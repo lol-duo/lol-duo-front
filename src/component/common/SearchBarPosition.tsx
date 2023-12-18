@@ -28,7 +28,7 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
                 </SearchBarPositionWrapper>
             </DropdownTrigger>
             <DropdownMenu aria-label="DuoDropDownMenu">
-                <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none'}}>
+                <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none', outline: 'none'}}>
                     <SearchBarPositionDropDown positionState={positionState} setPositionState={setPositionState}/>
                 </DropdownItem>
             </DropdownMenu>

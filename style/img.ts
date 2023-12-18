@@ -1,7 +1,7 @@
 import {PositionType} from "@/types/SearchBar";
 
-const S3_URL = "https://s3.ap-northeast-2.amazonaws.com/img.lol-duo";
-;
+const S3_URL = process.env["NEXT_PUBLIC_IMAGE_URL"];
+
 export const imgURL = {
     logo: S3_URL + "/logo/Lightmode.svg",
     laneImg: {

@@ -4,17 +4,13 @@ import fontList from "../../../style/fontList";
 import colorList from "../../../style/colorList";
 import {SearchBarTextProps} from "@/types/SearchBar";
 import {imgURL} from "../../../style/img";
-import {useRouter} from "next/router";
 import Image from "next/image";
+import I18n from "@/component/locale/i18n";
 
 const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
     const {text, isOpen, selectedName} = props;
 
-    const {locale} = useRouter();
-    let newText = selectedName;
-    if (locale === "ko") {
-        if (selectedName === "ALL") newText = "전체";
-    }
+    const positionName = I18n('common.json').lane;
 
     return (
         <SearchBarTextWrapper>
@@ -26,7 +22,7 @@ const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
                         <Image className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow} width={16} height={16}/>
                 }
             </div>
-            <div className="selectedName">{newText}</div>
+            <div className="selectedName">{positionName[selectedName]}</div>
         </SearchBarTextWrapper>
     );
 }

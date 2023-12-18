@@ -2,14 +2,16 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import DuoSearchBar from "@/component/duo/DuoSearchBar";
 import {useState} from "react";
-import {PositionType} from "@/types/SearchBar";
+import {ChampionInfo, PositionType} from "@/types/SearchBar";
 
 const DuoMain: NextPage = () => {
 
+    const S3_URL = process.env["NEXT_PUBLIC_IMAGE_URL"];
+
     const [firstPosition, setFirstPosition] = useState<PositionType>("ALL");
     const [secondPosition, setSecondPosition] = useState<PositionType>("ALL");
-    const [firstChampion, setFirstChampion] = useState<string>("");
-    const [secondChampion, setSecondChampion] = useState<string>("");
+    const [firstChampion, setFirstChampion] = useState<ChampionInfo>({id: 0, name: "All", imgUrl: S3_URL + "/champion/ALL.svg"});
+    const [secondChampion, setSecondChampion] = useState<ChampionInfo>({id: 0, name: "All", imgUrl: S3_URL + "/champion/ALL.svg"});
 
     return (
         <DuoMainWrapper>

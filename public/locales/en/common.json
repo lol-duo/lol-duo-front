@@ -1,5 +1,6 @@
 {
   "lane": {
+    "ALL": "All",
     "TOP": "Top",
     "JUNGLE": "Jungle",
     "MID": "Mid",

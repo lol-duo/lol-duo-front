@@ -5,6 +5,7 @@ import DuoMain from "@/component/duo/DuoMain";
 import colorList from "../style/colorList";
 
 const Home: NextPage = () => {
+
     return (
         <>
             <style jsx global>

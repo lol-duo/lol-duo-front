@@ -3,15 +3,17 @@ import styled from "@emotion/styled";
 import {SearchBarProps} from "@/types/SearchBar";
 import SearchBarPosition from "@/component/common/SearchBarPosition";
 import colorList from "../../../style/colorList";
+import SearchBarChampion from "@/component/common/SearchBarChampion";
 
 const SearchBar: NextPage<SearchBarProps> = (props) => {
 
-    const {positionState, setPositionState} = props;
+    const {positionState, setPositionState, championState, setChampionState} = props;
 
     return (
         <SearchBarWrapper>
             <SearchBarPosition positionState={positionState} setPositionState={setPositionState}/>
             <div className="Bar"/>
+            <SearchBarChampion championState={championState} setChampionState={setChampionState}/>
         </SearchBarWrapper>
     );
 }

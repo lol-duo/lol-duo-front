@@ -1,29 +1,35 @@
 import {NextPage} from "next";
 import styled from "@emotion/styled";
-import {SearchBarPositionProps} from "@/types/SearchBar";
+import {SearchBarChampionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/react";
-import {imgURL} from "../../../style/img";
+import React, {useState} from "react";
+import I18n from "@/component/locale/i18n";
 import SearchBarText from "@/component/common/SearchBarText";
-import {useState} from "react";
 import Image from "next/image";
 
-const SearchBarChampion: NextPage<SearchBarPositionProps> = (props) => {
+const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
 
-    const {positionState, setPositionState} = props;
+
+    const {championState, setChampionState} = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
+    const championList = I18n('champion.ts');
+
+    const {id, name, imgUrl} = championState;
+
     const setIsOpenTrue = () => setIsOpen(!isOpen);
+
+    console.log(imgUrl);
 
     return (
         <Dropdown onOpenChange={setIsOpenTrue}>
             <DropdownTrigger>
                 <SearchBarChampionWrapper>
-                    <div className="positionCircle">
-                        <Image className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
-                               alt={imgURL.laneImg[positionState]}/>
+                    <div className="championCircle">
+                        <Image className="positionImg" src={imgUrl} width={24} height={24} alt={imgUrl}/>
                     </div>
-                    {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionState}/>}
+                    {<SearchBarText text="Position" isOpen={isOpen} selectedName={name}/>}
                 </SearchBarChampionWrapper>
             </DropdownTrigger>
             <DropdownMenu aria-label="DuoDropDownMenu">
@@ -44,7 +50,7 @@ const SearchBarChampionWrapper = styled.div`
   gap: 12px;
 
 
-  .positionCircle {
+  .championCircle {
     box-sizing: border-box;
     width: 44px;
     height: 44px;

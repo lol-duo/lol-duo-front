@@ -12,8 +12,8 @@ export declare interface SearchBarTextProps {
 }
 
 export declare interface SearchBarChampionProps {
-    championState: string;
-    setChampionState: Dispatch<SetStateAction<string>>
+    championState: ChampionInfo;
+    setChampionState: Dispatch<SetStateAction<ChampionInfo>>
 }
 
 export declare interface SearchBarProps extends SearchBarPositionProps, SearchBarChampionProps {
@@ -25,12 +25,9 @@ export declare interface DuoSearchBarProps {
 }
 
 export declare interface ChampionInfo {
-    position: PositionType;
-    champion: {
-        id: number;
-        name: string;
-        championImgUrl: string;
-    }
+    id: number;
+    name: string;
+    imgUrl: string;
 }
 
 type PositionType = "TOP" | "JUNGLE" | "MID" | "BOT" | "SUPPORT" | "ALL";
