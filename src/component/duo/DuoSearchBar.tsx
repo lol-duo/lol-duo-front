@@ -9,8 +9,10 @@ const DuoSearchBar: NextPage<DuoSearchBarProps> = (props) => {
 
     return (
         <DuoSearchBarWrapper>
-            <SearchBar positionState={firstProps.positionState} setPositionState={firstProps.setPositionState}/>
-            <SearchBar positionState={secondProps.positionState} setPositionState={secondProps.setPositionState}/>
+            <SearchBar positionState={firstProps.positionState} setPositionState={firstProps.setPositionState}
+                       championState={firstProps.championState} setChampionState={secondProps.setChampionState}/>
+            <SearchBar positionState={secondProps.positionState} setPositionState={secondProps.setPositionState}
+                       championState={secondProps.championState} setChampionState={secondProps.setChampionState}/>
         </DuoSearchBarWrapper>
     );
 }

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import {PositionType, SearchBarPositionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import {imgURL} from "../../../style/img";
+import Image from "next/image";
 
 const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
 
@@ -18,14 +19,14 @@ const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
                                 <div className="positionCircle" key={positionType}
                                      style={{backgroundColor: colorList.alpha.secondaryBeige_20}}
                                      onClick={() => setPositionState(positionType)}>
-                                    <img key={positionType + "img"} className="positionImg"
-                                         src={imgURL.laneImg[positionType]}
-                                         alt={imgURL.laneImg[positionType]}/>
+                                    <Image key={positionType + "img"} className="positionImg"
+                                           src={imgURL.laneImg[positionType]}
+                                           alt={imgURL.laneImg[positionType]}/>
                                 </div> : <div className="positionCircle" key={positionType}
                                               onClick={() => setPositionState(positionType)}>
-                                    <img key={positionType + "img"} className="positionImg"
-                                         src={imgURL.laneImg[positionType]}
-                                         alt={imgURL.laneImg[positionType]}/>
+                                    <Image key={positionType + "img"} className="positionImg"
+                                           src={imgURL.laneImg[positionType]}
+                                           alt={imgURL.laneImg[positionType]}/>
                                 </div>
                         )
                     )

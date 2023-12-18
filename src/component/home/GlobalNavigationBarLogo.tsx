@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import {useRouter} from "next/router";
 import {imgURL} from "../../../style/img";
+import Image from "next/image";
 
 const GlobalNavigationBarLogo: NextPage = () => {
 
@@ -14,8 +15,8 @@ const GlobalNavigationBarLogo: NextPage = () => {
 
     return (
         <GlobalNavigationBarLogoWrapper>
-            <img className="logoImg" src={imgURL.logo} onClick={onClickNavLogo}
-                 alt={imgURL.logo}/>
+            <Image className="logoImg" src={imgURL.logo} onClick={onClickNavLogo}
+                   alt={imgURL.logo}/>
         </GlobalNavigationBarLogoWrapper>
     );
 }

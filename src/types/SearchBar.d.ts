@@ -5,9 +5,15 @@ export declare interface SearchBarPositionProps {
     setPositionState: Dispatch<SetStateAction<PositionType>>
 }
 
+export declare interface SearchBarTextProps {
+    text: string;
+    isOpen: boolean;
+    selectedName: string;
+}
+
 export declare interface SearchBarChampionProps {
-    // champion: string;
-    // setChampion: Dispatch<SetStateAction<string>>
+    championState: string;
+    setChampionState: Dispatch<SetStateAction<string>>
 }
 
 export declare interface SearchBarProps extends SearchBarPositionProps, SearchBarChampionProps {

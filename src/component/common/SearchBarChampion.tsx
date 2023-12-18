@@ -3,13 +3,12 @@ import styled from "@emotion/styled";
 import {SearchBarPositionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/react";
-import SearchBarPositionDropDown from "@/component/common/SearchBarPositionDropDown";
 import {imgURL} from "../../../style/img";
 import SearchBarText from "@/component/common/SearchBarText";
 import {useState} from "react";
 import Image from "next/image";
 
-const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
+const SearchBarChampion: NextPage<SearchBarPositionProps> = (props) => {
 
     const {positionState, setPositionState} = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,26 +18,25 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
     return (
         <Dropdown onOpenChange={setIsOpenTrue}>
             <DropdownTrigger>
-                <SearchBarPositionWrapper>
+                <SearchBarChampionWrapper>
                     <div className="positionCircle">
                         <Image className="positionImg" src={imgURL.laneImg[positionState]}
                                alt={imgURL.laneImg[positionState]}/>
                     </div>
                     {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionState}/>}
-                </SearchBarPositionWrapper>
+                </SearchBarChampionWrapper>
             </DropdownTrigger>
             <DropdownMenu aria-label="DuoDropDownMenu">
                 <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none'}}>
-                    <SearchBarPositionDropDown positionState={positionState} setPositionState={setPositionState}/>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>
     );
 }
 
-export default SearchBarPosition;
+export default SearchBarChampion;
 
-const SearchBarPositionWrapper = styled.div`
+const SearchBarChampionWrapper = styled.div`
   width: 134px;
   height: 44px;
   position: relative;

@@ -11,6 +11,7 @@ const SearchBar: NextPage<SearchBarProps> = (props) => {
     return (
         <SearchBarWrapper>
             <SearchBarPosition positionState={positionState} setPositionState={setPositionState}/>
+            <div className="Bar"/>
         </SearchBarWrapper>
     );
 }
@@ -19,12 +20,19 @@ export default SearchBar;
 
 const SearchBarWrapper = styled.div`
   position: relative;
-  top: 0;
-  left: 0;
   width: 474px;
   height: 76px;
   background-color: ${colorList.semantic.card};
   border-radius: 100px;
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 
+  .Bar {
+    border: 1px solid ${colorList.grayscale["300"]};
+    width: 0;
+    height: 36px;
+  }
 `

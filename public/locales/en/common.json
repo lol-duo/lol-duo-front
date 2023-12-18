@@ -1,0 +1,9 @@
+{
+  "lane": {
+    "TOP": "Top",
+    "JUNGLE": "Jungle",
+    "MID": "Mid",
+    "BOTTOM": "Bottom",
+    "SUPPORT": "Support"
+  }
+}

@@ -8,11 +8,23 @@ const DuoMain: NextPage = () => {
 
     const [firstPosition, setFirstPosition] = useState<PositionType>("ALL");
     const [secondPosition, setSecondPosition] = useState<PositionType>("ALL");
+    const [firstChampion, setFirstChampion] = useState<string>("");
+    const [secondChampion, setSecondChampion] = useState<string>("");
 
     return (
         <DuoMainWrapper>
-            <DuoSearchBar firstProps={{positionState: firstPosition, setPositionState: setFirstPosition}}
-                          secondProps={{positionState: secondPosition, setPositionState: setSecondPosition}}/>
+            <DuoSearchBar firstProps={{
+                positionState: firstPosition,
+                setPositionState: setFirstPosition,
+                championState: firstChampion,
+                setChampionState: setFirstChampion
+            }}
+                          secondProps={{
+                              positionState: secondPosition,
+                              setPositionState: setSecondPosition,
+                              championState: secondChampion,
+                              setChampionState: setSecondChampion
+                          }}/>
             {/*<DuoTableHeader newCss={{*/}
             {/*    marginTop: "24px",*/}
             {/*}}/>*/}
