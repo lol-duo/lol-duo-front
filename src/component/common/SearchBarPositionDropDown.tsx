@@ -19,12 +19,12 @@ const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
                                 <div className="positionCircle" key={positionType}
                                      style={{backgroundColor: colorList.alpha.secondaryBeige_20}}
                                      onClick={() => setPositionState(positionType)}>
-                                    <Image key={positionType + "img"} className="positionImg"
+                                    <Image key={positionType + "img"} className="positionImg" width={24} height={24}
                                            src={imgURL.laneImg[positionType]}
                                            alt={imgURL.laneImg[positionType]}/>
                                 </div> : <div className="positionCircle" key={positionType}
                                               onClick={() => setPositionState(positionType)}>
-                                    <Image key={positionType + "img"} className="positionImg"
+                                    <Image key={positionType + "img"} className="positionImg" width={24} height={24}
                                            src={imgURL.laneImg[positionType]}
                                            alt={imgURL.laneImg[positionType]}/>
                                 </div>
@@ -68,8 +68,6 @@ const SearchBarPositionDropDownWrapper = styled.div`
 
     .positionImg {
       position: relative;
-      width: 24px;
-      height: 24px;
     }
   }
 `

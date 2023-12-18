@@ -1,6 +1,6 @@
 import {PositionType} from "@/types/SearchBar";
 
-const S3_URL = "https://lol-duo.s3.ap-northeast-2.amazonaws.com";
+const S3_URL = "https://s3.ap-northeast-2.amazonaws.com/img.lol-duo";
 ;
 export const imgURL = {
     logo: S3_URL + "/logo/Lightmode.svg",

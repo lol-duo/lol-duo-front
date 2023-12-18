@@ -20,7 +20,7 @@ const SearchBarChampion: NextPage<SearchBarPositionProps> = (props) => {
             <DropdownTrigger>
                 <SearchBarChampionWrapper>
                     <div className="positionCircle">
-                        <Image className="positionImg" src={imgURL.laneImg[positionState]}
+                        <Image className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
                                alt={imgURL.laneImg[positionState]}/>
                     </div>
                     {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionState}/>}
@@ -63,8 +63,6 @@ const SearchBarChampionWrapper = styled.div`
 
     .positionImg {
       position: relative;
-      width: 24px;
-      height: 24px;
     }
   }
 `

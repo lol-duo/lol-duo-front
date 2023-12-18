@@ -21,8 +21,9 @@ const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
             <div className="text">
                 {text}
                 {
-                    isOpen ? <Image className="Arrow" src={imgURL.upArrow} alt={imgURL.upArrow}/> :
-                        <Image className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow}/>
+                    isOpen ?
+                        <Image className="Arrow" src={imgURL.upArrow} alt={imgURL.upArrow} width={16} height={16}/> :
+                        <Image className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow} width={16} height={16}/>
                 }
             </div>
             <div className="selectedName">{newText}</div>

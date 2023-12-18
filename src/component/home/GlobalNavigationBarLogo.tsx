@@ -15,7 +15,7 @@ const GlobalNavigationBarLogo: NextPage = () => {
 
     return (
         <GlobalNavigationBarLogoWrapper>
-            <Image className="logoImg" src={imgURL.logo} onClick={onClickNavLogo}
+            <Image className="logoImg" src={imgURL.logo} onClick={onClickNavLogo} width={164.8} height={32}
                    alt={imgURL.logo}/>
         </GlobalNavigationBarLogoWrapper>
     );
@@ -33,7 +33,5 @@ const GlobalNavigationBarLogoWrapper = styled.div`
     position: relative;
     left: 0;
     top: 12px;
-    height: 32px;
-    width: 164.8px;
   }
 `
