@@ -7,8 +7,14 @@ export default function I18n(file: string): any {
 
     const file_extension = file.split('.').pop();
     if (file_extension === 'ts') {
-        return require(`/public/locales/${locale}/${file}`).default;
+        return {
+            language: locale,
+            value: require(`/public/locales/${locale}/${file}`).default
+        }
     }
 
-    return require(`/public/locales/${locale}/${file}`);
+    return {
+        language: locale,
+        value: require(`/public/locales/${locale}/${file}`)
+    }
 }

@@ -8,6 +8,7 @@ import {imgURL} from "../../../style/img";
 import SearchBarText from "@/component/common/SearchBarText";
 import {useState} from "react";
 import Image from "next/image";
+import I18n from "@/component/locale/i18n";
 
 const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
 
@@ -15,6 +16,8 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const setIsOpenTrue = () => setIsOpen(!isOpen);
+
+    const positionName = I18n('common.json').value.lane;
 
     return (
         <Dropdown onOpenChange={setIsOpenTrue}>
@@ -24,7 +27,7 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
                         <Image className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
                                alt={imgURL.laneImg[positionState]}/>
                     </div>
-                    {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionState}/>}
+                    {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionName[positionState]}/>}
                 </SearchBarPositionWrapper>
             </DropdownTrigger>
             <DropdownMenu aria-label="DuoDropDownMenu">

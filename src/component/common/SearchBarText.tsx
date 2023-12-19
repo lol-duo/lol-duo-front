@@ -5,12 +5,9 @@ import colorList from "../../../style/colorList";
 import {SearchBarTextProps} from "@/types/SearchBar";
 import {imgURL} from "../../../style/img";
 import Image from "next/image";
-import I18n from "@/component/locale/i18n";
 
 const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
     const {text, isOpen, selectedName} = props;
-
-    const positionName = I18n('common.json').lane;
 
     return (
         <SearchBarTextWrapper>
@@ -22,7 +19,7 @@ const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
                         <Image className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow} width={16} height={16}/>
                 }
             </div>
-            <div className="selectedName">{positionName[selectedName]}</div>
+            <div className="selectedName">{selectedName}</div>
         </SearchBarTextWrapper>
     );
 }

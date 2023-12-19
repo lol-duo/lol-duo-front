@@ -10,8 +10,16 @@ const DuoMain: NextPage = () => {
 
     const [firstPosition, setFirstPosition] = useState<PositionType>("ALL");
     const [secondPosition, setSecondPosition] = useState<PositionType>("ALL");
-    const [firstChampion, setFirstChampion] = useState<ChampionInfo>({id: 0, name: "All", imgUrl: S3_URL + "/champion/ALL.svg"});
-    const [secondChampion, setSecondChampion] = useState<ChampionInfo>({id: 0, name: "All", imgUrl: S3_URL + "/champion/ALL.svg"});
+    const [firstChampion, setFirstChampion] = useState<ChampionInfo>({
+        id: 0,
+        name: "All",
+        imgUrl: S3_URL + "/champion/All.svg"
+    });
+    const [secondChampion, setSecondChampion] = useState<ChampionInfo>({
+        id: 0,
+        name: "All",
+        imgUrl: S3_URL + "/champion/All.svg"
+    });
 
     return (
         <DuoMainWrapper>
