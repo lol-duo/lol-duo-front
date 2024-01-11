@@ -15,6 +15,5 @@ const HomeHeader: NextPage = () => {
 export default HomeHeader;
 
 const HeaderWrapper = styled.div`
-  top: 0;
-  left: 0;
+    width: 100vw;
 `

@@ -28,7 +28,6 @@ const SearchBarWrapper = styled.div`
   border-radius: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   gap: 16px;
 
@@ -37,4 +36,8 @@ const SearchBarWrapper = styled.div`
     width: 0;
     height: 36px;
   }
+    
+    @media screen and (max-width: 480px) {
+        width: 90vw;
+    }
 `

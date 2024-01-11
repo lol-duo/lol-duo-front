@@ -4,7 +4,9 @@
     "TOP": "Top",
     "JUNGLE": "Jungle",
     "MID": "Mid",
-    "BOTTOM": "Bottom",
+    "BOT": "Bottom",
     "SUPPORT": "Support"
-  }
+  },
+  "noData": "Sample Size is not large enough to show data",
+  "description": "Provides good information when playing LOL co-op"
 }

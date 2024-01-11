@@ -2,7 +2,7 @@ import {Dispatch, SetStateAction} from "react";
 
 export declare interface SearchBarPositionProps {
     positionState: PositionType;
-    setPositionState: Dispatch<SetStateAction<PositionType>>
+    setPositionState: Dispatch<SetStateAction<PositionType>>;
 }
 
 export declare interface SearchBarTextProps {
@@ -13,7 +13,7 @@ export declare interface SearchBarTextProps {
 
 export declare interface SearchBarChampionProps {
     championState: ChampionInfo;
-    setChampionState: Dispatch<SetStateAction<ChampionInfo>>
+    setChampionState: Dispatch<SetStateAction<ChampionInfo>>;
 }
 
 export declare interface SearchBarProps extends SearchBarPositionProps, SearchBarChampionProps {

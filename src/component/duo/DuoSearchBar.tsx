@@ -10,7 +10,7 @@ const DuoSearchBar: NextPage<DuoSearchBarProps> = (props) => {
     return (
         <DuoSearchBarWrapper>
             <SearchBar positionState={firstProps.positionState} setPositionState={firstProps.setPositionState}
-                       championState={firstProps.championState} setChampionState={secondProps.setChampionState}/>
+                       championState={firstProps.championState} setChampionState={firstProps.setChampionState}/>
             <SearchBar positionState={secondProps.positionState} setPositionState={secondProps.setPositionState}
                        championState={secondProps.championState} setChampionState={secondProps.setChampionState}/>
         </DuoSearchBarWrapper>
@@ -20,10 +20,14 @@ const DuoSearchBar: NextPage<DuoSearchBarProps> = (props) => {
 export default DuoSearchBar;
 
 const DuoSearchBarWrapper = styled.div`
-  width: 960px;
-  top: 76px;
-  gap: 12px;
-  display: flex;
-  flex-direction: row;
-  position: relative;
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 76px;
+    align-items: center;
+    
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+    }
 `

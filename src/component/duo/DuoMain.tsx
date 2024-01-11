@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import DuoSearchBar from "@/component/duo/DuoSearchBar";
 import {useState} from "react";
 import {ChampionInfo, PositionType} from "@/types/SearchBar";
+import DuoTable from "@/component/duo/DuoTable";
 
 const DuoMain: NextPage = () => {
 
@@ -13,103 +14,42 @@ const DuoMain: NextPage = () => {
     const [firstChampion, setFirstChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: S3_URL + "/champion/All.svg"
+        imgUrl: S3_URL + "/champion/ALL.svg"
     });
     const [secondChampion, setSecondChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: S3_URL + "/champion/All.svg"
+        imgUrl: S3_URL + "/champion/ALL.svg"
     });
+
 
     return (
         <DuoMainWrapper>
-            <DuoSearchBar firstProps={{
+                <DuoSearchBar
+                    firstProps={{
+                        positionState: firstPosition,
+                        setPositionState: setFirstPosition,
+                        championState: firstChampion,
+                        setChampionState: setFirstChampion
+                    }}
+                  secondProps={{
+                      positionState: secondPosition,
+                      setPositionState: setSecondPosition,
+                      championState: secondChampion,
+                      setChampionState: setSecondChampion
+                  }}/>
+            <DuoTable firstProps={{
                 positionState: firstPosition,
                 setPositionState: setFirstPosition,
                 championState: firstChampion,
                 setChampionState: setFirstChampion
             }}
-                          secondProps={{
-                              positionState: secondPosition,
-                              setPositionState: setSecondPosition,
-                              championState: secondChampion,
-                              setChampionState: setSecondChampion
-                          }}/>
-            {/*<DuoTableHeader newCss={{*/}
-            {/*    marginTop: "24px",*/}
-            {/*}}/>*/}
-            {/*<div css={css({*/}
-            {/*    marginTop: "4px",*/}
-            {/*    display: "flex",*/}
-            {/*    flexDirection: "column",*/}
-            {/*    gap: "4px",*/}
-
-            {/*})}>*/}
-            {/*    {*/}
-            {/*        mainChampion.length > 3 ?*/}
-            {/*            <>*/}
-            {/*                <Link key="firstBigTable" to={{*/}
-            {/*                    pathname: "/duo/detail",*/}
-            {/*                    search: `${createSearchParams({id: mainChampion[0].id + ""})}`*/}
-            {/*                }}>*/}
-            {/*                    <BigDuoTable rankInfo={mainChampion[0]}/>*/}
-            {/*                </Link>*/}
-            {/*                <div css={css({*/}
-            {/*                    display: "flex",*/}
-            {/*                    flexDirection: "row",*/}
-            {/*                    gap: "4px"*/}
-            {/*                })}>*/}
-            {/*                    <Link to={{*/}
-            {/*                        pathname: "/duo/detail",*/}
-            {/*                        search: `${createSearchParams({id: mainChampion[1].id + ""})}`*/}
-            {/*                    }}>*/}
-            {/*                        <BigDuoTable rankInfo={mainChampion[1]}/>*/}
-            {/*                    </Link>*/}
-            {/*                    <Link to={{*/}
-            {/*                        pathname: "/duo/detail",*/}
-            {/*                        search: `${createSearchParams({id: mainChampion[2].id + ""})}`*/}
-            {/*                    }}>*/}
-            {/*                        <BigDuoTable rankInfo={mainChampion[2]}/>*/}
-            {/*                    </Link>*/}
-            {/*                </div>*/}
-            {/*                {*/}
-            {/*                    mainChampion.map((champion, index) => {*/}
-            {/*                        if (index > 2) {*/}
-            {/*                            return (*/}
-            {/*                                <Link key={index} to={{*/}
-            {/*                                    pathname: "/duo/detail",*/}
-            {/*                                    search: `${createSearchParams({id: mainChampion[index].id + ""})}`*/}
-            {/*                                }}>*/}
-            {/*                                    <DuoTable rankInfo={champion}/>*/}
-            {/*                                </Link>)*/}
-            {/*                        } else {*/}
-            {/*                            return null;*/}
-            {/*                        }*/}
-            {/*                    })*/}
-            {/*                }*/}
-            {/*            </>*/}
-            {/*            : mainChampion.length === 0 ?*/}
-            {/*                <div css={{*/}
-            {/*                    height: "17px",*/}
-            {/*                    width: "258px",*/}
-            {/*                    ...fontList.roboto.regular["14"],*/}
-            {/*                    color: colorList.grayscale["000"],*/}
-            {/*                    position: "relative",*/}
-            {/*                    top: "54px",*/}
-            {/*                }}>현재 포지션/챔피언의 데이터가 부족합니다.</div>*/}
-            {/*                :*/}
-            {/*                mainChampion.map((champion, index) => {*/}
-            {/*                    return (*/}
-            {/*                        <Link key={index} to={{*/}
-            {/*                            pathname: "/duo/detail",*/}
-            {/*                            search: `${createSearchParams({id: mainChampion[index].id + ""})}`*/}
-            {/*                        }}>*/}
-            {/*                            <DuoTable rankInfo={champion}/>*/}
-            {/*                        </Link>*/}
-            {/*                    )*/}
-            {/*                })*/}
-            {/*    }*/}
-            {/*</div>*/}
+                      secondProps={{
+                          positionState: secondPosition,
+                          setPositionState: setSecondPosition,
+                          championState: secondChampion,
+                          setChampionState: setSecondChampion
+                      }}/>
         </DuoMainWrapper>
     );
 }
@@ -117,8 +57,9 @@ const DuoMain: NextPage = () => {
 export default DuoMain;
 
 const DuoMainWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
 `

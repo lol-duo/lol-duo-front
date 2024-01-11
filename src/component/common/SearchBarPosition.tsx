@@ -42,21 +42,18 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
 export default SearchBarPosition;
 
 const SearchBarPositionWrapper = styled.div`
-  width: 134px;
-  height: 44px;
   position: relative;
   display: flex;
   gap: 12px;
-
-
+    margin-left: 32px;
+    
   .positionCircle {
     box-sizing: border-box;
     width: 44px;
     height: 44px;
     background-color: ${colorList.grayscale["400"]};
     border-radius: 50%;
-
-    //centering
+      
     position: relative;
     display: flex;
     justify-content: center;

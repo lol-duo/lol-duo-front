@@ -7,6 +7,16 @@ import {useRouter} from "next/router";
 const GlobalNavigationBar: NextPage = () => {
 
     const router = useRouter();
+    let duoClassName = "nav";
+    let soloClassName = "nav";
+
+    if(router.pathname === "/solo") {
+        soloClassName = "nav active";
+    }
+
+    if(router.pathname === "/") {
+        duoClassName = "nav active";
+    }
 
     const onClickNav = (info: string) => {
         switch (info) {
@@ -22,10 +32,10 @@ const GlobalNavigationBar: NextPage = () => {
     return (
         <GlobalNavigationBarWrapper>
             <ul className="navList">
-                <div className="nav" onClick={() => onClickNav("solo")}>
+                <div className={duoClassName} onClick={() => onClickNav("duo")}>
                     Duo
                 </div>
-                <div className="nav" onClick={() => onClickNav("duo")}>
+                <div className={soloClassName} onClick={() => onClickNav("solo")}>
                     Solo
                 </div>
             </ul>
@@ -60,11 +70,17 @@ const GlobalNavigationBarWrapper = styled.div`
     padding: 12px 16px;
     width: auto;
 
-    &:hover {
-      border-bottom: 2px solid ${colorList.grayscale["050"]};
-      color: ${colorList.grayscale["050"]};
-    }
-
     text-decoration: none;
+      
+    &:hover {
+      cursor: pointer;
+      border-bottom: 2px solid ${colorList.grayscale["200"]};
+      color: ${colorList.grayscale["200"]};
+    }
+      
   }
+    .active {
+        border-bottom: 2px solid ${colorList.grayscale["050"]};
+        color: ${colorList.grayscale["050"]};
+    }
 `
