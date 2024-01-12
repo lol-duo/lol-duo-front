@@ -15,15 +15,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <Head>
                 <meta charSet="utf-8"/>
-                <link href="/favicon.svg" rel="icon"/>
+                <link rel="icon" href="/favicon.svg"/>
+                <link rel="apple-touch-icon" href="/favicon.svg"/>
+                <link rel="shortcut icon" href="/favicon.svg"/>
+                <meta name="keywords" content="LOL-DUO,LOL,DUO,롤듀오,롤,듀오,LOL,LOL듀오,LOL듀오"/>
+                <meta name="author" content="LOL-DUO"/>
+
                 <meta content="LOL-DUO" property="og:title"/>
-                <meta content="Provides good information when playing LOL co-op" property="og:description"/>
+                <meta content={description} property="og:description"/>
                 <meta content="https://www.lolduo.net" property="og:url"/>
                 <meta content="/1200_600.svg" property="og:image"/>
                 <meta
                     content={description}
                     name="description"
                 />
+                <meta content="width=device-width, initial-scale=1" name="viewport"/>
+                <meta content="#000000" name="theme-color"/>
                 <link href="/favicon.svg" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
