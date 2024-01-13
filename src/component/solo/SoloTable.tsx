@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import fontList from "../../../style/fontList";
 import {useQuery} from "react-query";
-import {soloMainInfo} from "@/api/main";
+import { soloMainInfo} from "@/api/main";
 import {SearchBarProps} from "@/types/SearchBar";
 import Image from "next/image";
 import {imgURL} from "../../../style/img";
