@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import styled from "@emotion/styled";
-import {ChampionInfo, SearchBarChampionProps} from "@/types/SearchBar";
+import {SearchBarChampionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import React, {useState} from "react";
 import I18n from "@/component/locale/i18n";
@@ -17,7 +17,13 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
     const [userSearchState, setUserSearchState] = useState<string>("");
     const [isOpen, setIsOpen] = useState(false);
 
-    const championList = I18n('champion.ts').value as Array<ChampionInfo>;
+    const championList = I18n('champion.ts').value as [{
+        id: number,
+        en_name: string,
+        ko_name: string,
+        image: string,
+        name_id: string,
+    }]
     const language = I18n('common.json').language;
 
     let {id, name, imgUrl} = championState;
@@ -44,17 +50,21 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
                     <Image className="glassIcon" src={glassImg} alt={glassImg} width={16} height={16}/>
                     <div className="championList">{
                         championList.filter((champion) => {
-                            if (language === "ko") return champion.name.includes(userSearchState);
-                            else return champion.name.includes(userSearchState);
+                            if (language === "ko") return champion.ko_name.includes(userSearchState);
+                            else return champion.en_name.includes(userSearchState);
                         }).map((champion) => {
                             return (
                                 <div className="champion" key={champion.id}
                                      onClick={() => {
-                                         setChampionState(champion);
+                                         setChampionState({
+                                                id: champion.id,
+                                                name: language === "ko" ? champion.ko_name : champion.en_name,
+                                                imgUrl: `/champion/${champion.image}`
+                                         });
                                          setIsOpen(false);
                                      }}>
-                                    <Image className="championImg" src={champion.imgUrl} width={36} height={36}
-                                           alt={champion.imgUrl}/>
+                                    <Image className="championImg" src={`/champion/${champion.image}`} width={36} height={36}
+                                           alt={`/champion/${champion.image}`}/>
                                 </div>
                             )
                         })

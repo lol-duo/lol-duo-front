@@ -1,0 +1,32 @@
+{
+  "myId" : "My ID",
+  "roomURL": "Room address (participation link)",
+  "redTeam": "Red team",
+    "blueTeam": "Blue team",
+  "status" : {
+    "waiting" : "waiting",
+    "in" : "participated",
+    "ready" : "ready"
+  },
+  "startButtonInfo" : "※ Only the host can start the game.",
+  "subject" : "Pick Ban Strategy Simulator",
+  "infoList": [
+    {"index" : 1,"info": "Information on the game"},
+    {"index" : 2,"info":"※ You can participate in the team you want and prepare."},
+    {"index" : 3,"info":"※ The Game Start button will be activated only when all teams are ready."},
+    {"index" : 4,"info":"※ Those who do not participate in the team will be spectators."},
+    {"index" : 5,"info":"※ You can deliver a room link through the room address 'copy' button at the top."},
+    {"index" : 6,"info":"※ After starting the game, you can send the link through the 'copy' button at the bottom right."},
+    {"index" : 7,"info":"※ You can chat in the chat window at the bottom left."}
+
+  ],
+  "lastInfoList": [
+    {"index" :  1,"info": "Please" },
+    {"index" :  2,"info": "select the lane" }
+  ],
+  "endInfoList": [
+    {"index" : 1,"info": "End Notice" },
+    {"index" : 2,"info": "※ First image: Download status before lane swap" },
+    {"index" : 3,"info": "※ Second image: Download end status"}
+  ]
+}

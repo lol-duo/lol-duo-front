@@ -9,9 +9,14 @@ const GlobalNavigationBar: NextPage = () => {
     const router = useRouter();
     let duoClassName = "nav";
     let soloClassName = "nav";
+    let banpickClassName = "nav";
 
     if(router.pathname === "/solo") {
         soloClassName = "nav active";
+    }
+
+    if(router.pathname === "/banpick") {
+        banpickClassName = "nav active";
     }
 
     if(router.pathname === "/") {
@@ -26,6 +31,9 @@ const GlobalNavigationBar: NextPage = () => {
             case "duo":
                 router.push("/");
                 break;
+            case "banpick":
+                router.push("/banpick");
+                break;
         }
     }
 
@@ -37,6 +45,9 @@ const GlobalNavigationBar: NextPage = () => {
                 </div>
                 <div className={soloClassName} onClick={() => onClickNav("solo")}>
                     Solo
+                </div>
+                <div className={banpickClassName} onClick={() => onClickNav("banpick")}>
+                    BanPick
                 </div>
             </ul>
         </GlobalNavigationBarWrapper>

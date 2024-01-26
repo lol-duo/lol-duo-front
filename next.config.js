@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: false,
     i18n: {
         locales: ['en', 'ko'],
-        defaultLocale: 'en',
+        defaultLocale: 'ko',
     },
     env: {
         IMAGE_URL: process.env.NEXT_PUBLIC_IMAGE_URL,

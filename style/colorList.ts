@@ -33,6 +33,16 @@ const colorList = {
         second: "#D2466B",
         third: "#5646D2",
         fourth: "#4E4E4E",
+    },
+    banPick: {
+        redTeam: "#a6160c",
+        redTeamText: "#ff0022",
+        redTeamHover: "#d81c0f",
+        redTeamHover2: "#660d07",
+        blueTeam: "#1e1ebd",
+        blueTeamText: "#88ccfc",
+        blueTeamHover: "#2929ff",
+        blueTeamHover2: "#121270",
     }
 };
 

@@ -16,4 +16,6 @@ export default HomeHeader;
 
 const HeaderWrapper = styled.div`
     width: 100vw;
+    position: relative;
+    z-index: 0;
 `
