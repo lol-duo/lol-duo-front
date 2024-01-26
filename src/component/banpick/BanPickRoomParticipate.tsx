@@ -153,6 +153,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
                 host: 'www.lolduo.net',
                 port: 9000,
                 path: '/',
+                secure: false,
             });
             peer.current = nowPeer;
 
@@ -167,7 +168,6 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
 
             nowPeer.on('open', function(nowId) {
                 myId.current = nowId;
-                console.log('My peer ID is: ' + nowId);
 
                 const conn2 = nowPeer?.connect(id as string);
                 conn2?.on('open', function () {
@@ -195,7 +195,6 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
             nowPeer.on('connection', function(conn) {
                 conn.on('data', function(data) {
                     const nowData = JSON.parse(data as string);
-                    console.log(nowData);
 
                     if(nowData.type === "connectionList") {
                         for(let i = 0; i < nowData.message.length; i++) {
@@ -235,7 +234,6 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
                         setIsStart(true);
                         isStartRef.current = true;
                     } else if(nowData.type === "banPick") {
-                        console.log(nowData.message);
                         setSelectedChampion(selectedChampion => {
                             const newSelectedChampion = [...selectedChampion];
                             newSelectedChampion[nowData.message.now] = nowData.message.selectedChampion;
@@ -263,11 +261,6 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
                 });
                 conn.on('close', () => {
                     connectionList.delete(conn.peer);
-                    console.log(conn.peer + " is closed");
-                    console.log(rootIdRef.current, "rootIdRef.current");
-                    console.log(isStart, "isStart");
-                    console.log(redTeam.user, "redTeam.user");
-                    console.log(blueTeam.user, "blueTeam.user");
                     if(!isEnd.current) {
                         if (conn.peer === rootIdRef.current && isStartRef.current) {
                             alert("방장이 나갔습니다.");
@@ -296,8 +289,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
 
     const handleCopyClipBoard = async (text: string) => {
         // Navigator clipboard api needs a secure context (https)
-        console.log("check winidw SecureContext");
-        console.log(window.isSecureContext);
+
         if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(text);
             alert('클립보드에 복사되었습니다');

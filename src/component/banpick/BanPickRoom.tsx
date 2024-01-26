@@ -143,6 +143,7 @@ const BanPickRoom: NextPage = () => {
                     host: 'www.lolduo.net',
                     port: 9000,
                     path: '/',
+                    secure: false,
                 });
 
                 nowPeer.on('open', function (id) {
@@ -322,11 +323,7 @@ const BanPickRoom: NextPage = () => {
                         }
                     });
                     conn.on('close', () => {
-                        console.log(conn.peer + " is closed");
                         connectionList.delete(conn.peer);
-                        console.log(redTeam);
-                        console.log(blueTeam);
-                        console.log(isStart.current);
                         if(!isEnd.current) {
                             if (redTeam.user === conn.peer) {
                                 if (isStart.current) {
