@@ -612,7 +612,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[1] &&
-                            <Image className="img" src={`${selectedChampion[1].img}`} alt={selectedChampion[1].img} fill sizes="3840px"/>
+                            <Image loading="lazy" className="img" src={`${selectedChampion[1].img}`} alt={selectedChampion[1].img} fill sizes="3840px"/>
                         }
                     </div>
                     <div className={now === 3 ? "ban now" : "ban"}>
@@ -622,7 +622,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[3] &&
-                            <Image className="img" src={`${selectedChampion[3].img}`} alt={selectedChampion[3].img} fill sizes="3840px"/>
+                            <Image loading="lazy" className="img" src={`${selectedChampion[3].img}`} alt={selectedChampion[3].img} fill sizes="3840px"/>
                         }
                     </div>
                     <div className={now === 5 ? "ban now" : "ban"}>
@@ -632,7 +632,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[5] &&
-                            <Image className="img" src={`${selectedChampion[5].img}`} alt={selectedChampion[5].img} fill sizes="3840px"/>
+                            <Image loading="lazy" className="img" src={`${selectedChampion[5].img}`} alt={selectedChampion[5].img} fill sizes="3840px"/>
                         }
                     </div>
                     <div className={now === 12 ? "ban now" : "ban"}>
@@ -642,7 +642,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[12] &&
-                            <Image className="img" src={`${selectedChampion[12].img}`} alt={selectedChampion[12].img} fill sizes="3840px"/>
+                            <Image loading="lazy" className="img" src={`${selectedChampion[12].img}`} alt={selectedChampion[12].img} fill sizes="3840px"/>
                         }
                     </div>
                     <div className={now === 14 ? "ban now" : "ban"}>
@@ -652,7 +652,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[14] &&
-                            <Image className="img" src={`${selectedChampion[14].img}`} alt={selectedChampion[14].img} fill sizes="3840px"/>
+                            <Image loading="lazy" className="img" src={`${selectedChampion[14].img}`} alt={selectedChampion[14].img} fill sizes="3840px"/>
                         }
                     </div>
                 </div>
@@ -667,7 +667,7 @@ const BanPickRoomStart: NextPage<{
                         }
                         {
                             selectedChampion[7] &&
-                                    <Image className="img" src={selectedChampion[7].img} alt={selectedChampion[7].img} fill sizes="3840px"/>
+                                    <Image loading="lazy" className="img" src={selectedChampion[7].img} alt={selectedChampion[7].img} fill sizes="3840px"/>
                         }
                         {
                             selectedChampion[7] &&
@@ -679,7 +679,7 @@ const BanPickRoomStart: NextPage<{
                             now >= 20 &&
                             <div className="swap">
                                 <div className="swap-border">
-                                    <Image src="/swap.png" alt="/swap.png"
+                                    <Image loading="lazy" src="/swap.png" alt="/swap.png"
                                            height={45} width={45}/>
                                 </div>
 
@@ -688,7 +688,7 @@ const BanPickRoomStart: NextPage<{
                         {
                             now >= 20 &&
                             <div className="championLane">
-                                <Image src="/lane/TOP.svg" alt="/lane/TOP.svg"
+                                <Image loading="lazy" src="/lane/TOP.svg" alt="/lane/TOP.svg"
                                        height={30} width={30}/>
                             </div>
                         }
@@ -697,19 +697,19 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                {selectedChampion[8] && <div className="change_div"><Image
+                                {selectedChampion[8] && <div className="change_div"><Image loading="lazy"
                                     onClick={() => changeChampion(7, 8)} className="img" src={imgURL.laneImg.JUNGLE}
                                     alt={imgURL.laneImg.JUNGLE}
                                     width={50} height={50}/></div>}
-                                    {selectedChampion[11] && <div className="change_div"><Image
+                                    {selectedChampion[11] && <div className="change_div"><Image loading="lazy"
                                         onClick={() => changeChampion(7, 11)} className="img" src={imgURL.laneImg.MID}
                                         alt={imgURL.laneImg.MID}
                                         width={50} height={50}/></div>}
-                                        {selectedChampion[16] && <div className="change_div"><Image
+                                        {selectedChampion[16] && <div className="change_div"><Image loading="lazy"
                                             onClick={() => changeChampion(7, 16)} className="img"
                                             src={imgURL.laneImg.BOT} alt={imgURL.laneImg.BOT}
                                             width={50} height={50}/></div>}
-                                            {selectedChampion[19] && <div className="change_div"><Image
+                                            {selectedChampion[19] && <div className="change_div"><Image loading="lazy"
                                                 onClick={() => changeChampion(7, 19)} className="img"
                                                 src={imgURL.laneImg.SUPPORT} alt={imgURL.laneImg.SUPPORT}
                                                 width={50} height={50}/></div>}
@@ -727,7 +727,7 @@ const BanPickRoomStart: NextPage<{
                                 }
                                 {
                                     selectedChampion[8] &&
-                                    <Image className="img" src={selectedChampion[8].img} alt={selectedChampion[8].img} fill sizes="3840px"/>
+                                    <Image loading="lazy" className="img" src={selectedChampion[8].img} alt={selectedChampion[8].img} fill sizes="3840px"/>
                                 }
                                 {
                                     selectedChampion[8] &&
@@ -739,7 +739,7 @@ const BanPickRoomStart: NextPage<{
                                     now >= 20 &&
                                     <div className="swap">
                                         <div className="swap-border">
-                                            <Image src="/swap.png" alt="/swap.png"
+                                            <Image loading="lazy" src="/swap.png" alt="/swap.png"
                                                    height={45} width={45}/>
                                         </div>
                                     </div>
@@ -747,7 +747,7 @@ const BanPickRoomStart: NextPage<{
                                 {
                                     now >= 20 &&
                                     <div className="championLane">
-                                        <Image src="/lane/JUNGLE.svg" alt="/lane/JUNGLE.svg"
+                                        <Image loading="lazy" src="/lane/JUNGLE.svg" alt="/lane/JUNGLE.svg"
                                                height={30} width={30}/>
                                     </div>
                                 }
@@ -756,19 +756,19 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                {selectedChampion[7] && <div className="change_div"><Image
+                                {selectedChampion[7] && <div className="change_div"><Image loading="lazy"
                                     onClick={() => changeChampion(8, 7)} className="img" src={imgURL.laneImg.TOP}
                                     alt={imgURL.laneImg.TOP}
                                     width={50} height={50}/></div>}
-                                    {selectedChampion[11] && <div className="change_div"><Image
+                                    {selectedChampion[11] && <div className="change_div"><Image loading="lazy"
                                         onClick={() => changeChampion(8, 11)} className="img" src={imgURL.laneImg.MID}
                                         alt={imgURL.laneImg.MID}
                                         width={50} height={50}/></div>}
-                                        {selectedChampion[16] && <div className="change_div"><Image
+                                        {selectedChampion[16] && <div className="change_div"><Image loading="lazy"
                                             onClick={() => changeChampion(8, 16)} className="img"
                                             src={imgURL.laneImg.BOT} alt={imgURL.laneImg.BOT}
                                             width={50} height={50}/></div>}
-                                            {selectedChampion[19] && <div className="change_div"><Image
+                                            {selectedChampion[19] && <div className="change_div"><Image loading="lazy"
                                                 onClick={() => changeChampion(8, 19)} className="img"
                                                 src={imgURL.laneImg.SUPPORT} alt={imgURL.laneImg.SUPPORT}
                                                 width={50} height={50}/></div>}
@@ -787,7 +787,7 @@ const BanPickRoomStart: NextPage<{
                                 }
                                 {
                                     selectedChampion[11] &&
-                                    <Image className="img" src={`${selectedChampion[11].img}`} alt={selectedChampion[11].img} fill sizes="3840px"/>
+                                    <Image loading="lazy" className="img" src={`${selectedChampion[11].img}`} alt={selectedChampion[11].img} fill sizes="3840px"/>
                                 }
                                 {
                                     selectedChampion[11] &&
@@ -799,7 +799,7 @@ const BanPickRoomStart: NextPage<{
                                     now >= 20 &&
                                     <div className="swap">
                                         <div className="swap-border">
-                                    <Image src="/swap.png" alt="/swap.png"
+                                    <Image loading="lazy" src="/swap.png" alt="/swap.png"
                                            height={45} width={45}/>
                                 </div>
                             </div>
@@ -807,7 +807,7 @@ const BanPickRoomStart: NextPage<{
                         {
                             now >= 20 &&
                             <div className="championLane">
-                                <Image src="/lane/MIDDLE.svg" alt="/lane/MIDDLE.svg"
+                                <Image loading="lazy" src="/lane/MIDDLE.svg" alt="/lane/MIDDLE.svg"
                                        height={30} width={30}/>
                             </div>
                         }
@@ -816,19 +816,19 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                {selectedChampion[7] && <div className="change_div"><Image
+                                {selectedChampion[7] && <div className="change_div"><Image loading="lazy"
                                     onClick={() => changeChampion(11, 7)} className="img" src={imgURL.laneImg.TOP}
                                     alt={imgURL.laneImg.TOP}
                                     width={50} height={50}/></div>}
-                                    {selectedChampion[8] && <div className="change_div"><Image
+                                    {selectedChampion[8] && <div className="change_div"><Image loading="lazy"
                                         onClick={() => changeChampion(11, 8)} className="img"
                                         src={imgURL.laneImg.JUNGLE} alt={imgURL.laneImg.JUNGLE}
                                         width={50} height={50}/></div>}
-                                        {selectedChampion[16] && <div className="change_div"><Image
+                                        {selectedChampion[16] && <div className="change_div"><Image loading="lazy"
                                             onClick={() => changeChampion(11, 16)} className="img"
                                             src={imgURL.laneImg.BOT} alt={imgURL.laneImg.BOT}
                                             width={50} height={50}/></div>}
-                                            {selectedChampion[19] && <div className="change_div"><Image
+                                            {selectedChampion[19] && <div className="change_div"><Image loading="lazy"
                                                 onClick={() => changeChampion(11, 19)} className="img"
                                                 src={imgURL.laneImg.SUPPORT} alt={imgURL.laneImg.SUPPORT}
                                                 width={50} height={50}/></div>}
@@ -847,7 +847,7 @@ const BanPickRoomStart: NextPage<{
                                 }
                                 {
                                     selectedChampion[16] &&
-                                    <Image className="img" src={`${selectedChampion[16].img}`} alt={selectedChampion[16].img} fill sizes="3840px"/>
+                                    <Image loading="lazy" className="img" src={`${selectedChampion[16].img}`} alt={selectedChampion[16].img} fill sizes="3840px"/>
                                 }
                                 {
                                     selectedChampion[16] &&
@@ -859,7 +859,7 @@ const BanPickRoomStart: NextPage<{
                                     now >= 20 &&
                                     <div className="swap">
                                         <div className="swap-border">
-                                    <Image src="/swap.png" alt="/swap.png"
+                                    <Image loading="lazy" src="/swap.png" alt="/swap.png"
                                            height={45} width={45}/>
                                 </div>
                             </div>
@@ -867,7 +867,7 @@ const BanPickRoomStart: NextPage<{
                         {
                             now >= 20 &&
                             <div className="championLane">
-                                <Image src="/lane/BOTTOM.svg" alt="/lane/BOTTOM.svg"
+                                <Image loading="lazy" src="/lane/BOTTOM.svg" alt="/lane/BOTTOM.svg"
                                        height={30} width={30}/>
                             </div>
                         }
@@ -876,19 +876,19 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                {selectedChampion[7] && <div className="change_div"><Image
+                                {selectedChampion[7] && <div className="change_div"><Image loading="lazy"
                                     onClick={() => changeChampion(16, 7)} className="img" src={imgURL.laneImg.TOP}
                                     alt={imgURL.laneImg.TOP}
                                     width={50} height={50}/></div>}
-                                    {selectedChampion[8] && <div className="change_div"><Image
+                                    {selectedChampion[8] && <div className="change_div"><Image loading="lazy"
                                         onClick={() => changeChampion(16, 8)} className="img"
                                         src={imgURL.laneImg.JUNGLE} alt={imgURL.laneImg.JUNGLE}
                                         width={50} height={50}/></div>}
-                                        {selectedChampion[11] && <div className="change_div"><Image
+                                        {selectedChampion[11] && <div className="change_div"><Image loading="lazy"
                                             onClick={() => changeChampion(16, 11)} className="img"
                                             src={imgURL.laneImg.MID} alt={imgURL.laneImg.MID}
                                             width={50} height={50}/></div>}
-                                            {selectedChampion[19] && <div className="change_div"><Image
+                                            {selectedChampion[19] && <div className="change_div"><Image loading="lazy"
                                                 onClick={() => changeChampion(16, 19)} className="img"
                                                 src={imgURL.laneImg.SUPPORT} alt={imgURL.laneImg.SUPPORT}
                                                 width={50} height={50}/></div>}
@@ -907,7 +907,7 @@ const BanPickRoomStart: NextPage<{
                                 }
                                 {
                                     selectedChampion[19] &&
-                                    <Image className="img" src={`${selectedChampion[19].img}`}
+                                    <Image loading="lazy" className="img" src={`${selectedChampion[19].img}`}
                                            alt={selectedChampion[19].img} fill sizes="3840px"/>
                                 }
                                 {
@@ -920,7 +920,7 @@ const BanPickRoomStart: NextPage<{
                                     now >= 20 &&
                                     <div className="swap">
                                         <div className="swap-border">
-                                    <Image src="/swap.png" alt="/swap.png"
+                                    <Image loading="lazy" src="/swap.png" alt="/swap.png"
                                            height={45} width={45}/>
                                 </div>
                             </div>
@@ -928,7 +928,7 @@ const BanPickRoomStart: NextPage<{
                         {
                             now >= 20 &&
                             <div className="championLane">
-                                <Image src="/lane/UTILITY.svg" alt="/lane/UTILITY.svg"
+                                <Image loading="lazy" src="/lane/UTILITY.svg" alt="/lane/UTILITY.svg"
                                        height={30} width={30}/>
                             </div>
                         }
@@ -937,19 +937,19 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                {selectedChampion[7] && <div className="change_div"><Image
+                                {selectedChampion[7] && <div className="change_div"><Image loading="lazy"
                                     onClick={() => changeChampion(19, 7)} className="img" src={imgURL.laneImg.TOP}
                                     alt={imgURL.laneImg.TOP}
                                     width={50} height={50}/></div>}
-                                    {selectedChampion[8] && <div className="change_div"><Image
+                                    {selectedChampion[8] && <div className="change_div"><Image loading="lazy"
                                         onClick={() => changeChampion(19, 8)} className="img"
                                         src={imgURL.laneImg.JUNGLE} alt={imgURL.laneImg.JUNGLE}
                                         width={50} height={50}/></div>}
-                                        {selectedChampion[11] && <div className="change_div"><Image
+                                        {selectedChampion[11] && <div className="change_div"><Image loading="lazy"
                                             onClick={() => changeChampion(19, 11)} className="img"
                                             src={imgURL.laneImg.MID} alt={imgURL.laneImg.MID}
                                             width={50} height={50}/></div>}
-                                            {selectedChampion[16] && <div className="change_div"><Image
+                                            {selectedChampion[16] && <div className="change_div"><Image loading="lazy"
                                                 onClick={() => changeChampion(19, 16)} className="img"
                                                 src={imgURL.laneImg.BOT} alt={imgURL.laneImg.BOT}
                                                 width={50} height={50}/></div>}

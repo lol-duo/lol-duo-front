@@ -153,7 +153,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
                 host: 'www.lolduo.net',
                 port: 9000,
                 path: '/',
-                secure: false,
+                secure: true,
             });
             peer.current = nowPeer;
 

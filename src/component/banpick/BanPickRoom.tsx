@@ -143,7 +143,7 @@ const BanPickRoom: NextPage = () => {
                     host: 'www.lolduo.net',
                     port: 9000,
                     path: '/',
-                    secure: false,
+                    secure: true,
                 });
 
                 nowPeer.on('open', function (id) {
