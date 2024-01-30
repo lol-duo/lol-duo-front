@@ -2,6 +2,7 @@ import {AppProps} from "next/app";
 import colorList from "../style/colorList";
 import {QueryClient, QueryClientProvider} from "react-query";
 import Footer from "@/component/common/Footer";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
     const queryClient = new QueryClient();
@@ -27,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                     height: 100%;
                 }
             `}</style>
-
+            <Head>
+                <meta name="naver-site-verification" content="5ba4384c6d894c26269fbffc41266ed0371ea7fb"/>
+            </Head>
             <QueryClientProvider client={queryClient}>
                 <Component {...pageProps} />
                 <Footer/>
