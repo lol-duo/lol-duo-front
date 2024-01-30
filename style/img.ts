@@ -3,15 +3,15 @@ import {PositionType} from "@/types/SearchBar";
 const S3_URL = process.env["NEXT_PUBLIC_IMAGE_URL"];
 
 export const imgURL = {
-    logo: S3_URL + "/logo/Lightmode.svg",
-    logoDark: S3_URL + "/logo/Darkmode.svg",
+    logo: "/logo/Lightmode.svg",
+    logoDark: "/logo/Darkmode.svg",
     laneImg: {
-        ALL: S3_URL + "/mainPage/search/ALL.svg",
-        TOP: S3_URL + "/mainPage/search/TOP.svg",
-        JUNGLE: S3_URL + "/mainPage/search/JUNGLE.svg",
-        MID: S3_URL + "/mainPage/search/MIDDLE.svg",
-        BOT: S3_URL + "/mainPage/search/BOTTOM.svg",
-        SUPPORT: S3_URL + "/mainPage/search/UTILITY.svg",
+        ALL: "/lane/ALL.svg",
+        TOP: "/lane/TOP.svg",
+        JUNGLE: "/lane/JUNGLE.svg",
+        MID: "/lane/MIDDLE.svg",
+        BOT: "/lane/BOTTOM.svg",
+        SUPPORT: "/lane/UTILITY.svg",
     } as Record<PositionType, string>,
 
     searchGlass: S3_URL + "/mainPage/search/searchGlass.svg",

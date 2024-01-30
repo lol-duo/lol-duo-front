@@ -29,10 +29,11 @@ const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  height: 144px;
+  height: 100%;
     margin-left: 60px;
     margin-top: 108px;
     margin-right: 60px;
+    z-index: 1;
 
   .text {
     display: flex;
