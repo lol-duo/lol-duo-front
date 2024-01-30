@@ -140,7 +140,7 @@ const BanPickRoom: NextPage = () => {
         try {
             import('peerjs').then(({default: Peer}) => {
                 const nowPeer = new Peer({
-                    host: 'www.lolduo.net',
+                    host: 'api.lolduo.net',
                     port: 9000,
                     path: '/',
                     secure: true,
