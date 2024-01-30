@@ -1,27 +1,79 @@
 import {NextPage} from "next";
 import styled from "@emotion/styled";
-import {useState} from "react";
-import {ChampionInfo, PositionType} from "@/types/SearchBar";
+import {useEffect, useState} from "react";
+import {ChampionInfo, ChampionListType, ChampionType, PositionType} from "@/types/SearchBar";
 import SearchBar from "@/component/common/SearchBar";
 import SoloTable from "@/component/solo/SoloTable";
+import {PositionTypeGuard} from "@/types/SearchBarTypeGaurd";
+import {useRouter} from "next/router";
+import I18n from "@/component/locale/i18n";
 
 const SoloMain: NextPage = () => {
 
-    const S3_URL = process.env["NEXT_PUBLIC_IMAGE_URL"];
+    const router = useRouter();
+    const {position, champion} = router.query;
 
-    const [position, setPosition] = useState<PositionType>("ALL");
-    const [champion, setChampion] = useState<ChampionInfo>({
+    //i18n
+    const i18n = I18n("champion.ts");
+    const language = i18n.language;
+    const championInfoList = i18n.value as ChampionListType;
+
+    const [nowPosition, setNowPosition] = useState<PositionType>("ALL");
+    const [nowChampion, setNowChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: S3_URL + "/champion/ALL.svg"
+        imgUrl: "/champion/ALL.svg"
     });
+
+    const setPosition = (position: string, setPositionFunc: Function) => {
+        if (PositionTypeGuard(position)) {
+            setPositionFunc(position);
+        } else {
+            setPositionFunc("ALL");
+        }
+    };
+
+    const setChampion = (championId: string, setChampionFunc: Function) => {
+        const championInfo = championInfoList.find((item: ChampionType) => item.id === Number(championId));
+        if (championInfo) {
+            setChampionFunc({
+                id: championInfo.id,
+                name: language === "ko" ? championInfo.ko_name : championInfo.en_name,
+                imgUrl: `/champion/${championInfo.image}`
+            });
+        } else {
+            setChampionFunc({
+                id: 0,
+                name: "All",
+                imgUrl: "/champion/ALL.svg"
+            });
+        }
+    };
+
+    //쿼리로 받은 값 업데이트
+    useEffect(() => {
+        setPosition(position as string, setNowPosition);
+        setChampion(champion as string, setNowChampion);
+    }, [position, champion]);
+
+    //변경사항 쿼리 업데이트
+    useEffect(() => {
+        if(nowPosition && nowChampion)
+            router.push({
+                pathname: "/solo",
+                query: {
+                    position: nowPosition,
+                    champion: nowChampion.id,
+                }
+            });
+    },[nowChampion, nowPosition]);
 
     return (
         <SoloMainWrapper>
             <div style={{marginTop: "76px"}}>
-                <SearchBar positionState={position} setPositionState={setPosition} championState={champion} setChampionState={setChampion}/>
+                <SearchBar positionState={nowPosition} setPositionState={setNowPosition} championState={nowChampion} setChampionState={setNowChampion}/>
             </div>
-            <SoloTable positionState={position} championState={champion} setPositionState={setPosition} setChampionState={setChampion}/>
+            <SoloTable positionState={nowPosition} setPositionState={setNowPosition} championState={nowChampion}  setChampionState={setNowChampion}/>
         </SoloMainWrapper>
     );
 }

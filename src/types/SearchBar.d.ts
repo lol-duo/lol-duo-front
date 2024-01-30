@@ -31,3 +31,15 @@ export declare interface ChampionInfo {
 }
 
 type PositionType = "TOP" | "JUNGLE" | "MID" | "BOT" | "SUPPORT" | "ALL";
+
+export declare interface ChampionType {
+    id: number;
+    en_name: string;
+    name_id: string;
+    image: string;
+    ko_name: string;
+    positionList: RealPositionType[];
+}
+
+type ChampionListType = ChampionType[];
+type RealPositionType = "TOP" | "JUNGLE" | "MIDDLE" | "BOTTOM" | "UTILITY";
