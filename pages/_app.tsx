@@ -30,6 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             `}</style>
             <Head>
                 <meta name="naver-site-verification" content="5ba4384c6d894c26269fbffc41266ed0371ea7fb"/>
+                <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9404910404961679"
+                        crossOrigin="anonymous"></script>
             </Head>
             <QueryClientProvider client={queryClient}>
                 <Component {...pageProps} />
