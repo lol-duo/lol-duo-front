@@ -1,9 +1,9 @@
 import {NextPage} from "next";
-import BanPickRoomParticipate from "@/component/banpick/BanPickRoomParticipate";
 import styled from "@emotion/styled";
 import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
 import Head from "next/head";
 import I18n from "@/component/locale/i18n";
+import BanPickRoomParticipate from "@/component/banpick/Participate/BanPickRoomParticipate";
 
 const BanPick: NextPage = () => {
 
