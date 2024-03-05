@@ -8,5 +8,6 @@
     "SUPPORT": "Support"
   },
   "noData": "Sample Size is not large enough to show data",
-  "description": "Provides good information when playing LOL co-op"
+  "description": "Provides good information when playing LOL co-op",
+  "suggestion": "suggestion"
 }

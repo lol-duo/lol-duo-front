@@ -3,6 +3,8 @@ import colorList from "../style/colorList";
 import {QueryClient, QueryClientProvider} from "react-query";
 import Footer from "@/component/common/Footer";
 import Head from "next/head";
+import {NextUIProvider} from "@nextui-org/react";
+import "./input.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
     const queryClient = new QueryClient();
@@ -34,10 +36,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9404910404961679"
                         crossOrigin="anonymous"></script>
             </Head>
+
             <QueryClientProvider client={queryClient}>
-                <Component {...pageProps} />
-                <Footer/>
+                <NextUIProvider>
+                    <Component {...pageProps} />
+                    <Footer/>
+                </NextUIProvider>
             </QueryClientProvider>
+
         </>
     )
         ;
