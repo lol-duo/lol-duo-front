@@ -3,6 +3,8 @@
   "roomURL": "방 주소 ( 참여 링크 )",
   "redTeam" : "레드팀",
   "blueTeam" : "블루팀",
+  "gameMode" : "혼자하기",
+  "timeLimit": "시간 제한", 
   "status" : {
     "waiting" : "대기중",
     "in" : "참여 완료",

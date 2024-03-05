@@ -2,7 +2,9 @@
   "myId" : "My ID",
   "roomURL": "Room address (participation link)",
   "redTeam": "Red team",
-    "blueTeam": "Blue team",
+  "blueTeam": "Blue team",
+  "gameMode" : "Solo",
+  "timeLimit": "Time limit", 
   "status" : {
     "waiting" : "waiting",
     "in" : "participated",

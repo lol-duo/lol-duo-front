@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import {useEffect, useRef, useState} from "react";
 import {DataConnection} from "peerjs";
-import BanPickRoomParticipate from "@/component/banpick/BanPickRoomParticipate";
+import BanPickRoomParticipate from "@/component/banpick/Participate/BanPickRoomParticipate";
 import {TeamInfoType} from "@/types/banPick";
 import {useRouter} from "next/router";
 import I18n from "@/component/locale/i18n";
