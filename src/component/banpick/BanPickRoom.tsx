@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import {useEffect, useRef, useState} from "react";
 import {DataConnection} from "peerjs";
-import BanPickRoomParticipate from "@/component/banpick/BanPickRoomParticipate";
+import BanPickRoomParticipate from "@/component/banpick/Participate/BanPickRoomParticipate";
 import {TeamInfoType} from "@/types/banPick";
 import {useRouter} from "next/router";
 import I18n from "@/component/locale/i18n";
@@ -26,7 +26,9 @@ const BanPickRoom: NextPage = () => {
     const championList = championInfoList.value as [{ name_id: string, en_name: string, ko_name: string }];
     const isEnd = useRef<boolean>(false);
     const isLast = useRef<boolean>(false);
-
+    const currentMode = useRef<string>("1:1");
+    const isTimeUnlimited = useRef<boolean>(false);
+    
     const router = useRouter();
 
     async function setLast() {
@@ -152,6 +154,7 @@ const BanPickRoom: NextPage = () => {
 
                 nowPeer.on('connection', function (conn) {
                     conn.on('data', function (data) {
+
                         const nowData = JSON.parse(data as any);
                         if (nowData.type === "join") {
                             const conn2 = nowPeer?.connect(nowData.id);
@@ -166,6 +169,12 @@ const BanPickRoom: NextPage = () => {
                                     message: {
                                         red: redTeam,
                                         blue: blueTeam
+                                    }
+                                }));
+                                conn2.send(JSON.stringify({
+                                    type: "currentMode",
+                                    message: {
+                                        mode: currentMode.current
                                     }
                                 }));
                                 conn2.send(JSON.stringify({
@@ -320,6 +329,46 @@ const BanPickRoom: NextPage = () => {
                                     }
                                 }));
                             }
+                        //Solo 모드
+                        } else if(nowData.type ==="soloMode"){
+                            redTeam.user = nowData.rootId;
+                            redTeam.status = "ready";
+                            redTeam.userName = nowData.userName;
+
+                            blueTeam.user = nowData.rootId;
+                            blueTeam.status = "ready";
+                            blueTeam.userName = nowData.userName;
+                            currentMode.current = "solo";                            
+                            for(let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "soloMode",
+                                    message: {
+                                        blueTeam : blueTeam,
+                                        redTeam : redTeam
+                                    },
+                                    mode: "solo"
+                                }));
+                            }                      
+                        // 1:1 모드
+                        } else if(nowData.type ==="1:1Mode"){
+                            redTeam.user = "";
+                            redTeam.status = "none";
+                            redTeam.userName = "";
+
+                            blueTeam.user = "";
+                            blueTeam.status = "none";
+                            blueTeam.userName = "";      
+                            currentMode.current = "1:1";             
+                            for(let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "1:1Mode",
+                                    message: {
+                                        blueTeam : blueTeam,
+                                        redTeam : redTeam
+                                    },
+                                    mode: "1:1"
+                                }));
+                            }                               
                         }
                     });
                     conn.on('close', () => {

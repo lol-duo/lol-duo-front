@@ -3,13 +3,28 @@ import styled from "@emotion/styled";
 import fontList from "@styles/fontList";
 import colorList from "@styles/colorList";
 import { Button } from "@nextui-org/react";
+import GameOption from "@/component/banpick/Participate/GameOption";
 
-const TeamReady: NextPage<{rootId:string,blueTeam:any,redTeam:any,sendMsg:Function,text:any}> = (props) => {
+const TeamReady: NextPage<{
+    rootId:string,
+    blueTeam:any,
+    redTeam:any,
+    sendMsg:Function,
+    text:any,
+    selectedGameMode:string,
+    setSelectedGameMode:(value: string) => void,
+    hostId:string,
+    isTimeUnlimited:boolean, 
+    setIsTimeUnlimited:(value: boolean) => void
+    myUserId:string,
+    myId:any,
+    }> = (props) => {
     
-    const {rootId, blueTeam, redTeam, sendMsg, text} = props;
-
+    const {rootId, blueTeam, redTeam, sendMsg, text,selectedGameMode,setSelectedGameMode,hostId, isTimeUnlimited,setIsTimeUnlimited,myUserId,myId} = props;
+    
     return (
         <TeamReadyWrapper>
+            <GameOption selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited} myUserId ={myUserId} sendMsg={sendMsg} hostId={hostId} myId={myId}></GameOption>
             <div className="startButton">
                 {rootId != undefined &&
                     <Button disabled={(!(redTeam.status === "ready" && blueTeam.status === "ready"))}

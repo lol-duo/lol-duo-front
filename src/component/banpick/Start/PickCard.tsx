@@ -19,10 +19,11 @@ const PickCard: NextPage<{
     locale:string,
     isOpen:number,
     setIsOpen:Function
-    turn:number
-}> = (props) => {  
+    turn:number,
+    selectedGameMode:string,
+    }> = (props) => {  
 
-    const {team,now, me, selectedChampion, changeChampion, imgURL, locale, isOpen, setIsOpen, turn} = props;
+    const {team,now, me, selectedChampion, changeChampion, imgURL, locale, isOpen, setIsOpen, turn,selectedGameMode} = props;
     const blueTeamTurn = [6,9,10,17,18];
     const redTeamTurn = [7,8,11,16,19];
     const lane = ["TOP", "JUNGLE", "MID", "BOT", "SUPPORT"];
@@ -31,11 +32,11 @@ const PickCard: NextPage<{
     if(team == 0){
         return (
             <PickCardWrapper>
-                <Popover placement={"right"} isOpen={now === 20 && me === "blue" ? isOpen == turn : false}  onOpenChange={(open) => {
+                <Popover placement={"right"} isOpen={now === 20 && (me === "blue" || selectedGameMode ==="solo") ? isOpen == turn : false}  onOpenChange={(open) => {
                         setIsOpen(open ? turn : -1)
                     }}>
                 <PopoverTrigger>
-                    <div className={now === turn ? "pick now blue" : now === 20 && me === "blue" ? "pick hover blue" : "pick blue"} >
+                    <div className={now === turn ? "pick now blue" : now === 20 && (me === "blue" || selectedGameMode ==="solo")  ? "pick hover blue" : "pick blue"} >
                         {
                             now == turn && <div className="now"/>
                         }
@@ -92,11 +93,11 @@ const PickCard: NextPage<{
     else{
         return (
             <PickCardWrapper>
-                <Popover placement={"left"} isOpen={now === 20 && me === "red" ? isOpen == turn : false} onOpenChange={(open) => {
+                <Popover placement={"left"} isOpen={now === 20 &&( me === "red" || selectedGameMode==="solo") ? isOpen == turn : false} onOpenChange={(open) => {
                     setIsOpen(open ? turn : -1)
                 }}  >
                     <PopoverTrigger>
-                <div className={now === turn ? "pick now red" : now === 20 && me === "red" ? "pick hover red" : "pick red"} >
+                <div className={now === turn ? "pick now red" : now === 20 && (me === "red" || selectedGameMode==="solo" )? "pick hover red" : "pick red"} >
                     {
                         now == turn && <div className="now"/>
                     }

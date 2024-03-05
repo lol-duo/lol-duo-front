@@ -4,10 +4,9 @@ import { Button } from "@nextui-org/react";
 import fontList from "@styles/fontList";
 import colorList from "@styles/colorList";
 
-const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:Function,myUserId:string,text:any}> = (props) => {
+const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:Function,myUserId:string,text:any,selectedGameMode:string}> = (props) => {
 
-    const {Team,blueTeam,redTeam,myId,sendTeamMsg,myUserId,text} = props;
-
+    const {Team,blueTeam,redTeam,myId,sendTeamMsg,myUserId,text,selectedGameMode} = props;
     // 블루팀
     if(Team === 0){
         return (
@@ -19,7 +18,7 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
                     {blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.userName}
                 </div>
                 <div className="in_button">
-                    {blueTeam.user === myId.current &&
+                    {selectedGameMode !== "solo" && blueTeam.user === myId.current &&
                         <div className="readyButton">
                             {
                                 blueTeam.user === myId.current && blueTeam.status === "in" &&
@@ -36,14 +35,14 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
                             }
                         </div>
                     }
-                    {redTeam.user !== myId.current && blueTeam.status === "none" && <Button
+                    {selectedGameMode!=="solo" && redTeam.user !== myId.current && blueTeam.status === "none" && <Button
                         onClick={() => sendTeamMsg({team: "blue", status: "in"})}>BLUE 팀 참가하기</Button>}
-                    {(redTeam.user === myId.current || (blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.status !== "ready")) && blueTeam.status !== "ready" &&
+                    {selectedGameMode!=="solo" && (redTeam.user === myId.current || (blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.status !== "ready")) && blueTeam.status !== "ready" &&
                         <Button disabled={true} className="none">BLUE 팀 참가하기</Button>}
                     {blueTeam.status === "in" && blueTeam.user === myId.current && <Button
                         className="outButton"
                         onClick={() => sendTeamMsg({team: "blue", status: "none"})}>나가기</Button>}
-                    {blueTeam.user !== myId.current && blueTeam.status === "ready" && <Button
+                    {(selectedGameMode==="solo" || (blueTeam.user !== myId.current && blueTeam.status === "ready") ) && <Button
                         disabled={true}>RED 팀 준비완료</Button>}
                 </div>
             </BlueWrapper>
@@ -60,7 +59,7 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
                     {redTeam.user !== myId.current && redTeam.user !== "" && redTeam.userName}
                 </div>
                 <div className="in_button">
-                    {redTeam.user === myId.current &&
+                    {selectedGameMode !== "solo" && redTeam.user === myId.current &&
                         <div className="readyButton">
                             {
                                 redTeam.user === myId.current && redTeam.status === "in" &&
@@ -78,14 +77,14 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
                             }
                         </div>
                     }
-                    {blueTeam.user !== myId.current && redTeam.status === "none" &&
+                    {selectedGameMode!=="solo" && blueTeam.user !== myId.current && redTeam.status === "none" &&
                         <Button onClick={() => sendTeamMsg({team: "red", status: "in"})}>RED 팀 참가하기</Button>}
-                    {(blueTeam.user === myId.current || (redTeam.user !== myId.current && redTeam.user !== "" && redTeam.status !== "ready")) && redTeam.status !== "ready" &&
+                    {selectedGameMode!=="solo" && (blueTeam.user === myId.current || (redTeam.user !== myId.current && redTeam.user !== "" && redTeam.status !== "ready")) && redTeam.status !== "ready" &&
                         <Button disabled={true} className="none">RED 팀 참가하기</Button>}
                     {redTeam.status === "in" && redTeam.user === myId.current &&
                         <Button className="outButton"
                                 onClick={() => sendTeamMsg({team: "red", status: "none"})}>나가기</Button>}
-                    {redTeam.user !== myId.current && redTeam.status === "ready" &&
+                    {(selectedGameMode==="solo" ||  (redTeam.user !== myId.current && redTeam.status === "ready")) &&
                         <Button disabled={true}>RED 팀 준비완료</Button>}
                 </div>
             </RedWrapper>
