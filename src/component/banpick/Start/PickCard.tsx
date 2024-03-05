@@ -134,7 +134,7 @@ const PickCard: NextPage<{
                             <div className="change_img">
                                 {redTeamTurn.map((value, index) => (
                                         value !== turn && selectedChampion[value] && (
-                                            <div className="change_div"> <Image
+                                            <div key={index} className="change_div"> <Image
                                                 onClick={() => changeChampion(turn, value)} className="img"
                                                 src={imgURL.laneImg[lane[index]]}
                                                 alt={lane[index]}
