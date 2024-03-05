@@ -5,3 +5,10 @@ export declare interface TeamInfoType {
 }
 
 type StatusType = "none" | "in" | "ready";
+
+
+export declare interface Chat {
+    chat: string,
+    userName: string,
+    color: string
+}

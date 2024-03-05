@@ -35,7 +35,8 @@ const BanPickRoomStart: NextPage<{
     blueTeam: any,
     time: number|string
     }> = (props) => {
-
+    
+        
     const {selectedChampion, now, sendMsg,text, me, setChatList,chatList, sendChat, myId, redTeam, blueTeam, myUserId, time} = props;
 
     const [search, setSearch] = useState<string>("");
@@ -191,9 +192,10 @@ const BanPickRoomStart: NextPage<{
                         <PopoverContent>
                             <PopUp>
                             <div className="change_img">
-                                  {selectedChampion[9] && <div className="change_div"> <Image onClick={() => changeChampion(6,9)} className="img" src={`${imgURL.laneImg.JUNGLE}`}
-                                                               alt={`${imgURL.laneImg.JUNGLE}`}
-                                                                                              width={50} height={50}/> </div>}
+                                  {selectedChampion[9] && <div className="change_div"> <Image 
+                                    onClick={() => changeChampion(6,9)} className="img" src={`${imgURL.laneImg.JUNGLE}`}
+                                    alt={`${imgURL.laneImg.JUNGLE}`}
+                                    width={50} height={50}/> </div>}
                                 {selectedChampion[10] && <div className="change_div"> <Image
                                     onClick={() => changeChampion(6, 10)} className="img" src={`${imgURL.laneImg.MID}`}
                                     alt={`${imgURL.laneImg.MID}`}
@@ -1039,12 +1041,12 @@ const BanPickRoomStartWrapper = styled.div`
                 border-left: 2px solid rgba(33, 33, 33, 0.5);
                 border-top: 2px solid rgba(33, 33, 33, 0.5);
                 border-right: 2px solid rgba(33, 33, 33, 0.5);
+                overflow: hidden;
 
                 //championName 우측, 아래로 배치
                 display: flex;
                 justify-content: start;
                 align-items: end;
-                overflow: hidden;
                 
                 @media screen and (max-width: 1100px) {
                     height: 100px;
@@ -1054,7 +1056,6 @@ const BanPickRoomStartWrapper = styled.div`
                 .img {
                     object-fit: cover;
                     object-position: top;
-                    height: auto !important;
                 }
                 
                 .championName{
@@ -1591,8 +1592,6 @@ const BanPickRoomStartWrapper = styled.div`
                 }
 
                 .img {
-                    object-fit: cover;
-                    object-position: top;
                     height: auto !important;
                 }
 
