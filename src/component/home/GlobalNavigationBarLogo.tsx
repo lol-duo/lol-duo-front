@@ -42,7 +42,9 @@ const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
     const sendSuggestion = () => {
         if(input !== "") {
             suggestionAPI(input, emailOrPhone)
-            alert(success);
+            setInput("");
+            setEmailOrPhone("");
+            window.alert(success);
         }
     }
 
