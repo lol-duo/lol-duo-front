@@ -3,15 +3,25 @@ import styled from "@emotion/styled";
 import Team from "@/component/banpick/Participate/Team";
 import TeamReady from "./TeamReady";
 
-const TeamBar: NextPage<{blueTeam:any,redTeam:any,rootId:any,myId:any,sendTeamMsg:Function,sendMsg:Function,myUserId:string,text:any}> = (props) => {
+const TeamBar: NextPage<{
+    blueTeam:any,
+    redTeam:any,
+    rootId:any,
+    myId:any,
+    sendTeamMsg:Function,
+    sendMsg:Function,
+    myUserId:string,
+    text:any,
+    selectedGameMode:string,
+    setSelectedGameMode:Function}> = (props) => {
 
-    const {blueTeam, redTeam, myId, sendMsg, sendTeamMsg, myUserId, text, rootId} = props;
+    const {blueTeam, redTeam, myId, sendMsg, sendTeamMsg, myUserId, text, rootId,selectedGameMode,setSelectedGameMode} = props;
     
     return (
         <TeamBarWrapper>
             <TeamBarWrapper>
                 <Team Team={0} blueTeam={blueTeam} redTeam={redTeam} myId={myId} sendTeamMsg={sendTeamMsg} myUserId={myUserId} text={text}></Team>
-                <TeamReady rootId={rootId} blueTeam={blueTeam} redTeam= {redTeam} sendMsg={sendMsg} text={text} ></TeamReady>
+                <TeamReady rootId={rootId} blueTeam={blueTeam} redTeam= {redTeam} sendMsg={sendMsg} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode}></TeamReady>
                 <Team Team={1} blueTeam={blueTeam} redTeam={redTeam} myId={myId} sendTeamMsg={sendTeamMsg} myUserId={myUserId} text={text}></Team>
             </TeamBarWrapper>
         </TeamBarWrapper>

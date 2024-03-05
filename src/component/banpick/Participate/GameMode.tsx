@@ -5,12 +5,8 @@ import I18n from "@/component/locale/i18n";1
 import fontList from "@styles/fontList";
 
 
-const GameMode: NextPage<{}> = (props) => {
-    const [selectedOption, setSelectedOption] = useState<string>("1:1");
-
-    const handleOptionChange = (option: string) => {
-        setSelectedOption(option);
-    };
+const GameMode: NextPage<{selectedGameMode:string,setSelectedGameMode:Function}> = (props) => {
+    const { selectedGameMode, setSelectedGameMode } = props;
     const text = I18n('banpick.json').value;
     return (
         <GameModeWrapper>
@@ -19,8 +15,8 @@ const GameMode: NextPage<{}> = (props) => {
                     type="radio"
                     name="radioGroup"
                     value="1:1"
-                    defaultChecked={selectedOption === "1:1"}
-                    onChange={() => handleOptionChange("1:1")}
+                    defaultChecked={selectedGameMode === "1:1"}
+                    onChange={() => setSelectedGameMode("1:1")}
                 />
                 1:1
             </label>
@@ -30,8 +26,8 @@ const GameMode: NextPage<{}> = (props) => {
                     type="radio"
                     name="radioGroup"
                     value="solo"
-                    defaultChecked={selectedOption === "solo"}
-                    onChange={() => handleOptionChange("solo")}
+                    defaultChecked={selectedGameMode === "solo"}
+                    onChange={() => setSelectedGameMode("solo")}
                 />
                 {text.gameMode}
             </label>

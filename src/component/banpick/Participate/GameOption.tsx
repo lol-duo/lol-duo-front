@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 import TimeLimit from "@/component/banpick/Participate/TimeLimit";
 import GameMode from "@/component/banpick/Participate/GameMode";
 
-const GameOption: NextPage<{}> = (props) => {
-  
+const GameOption: NextPage<{selectedGameMode:string,setSelectedGameMode:Function}> = (props) => {
+    const { selectedGameMode, setSelectedGameMode } = props;
+
     return (
         <GameOptionWrapper>
-            <GameMode></GameMode>
+            <GameMode selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} ></GameMode>
             <TimeLimit></TimeLimit>
         </GameOptionWrapper>
         

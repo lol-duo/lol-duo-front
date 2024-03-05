@@ -18,7 +18,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
     const router = useRouter();
     let {id} = router.query;
     if(rootId != undefined) id = rootId;
-
+    
     // text 정보
     const text = I18n('banpick.json').value;
 
@@ -43,6 +43,9 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
     const [redTeam, setRedTeam] = useState<TeamInfoType>({     user: "",   status: "none", userName: "" });
     const [blueTeam, setBlueTeam] = useState<TeamInfoType>({     user: "",   status: "none", userName: "" });
 
+    //게임 모드
+    const [selectedGameMode, setSelectedGameMode] = useState<string>("1:1");
+    
     //게임시작
     const [isStart, setIsStart] = useState<boolean>(false);
 
@@ -294,7 +297,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
         <BanPickRoomParticipateWrapper>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
-            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg ={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} text={text}/>}
+            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode}/>}
             {
                 isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} me={myId.current === blueTeam.user ? "blue" : myId.current === redTeam.user ? "red" : "none"} chatList={chatList} setChatList={setChatList}
                 sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} />
