@@ -9,5 +9,11 @@
   },
   "noData": "데이터 표본수가 부족합니다.",
   "description": "롤 챔피언 조합에 따른 승률 정보를 제공하는 서비스입니다.",
-  "suggestion": "건의하기"
+  "suggestion": "건의하기",
+  "suggestionPlaceholder": "핸드폰 번호 혹은 이메일을 입력해주세요.",
+  "suggestionContent": "건의 내용을 입력해주세요.",
+  "suggestionNotification": "좋은 건의를 보내주신 분께는 소정의 선물을 드립니다.",
+  "suggestionAction": "제출하기",
+  "suggestionClose": "닫기",
+  "suggestionSuccess": "건의가 성공적으로 제출되었습니다. 감사합니다."
 }

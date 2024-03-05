@@ -5,27 +5,55 @@ import {useRouter} from "next/router";
 import {imgURL} from "@styles/img";
 import Image from "next/image";
 import I18n from "@/component/locale/i18n";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {
+    Button,
+    Input,
+    Modal,
+    ModalBody,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    Textarea,
+    useDisclosure
+} from "@nextui-org/react";
+import {useState} from "react";
+import {suggestionAPI} from "@/api/main";
 
 
 const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
 
     const router = useRouter();
     const {isOpen, onOpen, onClose} = useDisclosure();
+    const [input, setInput] = useState("");
+    const [emailOrPhone, setEmailOrPhone] = useState("");
     const onClickNavLogo = () => {
         router.push("/");
     }
 
-    const suggestion = I18n('common.json').value.suggestion;
+    const i18n = I18n('common.json').value;
+    const suggestion = i18n.suggestion;
+    const placeholder = i18n.suggestionPlaceholder;
+    const content = i18n.suggestionContent;
+    const notification = i18n.suggestionNotification;
+    const action = i18n.suggestionAction;
+    const close = i18n.suggestionClose;
+    const success = i18n.suggestionSuccess
+
+    const sendSuggestion = () => {
+        if(input !== "") {
+            suggestionAPI(input, emailOrPhone)
+            alert(success);
+        }
+    }
 
     return (
         <GlobalNavigationBarLogoWrapper>
+            <div className={props.where === "banPick" ? "total none" : "total"}>
             <div className={props.where === "banPick" ? "logo banPick" : "logo"}>
                 <Image className="logoImg" src={imgURL.logo} onClick={() => onClickNavLogo()} width={164.8} height={32}
                        alt={imgURL.logo}/>
             </div>
             <div className="건의하기" onClick={() => {
-                console.log("건의하기");
                 onOpen();
             }}>
                 {suggestion}
@@ -34,40 +62,39 @@ const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
                 size={"sm"}
                 isOpen={isOpen}
                 onClose={onClose}
+                backdrop="blur"
             >
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                            <ModalHeader className="flex flex-col gap-1">{suggestion}</ModalHeader>
                             <ModalBody>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                                </p>
-                                <p>
-                                    Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                                    dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
-                                    Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
-                                </p>
+                                <Textarea content={input} onChange={(e) => setInput(e.target.value)} placeholder={content}/>
+                                <Input
+                                    label="Email or Phone Number"
+                                    placeholder={placeholder}
+                                    variant="bordered"
+                                    content={emailOrPhone}
+                                    onChange={(e) => setEmailOrPhone(e.target.value)}
+                                />
+                                <p>{notification}</p>
                             </ModalBody>
                             <ModalFooter>
                                 <Button color="danger" variant="light" onPress={onClose}>
-                                    Close
+                                    {close}
                                 </Button>
-                                <Button color="primary" onPress={onClose}>
-                                    Action
+                                <Button color="primary" onPress={() => {
+                                    sendSuggestion();
+                                    onClose();
+                                }}>
+                                    {action}
                                 </Button>
                             </ModalFooter>
                         </>
                     )}
                 </ModalContent>
             </Modal>
+            </div>
         </GlobalNavigationBarLogoWrapper>
     );
 }
@@ -75,23 +102,30 @@ const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
 export default GlobalNavigationBarLogo;
 
 const GlobalNavigationBarLogoWrapper = styled.div`
-  height: 56px;
-  box-sizing: border-box;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    .total {
+        height: 56px;
+        box-sizing: border-box;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: ${colorList.semantic.card};
+    }
+    
+    .none {
+        background: none;
+    }
     
     .건의하기 {
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 0 60px 0 0;
         font-size: 14px;
         font-weight: 500;
         line-height: 20px;
-        color: ${colorList.grayscale["200"]};
+        color: ${colorList.grayscale["000"]};
         cursor: pointer;
+        padding: 0 60px 0 0;
     }
              
   .logo {
@@ -106,12 +140,7 @@ const GlobalNavigationBarLogoWrapper = styled.div`
           cursor: pointer;
       }
   }
-      
-    
     .banPick {
-        //background: linear-gradient(180deg, ${colorList.semantic.background} 0%, rgba(255, 255, 255, 0) 100%);
         background: rgba(255, 255, 255, 0);
   }
-
-  
 `

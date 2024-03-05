@@ -9,5 +9,11 @@
   },
   "noData": "Sample Size is not large enough to show data",
   "description": "Provides good information when playing LOL co-op",
-  "suggestion": "suggestion"
+  "suggestion": "suggestion",
+  "suggestionPlaceholder": "Please enter your email or phone number",
+  "suggestionContent": "Please enter your suggestion",
+  "suggestionNotification": "We will give a small gift to those who send us good suggestions.",
+  "suggestionAction": "Submit",
+  "suggestionClose": "Close",
+  "suggestionSuccess": "Thank you for your suggestion"
 }
