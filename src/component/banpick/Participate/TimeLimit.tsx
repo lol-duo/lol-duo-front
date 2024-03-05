@@ -4,20 +4,21 @@ import {Button} from "@nextui-org/react";
 import React, { useState } from 'react';
 import I18n from "@/component/locale/i18n";
 import fontList from "@styles/fontList";
+import {Switch} from "@nextui-org/react";
+const TimeLimit: NextPage<{isTimeUnlimited:boolean, setIsTimeUnlimited:(value: boolean) => void}> = (props) => {
 
-const TimeLimit: NextPage<{}> = (props) => {
-
-    const [TimeLimitValue, setTimeLimitValue] = useState(false);
+    const {isTimeUnlimited, setIsTimeUnlimited} = props;
     const text = I18n('banpick.json').value;
     const handleToggle = () => {
-        setTimeLimitValue(!TimeLimitValue);
+        setIsTimeUnlimited(!isTimeUnlimited);
     };
     return (
         <TimeLimitWrapper>
-            <div>{text.timeLimit}</div>
-            <Button onClick={handleToggle}>
-                {TimeLimitValue ? 'ON' : 'OFF'}
-            </Button>
+            <div>{text.timeLimit}{isTimeUnlimited ? " OFF" : " ON"}</div>
+            <Switch
+                defaultChecked={isTimeUnlimited}
+                onChange={handleToggle}
+            />
         </TimeLimitWrapper>
         
     );

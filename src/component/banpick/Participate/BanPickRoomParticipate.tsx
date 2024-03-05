@@ -12,6 +12,7 @@ import ChatAndInfoBar from "@/component/banpick/Participate/ChatAndInfoBar";
 import TeamBar from "@/component/banpick/Participate/TeamBar";
 import InfoamtionBar from "@/component/banpick/Participate/InfoamtionBar";
 import TitleBar from "@/component/banpick/Participate/TitleBar";
+import { set } from "react-hook-form";
 
 const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
     const rootId = props.rootId;
@@ -45,7 +46,20 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
 
     //게임 모드
     const [selectedGameMode, setSelectedGameMode] = useState<string>("1:1");
-    
+
+
+    //시간 제한 여부
+    const [isTimeUnlimited,setIsTimeUnlimited] = useState<boolean>(true);
+        // 시간 제한 변경 시 동작할 함수
+        const handleTimeLimitChange = (newValue: boolean) => {
+            // 여기서 원하는 이벤트를 수행
+            console.log(`Time limit changed to: ${newValue}`);
+        };
+    useEffect(() => {
+        // 시간 제한이 변경될 때 실행될 부분
+        handleTimeLimitChange(isTimeUnlimited);
+    }, [isTimeUnlimited]);
+
     //게임시작
     const [isStart, setIsStart] = useState<boolean>(false);
 
@@ -260,8 +274,21 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
                         } else if(nowData.type === "last") {
                             Timer(false, true);
                             setNow(nowData.message.now);
+                        } else if(nowData.type === "soloMode"){
+                            setBlueTeam(nowData.message.blueTeam);
+                            setRedTeam(nowData.message.redTeam);
+                            redTeamUser.current = nowData.message.redTeam.user;
+                            blueTeamUser.current = nowData.message.blueTeam.user;
+                            setSelectedGameMode("solo");
+                        } else if(nowData.type === "1:1Mode"){
+                            setBlueTeam(nowData.message.blueTeam);
+                            setRedTeam(nowData.message.redTeam);
+                            redTeamUser.current = nowData.message.redTeam.user;
+                            blueTeamUser.current = nowData.message.blueTeam.user;   
+                            setSelectedGameMode("1:1");                        
+                        }else if(nowData.type === "currentMode"){
+                            setSelectedGameMode(nowData.message.mode);
                         }
-    
                         if(isEnd.current){
                             setNow(21);
                         }
@@ -297,10 +324,10 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
         <BanPickRoomParticipateWrapper>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
-            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode}/>}
+            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited}></TeamBar>}
             {
-                isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} me={myId.current === blueTeam.user ? "blue" : myId.current === redTeam.user ? "red" : "none"} chatList={chatList} setChatList={setChatList}
-                sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} />
+                isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} chatList={chatList} setChatList={setChatList}
+                sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} selectedGameMode={selectedGameMode}/>
             }
             <ChatAndInfoBar isStart={isStartRef.current} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList} text={text} roomUrl={text.roomURL} roomId ={id}/>
         </BanPickRoomParticipateWrapper>

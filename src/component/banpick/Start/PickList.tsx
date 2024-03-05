@@ -16,10 +16,11 @@ const PickList: NextPage<{
     imgURL:any, 
     locale:string,
     isOpen:number,
-    setIsOpen:Function
-}> = (props) => {
+    setIsOpen:Function,
+    selectedGameMode:string,
+    }> = (props) => {
     
-    const {team,now, me,selectedChampion,changeChampion,imgURL,locale,isOpen,setIsOpen } = props;
+    const {team,now, me,selectedChampion,changeChampion,imgURL,locale,isOpen,setIsOpen,selectedGameMode } = props;
     const blueTeamTurn = [6,9,10,17,18];
     const redTeamTurn = [7,8,11,16,19];
         //blue
@@ -27,7 +28,7 @@ const PickList: NextPage<{
             return (
                 <PickListWrapper>
                     {blueTeamTurn.map((turn, index) => (
-                        <PickCard key={index} team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} turn={turn}/>
+                        <PickCard key={index} team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} turn={turn} selectedGameMode={selectedGameMode}/>
                     ))}
                 </PickListWrapper>
             )
@@ -37,7 +38,7 @@ const PickList: NextPage<{
             return (
                 <PickListWrapper>
                     {redTeamTurn.map((turn, index) => (
-                        <PickCard key={index} team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} turn={turn}/>
+                        <PickCard key={index} team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} turn={turn} selectedGameMode ={selectedGameMode}/>
                     ))}
                 </PickListWrapper>
             )

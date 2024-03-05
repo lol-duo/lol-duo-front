@@ -4,6 +4,8 @@
   "redTeam": "Red team",
   "blueTeam": "Blue team",
   "gameMode" : "Solo",
+  "soloModeChangeMsg" : "Do you want to change to solo mode?",
+  "duelModeChangeMsg" : "Do you want to change to 1vs1 ?",
   "timeLimit": "Time limit", 
   "status" : {
     "waiting" : "waiting",

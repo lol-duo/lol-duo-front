@@ -4,13 +4,22 @@ import React, { useState } from 'react';
 import TimeLimit from "@/component/banpick/Participate/TimeLimit";
 import GameMode from "@/component/banpick/Participate/GameMode";
 
-const GameOption: NextPage<{selectedGameMode:string,setSelectedGameMode:Function}> = (props) => {
-    const { selectedGameMode, setSelectedGameMode } = props;
-
+const GameOption: NextPage<{
+    selectedGameMode:string,
+    setSelectedGameMode:(value: string) => void,
+    isTimeUnlimited:boolean, 
+    setIsTimeUnlimited:(value: boolean) => void
+    sendMsg:Function,
+    hostId:string,
+    myUserId:string,
+    myId:any,
+    }> = (props) => {
+    const { selectedGameMode, setSelectedGameMode,isTimeUnlimited,setIsTimeUnlimited,sendMsg,hostId,myUserId ,myId} = props;
+    
     return (
         <GameOptionWrapper>
-            <GameMode selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} ></GameMode>
-            <TimeLimit></TimeLimit>
+            <GameMode selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} myUserId ={myUserId} sendMsg={sendMsg} hostId={hostId} myId={myId} ></GameMode>
+            <TimeLimit isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited}></TimeLimit>
         </GameOptionWrapper>
         
     );

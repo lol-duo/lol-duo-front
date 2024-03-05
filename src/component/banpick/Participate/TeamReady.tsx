@@ -12,13 +12,19 @@ const TeamReady: NextPage<{
     sendMsg:Function,
     text:any,
     selectedGameMode:string,
-    setSelectedGameMode:Function}> = (props) => {
+    setSelectedGameMode:(value: string) => void,
+    hostId:string,
+    isTimeUnlimited:boolean, 
+    setIsTimeUnlimited:(value: boolean) => void
+    myUserId:string,
+    myId:any,
+    }> = (props) => {
     
-    const {rootId, blueTeam, redTeam, sendMsg, text,selectedGameMode,setSelectedGameMode} = props;
-
+    const {rootId, blueTeam, redTeam, sendMsg, text,selectedGameMode,setSelectedGameMode,hostId, isTimeUnlimited,setIsTimeUnlimited,myUserId,myId} = props;
+    
     return (
         <TeamReadyWrapper>
-            <GameOption selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode}></GameOption>
+            <GameOption selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited} myUserId ={myUserId} sendMsg={sendMsg} hostId={hostId} myId={myId}></GameOption>
             <div className="startButton">
                 {rootId != undefined &&
                     <Button disabled={(!(redTeam.status === "ready" && blueTeam.status === "ready"))}
