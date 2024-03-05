@@ -153,10 +153,10 @@ const BanPickRoomParticipate: NextPage<{rootId?: string}> = (props) => {
         // !rootId &&
         import('peerjs').then(({ default: Peer }) => {
             const nowPeer = new Peer({
-                host: 'localhost',
+                host: 'api.lolduo.net',
                 port: 9000,
                 path: '/',
-                secure: false,
+                secure: true,
             });
             peer.current = nowPeer;
             
