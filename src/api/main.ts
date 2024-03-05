@@ -11,3 +11,9 @@ export const soloMainInfo = async (championInfo: SearchBarProps): Promise<[SoloM
     const url = `${process.env["SOLO_API_URL"]}?championId=${championInfo.championState.id}&position=${championInfo.positionState}`;
     return fetch(url).then((res) => res.json());
 }
+
+export const suggestionAPI = async (suggestion: string, emailOrPhone: string): Promise<void> => {
+    const url = `${process.env["SUGGESTION_API_URL"]}?suggestion=${suggestion}&emailOrPhone=${emailOrPhone}`;
+    fetch(url).then((res) => res.json());
+    return ;
+}
