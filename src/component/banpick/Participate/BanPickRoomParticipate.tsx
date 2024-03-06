@@ -12,6 +12,7 @@ import ChatAndInfoBar from "@/component/banpick/Participate/ChatAndInfoBar";
 import TeamBar from "@/component/banpick/Participate/TeamBar";
 import InfoamtionBar from "@/component/banpick/Participate/InfoamtionBar";
 import TitleBar from "@/component/banpick/Participate/TitleBar";
+import Image from "next/image";
 
 const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,setTimeLimited?:(value:boolean) => void}> = (props) => {
     const {rootId,timeLimited,setTimeLimited} = props;
@@ -38,6 +39,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
     const connectionList = useRef(new Map<string, DataConnection>()).current;
     const rootIdRef = useRef<string>("");
     const peer = useRef<Peer>();
+    const [connectionListSize, setConnectionListSize] = useState<number>(0);
 
      // 각 팀의 정보
     const [redTeam, setRedTeam] = useState<TeamInfoType>({     user: "",   status: "none", userName: "" });
@@ -204,6 +206,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
                     }
                 });
                 connectionList.set(id as string, conn2 as DataConnection);
+                setConnectionListSize(connectionList.size);
                 sendChat("방에 입장하였습니다.");
                 setChatList(chatList => [...chatList, {
                     chat: "방에 입장하였습니다.",
@@ -226,6 +229,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
                                         }));
                                     });
                                     connectionList.set(nowData.message[i], conn as DataConnection);
+                                    setConnectionListSize(connectionList.size);
                                 }
                             }
                             for(let key of connectionList.keys()) {
@@ -324,6 +328,7 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
     }, [id]);
     return (
         <BanPickRoomParticipateWrapper>
+            <Person><Image src={"/person.png"} alt={"/person.png"} width={20} height={20}/><div className="person">{connectionListSize - 1}</div></Person>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
             {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setIsTimeLimited={setIsTimeLimited}></TeamBar>}
@@ -338,6 +343,26 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
 
 export default BanPickRoomParticipate;
 
+const Person = styled.div`
+    position: absolute;
+    top: -44px;
+    left: 49%;
+    width: 50px;
+    height: 20px;
+    z-index: 100;
+    color: ${colorList.grayscale["200"]};
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    
+    .person {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        font-size: 20px;
+    }
+`
 
 const BanPickRoomParticipateWrapper = styled.div`
 width: 100%;
