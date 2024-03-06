@@ -7,6 +7,7 @@
   "soloModeChangeMsg" : "Do you want to change to solo mode?",
   "duelModeChangeMsg" : "Do you want to change to 1vs1 ?",
   "timeLimit": "Time limit", 
+  "timeLimitInfo": "Time Unlimited", 
   "status" : {
     "waiting" : "waiting",
     "in" : "participated",

@@ -51,8 +51,6 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
         if(setTimeLimited!=undefined){
             setTimeLimited(isTimeLimited);
         }
-        console.log("확인1");
-        console.log(isTimeLimited);
     }, [isTimeLimited]);
     //게임시작
     const [isStart, setIsStart] = useState<boolean>(false);
@@ -83,11 +81,9 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
     const Timer = (end?: boolean, last?: boolean, isTimeLimited?:boolean) => {
 
         if(!isTimeLimited){
-            console.log("확인2");
-            console.log(isTimeLimited);
             intervalId.current && clearInterval(intervalId.current);
             timerTime.current = 30;
-            setTime("무제한");
+            setTime(text.timeLimitInfo);
             return;
         }
         if(end || isEnd.current) {
