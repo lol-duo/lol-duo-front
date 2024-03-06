@@ -1,5 +1,12 @@
 export default [
     {
+        "id": 0,
+        "en_name" : "ALL",
+        "ko_name" : "전체",
+        "image" : "ALL.svg",
+        "name_id" : "ALL",
+    },
+    {
         "id" : 1,
         "en_name" : "Annie",
         "name_id" : "Annie",
