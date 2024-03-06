@@ -31,10 +31,12 @@ const PickCard: NextPage<{
     
     if(team == 0){
         return (
-            <PickCardWrapper>
+            <PickCardWrapper  >
                 <Popover placement={"right"} isOpen={now === 20 && (me === "blue" || selectedGameMode ==="solo") ? isOpen == turn : false}  onOpenChange={(open) => {
                         setIsOpen(open ? turn : -1)
-                    }}>
+                    }}  style={{backgroundColor: "none"}} classNames={{
+                    content: "bg-content1-none shadow-none hover:none focus:none",
+                }}>
                 <PopoverTrigger>
                     <div className={now === turn ? "pick now blue" : now === 20 && (me === "blue" || selectedGameMode ==="solo")  ? "pick hover blue" : "pick blue"} >
                         {
@@ -68,7 +70,7 @@ const PickCard: NextPage<{
                         }
                     </div>
                 </PopoverTrigger>
-                <PopoverContent>
+                <PopoverContent >
                     <PopUp>
                         <div className="change_img">
                             {blueTeamTurn.map((value, index) => (
@@ -95,7 +97,9 @@ const PickCard: NextPage<{
             <PickCardWrapper>
                 <Popover placement={"left"} isOpen={now === 20 &&( me === "red" || selectedGameMode==="solo") ? isOpen == turn : false} onOpenChange={(open) => {
                     setIsOpen(open ? turn : -1)
-                }}  >
+                }}  style={{backgroundColor: "none"}} classNames={{
+                    content: "bg-content1-none shadow-none hover:none focus:none",
+                }}>
                     <PopoverTrigger>
                 <div className={now === turn ? "pick now red" : now === 20 && (me === "red" || selectedGameMode==="solo" )? "pick hover red" : "pick red"} >
                     {

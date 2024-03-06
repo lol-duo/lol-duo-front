@@ -48,17 +48,17 @@ const ChampionSelectSearch: NextPage<{lane:string,setLane:Function,search:any,se
 export default ChampionSelectSearch;
 
 const ChampionSelectSearchWrapper = styled.div`
-margin-top: 15px;
-display: flex;
-flex-direction: row;
-position: relative;
-width: 100%;
-gap: 20px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+        gap: 20px;
 
-@media screen and (max-width: 800px) {
-    flex-direction: column;
-    gap: 10px;
-}
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+            gap: 10px;
+        }
     
     .lane {
         display: flex;
@@ -89,12 +89,13 @@ gap: 20px;
         color: ${colorList.grayscale["100"]};
         font-size: 17px;
         box-sizing: border-box;
+        text-align: right;
         
         &:focus {
             outline: none;
         }
         &::placeholder {
-            color: ${colorList.grayscale["100"]};
+            color: ${colorList.grayscale["200"]};
         }
     }
 `
