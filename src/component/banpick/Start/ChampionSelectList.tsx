@@ -35,6 +35,7 @@ const ChampionSelectList: NextPage<{
             <ChampionSelectListWrapper>
                 {
                     championList && championList.map((item) => {
+                        if(item.id === 0) return null;
                         if (!item.en_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) && !item.ko_name.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
                             return null;
                         }
@@ -46,7 +47,6 @@ const ChampionSelectList: NextPage<{
                                             width={50} height={50} key={locale == "ko" ? item.ko_name : item.en_name}/>
                         }
                         return (
-                            
                             <Image onClick={() => {
                                 if ((me === "red" && !blueTurn.includes(now)) || (me === "blue" && blueTurn.includes(now))) {
                                     setChampionSelect(true);
@@ -54,8 +54,6 @@ const ChampionSelectList: NextPage<{
                                 } else{
                                     return;
                                 }
-
-                                    
                             }} className="img" src={`/champion/${item.image}`} alt={item.name_id} width={50} height={50}
                                     key={locale == "ko" ? item.ko_name : item.en_name}/>
                         )
