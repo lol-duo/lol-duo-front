@@ -7,19 +7,19 @@ import GameMode from "@/component/banpick/Participate/GameMode";
 const GameOption: NextPage<{
     selectedGameMode:string,
     setSelectedGameMode:(value: string) => void,
-    isTimeUnlimited:boolean, 
-    setIsTimeUnlimited:(value: boolean) => void
+    isTimeLimited:boolean, 
+    setIsTimeLimited:(value:boolean) => void,
     sendMsg:Function,
     hostId:string,
     myUserId:string,
     myId:any,
     }> = (props) => {
-    const { selectedGameMode, setSelectedGameMode,isTimeUnlimited,setIsTimeUnlimited,sendMsg,hostId,myUserId ,myId} = props;
+    const { selectedGameMode, setSelectedGameMode,isTimeLimited,setIsTimeLimited,sendMsg,hostId,myUserId ,myId} = props;
     
     return (
         <GameOptionWrapper>
             <GameMode selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} myUserId ={myUserId} sendMsg={sendMsg} hostId={hostId} myId={myId} ></GameMode>
-            <TimeLimit isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited}></TimeLimit>
+            <TimeLimit isTimeLimited={isTimeLimited} setIsTimeLimited={setIsTimeLimited} hostId={hostId} myId={myId}></TimeLimit>
         </GameOptionWrapper>
         
     );

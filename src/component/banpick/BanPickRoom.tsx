@@ -27,116 +27,135 @@ const BanPickRoom: NextPage = () => {
     const isEnd = useRef<boolean>(false);
     const isLast = useRef<boolean>(false);
     const currentMode = useRef<string>("1:1");
-    const isTimeUnlimited = useRef<boolean>(false);
-    
+    const [isTimeLimited, setIsTimeLimited] = useState<boolean>(true);
+    const isTimeLimitedRef = useRef<boolean>(isTimeLimited);
     const router = useRouter();
 
-    async function setLast() {
-        isLast.current = true;
-        setTimeout(() => {
-            if(now.current === 20) {
-                    isEnd.current = true;
-                    for(let conn of connectionList.values()) {
-                        conn?.send(JSON.stringify({
-                            type: "end",
-                            message: {
-                                now : now.current
+    async function setLast(isTimeLimited: boolean) {
+
+        //시간 제한 모드 일때만 실행 
+        if(isTimeLimited){
+            isLast.current = true;
+            setTimeout(() => {
+                if(now.current === 20) {
+                        isEnd.current = true;
+                        for(let conn of connectionList.values()) {
+                            conn?.send(JSON.stringify({
+                                type: "end",
+                                message: {
+                                    now : now.current
+                                }
+                            }));
+                        }
+                    }
+            }, 60 * 1000);
+        }
+
+    }
+
+    async function setRandomChampion(current: number , isTimeLimited: boolean) {
+        //시간 제한 모드 일때만 실행
+        if(isTimeLimited){
+            setTimeout(() => {
+                if(now.current === current && now.current < 20) {
+                    if (selectedChampion[current] == undefined) {
+                        let randomIndex = Math.floor(Math.random() * championList.length);
+                        let randomChampion = championList[randomIndex];
+                        while(selectedChampion.find((value) => value.en_name === randomChampion.en_name) != undefined) {
+                            randomIndex = Math.floor(Math.random() * championList.length);
+                            randomChampion = championList[randomIndex];
+                        }
+                        let imgURL = `/centered/${randomChampion.name_id}_0.jpg`
+                        if ((current >= 0 && current <= 5) || (current >= 12 && current <= 15)) {
+                            imgURL = `/champion/${randomChampion.name_id}.png`
+                        }
+                        selectedChampion[current] = {
+                            img: imgURL,
+                            en_name: randomChampion.en_name,
+                            ko_name: randomChampion.ko_name,
+                            name_id: randomChampion.name_id
+                        }
+                        now.current++;
+
+                        if(now.current === 20) {
+                            isLast.current = true;
+                            for (let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "banPick",
+                                    message: {
+                                        now: current,
+                                        selectedChampion: selectedChampion[current]
+                                    }
+                                }));
                             }
-                        }));
-                    }
-                }
-        }, 60 * 1000);
-    }
-
-    async function setRandomChampion(current: number) {
-        setTimeout(() => {
-            if(now.current === current && now.current < 20) {
-                if (selectedChampion[current] == undefined) {
-                    let randomIndex = Math.floor(Math.random() * championList.length);
-                    let randomChampion = championList[randomIndex];
-                    while(selectedChampion.find((value) => value.en_name === randomChampion.en_name) != undefined) {
-                        randomIndex = Math.floor(Math.random() * championList.length);
-                        randomChampion = championList[randomIndex];
-                    }
-                    let imgURL = `/centered/${randomChampion.name_id}_0.jpg`
-                    if ((current >= 0 && current <= 5) || (current >= 12 && current <= 15)) {
-                        imgURL = `/champion/${randomChampion.name_id}.png`
-                    }
-                    selectedChampion[current] = {
-                        img: imgURL,
-                        en_name: randomChampion.en_name,
-                        ko_name: randomChampion.ko_name,
-                        name_id: randomChampion.name_id
-                    }
-                    now.current++;
-
-                    if(now.current === 20) {
-                        isLast.current = true;
-                        for (let conn of connectionList.values()) {
-                            conn?.send(JSON.stringify({
-                                type: "banPick",
-                                message: {
-                                    now: current,
-                                    selectedChampion: selectedChampion[current]
-                                }
-                            }));
+                            for(let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "last",
+                                    message: {
+                                        now : now.current
+                                    }
+                                }));
+                            }
+                            setLast(isTimeLimited);
+                        } else {
+                            for (let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "banPick",
+                                    message: {
+                                        now: current,
+                                        selectedChampion: selectedChampion[current]
+                                    }
+                                }));
+                                conn?.send(JSON.stringify({
+                                    type: "next",
+                                    message: {
+                                        now : now.current
+                                    }
+                                }));
+                            }
+                            setRandomChampion(now.current,isTimeLimited);
                         }
-                        for(let conn of connectionList.values()) {
-                            conn?.send(JSON.stringify({
-                                type: "last",
-                                message: {
-                                    now : now.current
-                                }
-                            }));
-                        }
-                        setLast();
                     } else {
-                        for (let conn of connectionList.values()) {
-                            conn?.send(JSON.stringify({
-                                type: "banPick",
-                                message: {
-                                    now: current,
-                                    selectedChampion: selectedChampion[current]
-                                }
-                            }));
-                            conn?.send(JSON.stringify({
-                                type: "next",
-                                message: {
-                                    now : now.current
-                                }
-                            }));
+                        now.current++;
+                        if(now.current === 20) {
+                            isLast.current = true;
+                            for(let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "last",
+                                    message: {
+                                        now : now.current
+                                    }
+                                }));
+                            }
+                            setLast(isTimeLimited);
+                        } else {
+                            for (let conn of connectionList.values()) {
+                                conn?.send(JSON.stringify({
+                                    type: "next",
+                                    message: {
+                                        now : now.current
+                                    }
+                                }));
+                            }
+                            setRandomChampion(now.current,isTimeLimited);
                         }
-                        setRandomChampion(now.current);
                     }
-                } else {
-                    now.current++;
-                    if(now.current === 20) {
-                        isLast.current = true;
-                        for(let conn of connectionList.values()) {
-                            conn?.send(JSON.stringify({
-                                type: "last",
-                                message: {
-                                    now : now.current
-                                }
-                            }));
-                        }
-                        setLast();
-                    } else {
-                        for (let conn of connectionList.values()) {
-                            conn?.send(JSON.stringify({
-                                type: "next",
-                                message: {
-                                    now : now.current
-                                }
-                            }));
-                        }
-                        setRandomChampion(now.current);
-                    }
-                }
 
-            }
-        }, 30 * 1000);
+                }
+            }, 30 * 1000);
+        
+        }
     }
+    //시간 제한 토글시
+    useEffect(() => {
+        for(let conn of connectionList.values()) {
+            conn?.send(JSON.stringify({
+                type: "TimeLimitChange",
+                message: isTimeLimited
+            }));
+        }
+        isTimeLimitedRef.current = isTimeLimited;
+    },[isTimeLimited]);
 
     useEffect(() => {
         try {
@@ -174,7 +193,8 @@ const BanPickRoom: NextPage = () => {
                                 conn2.send(JSON.stringify({
                                     type: "currentMode",
                                     message: {
-                                        mode: currentMode.current
+                                        mode: currentMode.current,
+                                        isTimeLimited: isTimeLimitedRef.current 
                                     }
                                 }));
                                 conn2.send(JSON.stringify({
@@ -263,7 +283,7 @@ const BanPickRoom: NextPage = () => {
                                     type: "start",
                                 }));
                             }
-                            setRandomChampion(now.current);
+                            setRandomChampion(now.current,isTimeLimitedRef.current);
                         } else if (nowData.type === "banPick") {
                             let imgURL = `/centered/${nowData.message.img}_0.jpg`
                             if((now.current >= 0 && now.current <= 5) || (now.current >= 12 && now.current <= 15)) {
@@ -296,7 +316,7 @@ const BanPickRoom: NextPage = () => {
                                         }
                                     }));
                                 }
-                                setLast();
+                                setLast(isTimeLimited);
                             } else {
                                 for(let conn of connectionList.values()) {
                                     conn?.send(JSON.stringify({
@@ -306,7 +326,7 @@ const BanPickRoom: NextPage = () => {
                                         }
                                     }));
                                 }
-                                setRandomChampion(now.current);
+                                setRandomChampion(now.current,isTimeLimitedRef.current);
                             }
                         } else if (nowData.type === "root") {
                             rootId.current = nowData.id;
@@ -435,7 +455,7 @@ const BanPickRoom: NextPage = () => {
     return (
         <BanPickRoomWrapper>
             {
-                myId != "" && <BanPickRoomParticipate rootId={myId} />
+                myId != "" && <BanPickRoomParticipate rootId={myId} timeLimited={isTimeLimited} setTimeLimited={setIsTimeLimited} />
             }
         </BanPickRoomWrapper>
     );

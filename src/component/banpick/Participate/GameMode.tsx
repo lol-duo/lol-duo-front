@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styled from "@emotion/styled";
 import React, { useState } from 'react';
-import I18n from "@/component/locale/i18n";1
+import I18n from "@/component/locale/i18n";
 import fontList from "@styles/fontList";
 import {RadioGroup, Radio} from "@nextui-org/react";
 

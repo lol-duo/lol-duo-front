@@ -1,22 +1,28 @@
 import { NextPage } from "next";
 import styled from "@emotion/styled";
-import {Button} from "@nextui-org/react";
 import React, { useState } from 'react';
 import I18n from "@/component/locale/i18n";
 import fontList from "@styles/fontList";
 import {Switch} from "@nextui-org/react";
-const TimeLimit: NextPage<{isTimeUnlimited:boolean, setIsTimeUnlimited:(value: boolean) => void}> = (props) => {
-
-    const {isTimeUnlimited, setIsTimeUnlimited} = props;
+const TimeLimit: NextPage<{
+    isTimeLimited:any, 
+    setIsTimeLimited:(value:boolean) => void,
+    hostId:string,
+    myId:any,
+    }> = (props) => {
+    
+    const {isTimeLimited,hostId,myId,setIsTimeLimited} = props;
     const text = I18n('banpick.json').value;
+    // useState를 사용하여 초기값 설정
     const handleToggle = () => {
-        setIsTimeUnlimited(!isTimeUnlimited);
+        setIsTimeLimited(!isTimeLimited);
     };
     return (
         <TimeLimitWrapper>
-            <div>{text.timeLimit}{isTimeUnlimited ? " OFF" : " ON"}</div>
+            <div>{text.timeLimit} {isTimeLimited ? "ON" : "OFF"}</div>
             <Switch
-                defaultChecked={isTimeUnlimited}
+                isDisabled= {hostId != myId.current}
+                isSelected={isTimeLimited}
                 onChange={handleToggle}
             />
         </TimeLimitWrapper>

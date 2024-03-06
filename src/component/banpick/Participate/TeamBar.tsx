@@ -15,15 +15,16 @@ const TeamBar: NextPage<{
     text:any,
     selectedGameMode:string,
     setSelectedGameMode:(value: string) => void,
-    isTimeUnlimited:boolean, 
-    setIsTimeUnlimited:(value: boolean) => void}> = (props) => {
+    isTimeLimited:boolean,
+    setIsTimeLimited:(value:boolean) => void,
+    }> = (props) => {
 
-    const {blueTeam, redTeam, myId, sendMsg, sendTeamMsg, myUserId,hostId, text, rootId,selectedGameMode,setSelectedGameMode,isTimeUnlimited,setIsTimeUnlimited} = props;
+    const {blueTeam, redTeam, myId, sendMsg, sendTeamMsg, myUserId,hostId, text, rootId,selectedGameMode,setSelectedGameMode,isTimeLimited,setIsTimeLimited} = props;
     return (
         <TeamBarWrapper>
             <TeamBarWrapper>
                 <Team Team={0} blueTeam={blueTeam} redTeam={redTeam} myId={myId} sendTeamMsg={sendTeamMsg} myUserId={myUserId} text={text}  selectedGameMode={selectedGameMode}></Team>
-                <TeamReady rootId={rootId} blueTeam={blueTeam} redTeam= {redTeam} myId={myId} sendMsg={sendMsg}  myUserId={myUserId} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} hostId={hostId} isTimeUnlimited={isTimeUnlimited} setIsTimeUnlimited={setIsTimeUnlimited}></TeamReady>
+                <TeamReady rootId={rootId} blueTeam={blueTeam} redTeam= {redTeam} myId={myId} sendMsg={sendMsg}  myUserId={myUserId} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} hostId={hostId} isTimeLimited={isTimeLimited} setIsTimeLimited={setIsTimeLimited}></TeamReady>
                 <Team Team={1} blueTeam={blueTeam} redTeam={redTeam} myId={myId} sendTeamMsg={sendTeamMsg} myUserId={myUserId} text={text}  selectedGameMode={selectedGameMode}></Team>
             </TeamBarWrapper>
         </TeamBarWrapper>
