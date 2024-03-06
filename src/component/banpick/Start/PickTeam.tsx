@@ -19,14 +19,15 @@ const PickTeam: NextPage<{
     isOpen:number,
     setIsOpen:Function,
     selectedGameMode:string,
+    selectLane:string,
     }> = (props) => {
 
-    const {team,now, me,selectedChampion,changeChampion,imgURL,locale,isOpen,setIsOpen,selectedGameMode } = props;
+    const {team,now, me,selectedChampion,changeChampion,imgURL,locale,isOpen,setIsOpen,selectedGameMode,selectLane } = props;
     
     return (
         <PickTeamWrapper className={team ==0 ? "blueTeam":"redTeam"}>
             <BanList team={team} selectedChampion={selectedChampion} now={now}/>
-            <PickList team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode}/>
+            <PickList team={team} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode} selectLane={selectLane}/>
         </PickTeamWrapper>
     )
 }

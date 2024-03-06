@@ -24,10 +24,10 @@
     {"index" : 6,"info":"※ 게임시작 후에는 우측 하단의 'copy' 버튼 을 통해 링크 전달이 가능합니다."},
     {"index" : 7,"info":"※ 좌측 하단의 채팅창에서 채팅이 가능합니다."}
   ],
-  "lastInfoList": [
-    {"index" :  1,"info": "라인을" },
-    {"index" :  2,"info": "확정해주세요." }
-  ],
+  "laneSelect": "라인 확정",
+  "laneSelectWaitRed": "레드팀 \n확정 대기중",
+  "laneSelectWaitBlue": "블루팀 \n확정 대기중",
+  "laneSelectWaitObserver": "양 팀 라인 \n확정 대기중",
   "endInfoList": [
     {"index" :  1,"info": "종료 안내" },
     {"index" :  2,"info": "※ 첫 번째 아이콘: 라인 스왑 전 상태를 저장할 수 있습니다." },

@@ -25,10 +25,11 @@
     {"index" : 7,"info":"※ You can chat in the chat window at the bottom left."}
 
   ],
-  "lastInfoList": [
-    {"index" :  1,"info": "Please" },
-    {"index" :  2,"info": "select the lane" }
-  ],
+  "laneSelect": "Lane select",
+  "laneSelectWaitRed": "Waiting for \nred team selection",
+  "laneSelectWaitBlue": "Waiting for \nblue team selection",
+  "laneSelectWaitObserver": "Waiting to confirm \nboth team lines",
+
   "endInfoList": [
     {"index" : 1,"info": "End Notice" },
     {"index" : 2,"info": "※ First image: Download status before lane swap" },

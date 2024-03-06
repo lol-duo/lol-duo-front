@@ -30,9 +30,11 @@ const BanPickRoomStart: NextPage<{
     blueTeam: any,
     time: number|string,
     selectedGameMode:string,
+    hostId:string,
+    selectLane:string,
     }> = (props) => {
 
-        const {selectedChampion, now, sendMsg,text, setChatList,chatList, sendChat, myId, redTeam, blueTeam, myUserId, time,selectedGameMode} = props;
+        const {selectedChampion, now, sendMsg,text, setChatList,chatList, sendChat, myId, redTeam, blueTeam, myUserId, time,selectedGameMode,hostId,selectLane} = props;
         const [me, setMe] = useState<string>(myId.current === blueTeam.user ? "blue" : myId.current === redTeam.user ? "red" : "none");
         const [search, setSearch] = useState<string>("");
         const [lane, setLane] = useState<string>("ALL");
@@ -92,18 +94,18 @@ const BanPickRoomStart: NextPage<{
                     secondImage.current = link;
                 });
             }
-            if(selectedGameMode=="solo"){
+            if(selectedGameMode==="solo" && myId.current === hostId){
                 blueTurn.indexOf(now) != -1 ? setMe("blue") :setMe("red");
             }
         }, [now]);
         return (
             <BanPickRoomStartWrapper>
-                <PickTeam team={0} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode}/>
+                <PickTeam team={0} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode} selectLane={selectLane}/>
                 <MainList time={time} text={text} lane={lane} setLane={setLane} search={search} setSearch={setSearch} now={now}
                 championList={championList} blueTurn={blueTurn} locale={locale} sendMsg={sendMsg} me={me} setChampionSelect={setChampionSelect} selectedChampion={selectedChampion} championSelect={championSelect} 
                 chatList={chatList} chat={chat} setChat={setChat} sendChat={sendChat} setChatList={setChatList}  myUserId={myUserId} redTeam={redTeam} blueTeam={blueTeam} myId={myId}
-                firstImage={firstImage} secondImage={secondImage}/>
-                <PickTeam team={1} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode}/>
+                firstImage={firstImage} secondImage={secondImage} selectLane={selectLane}/>
+                <PickTeam team={1} now={now} me={me} selectedChampion={selectedChampion} changeChampion={changeChampion} imgURL={imgURL} locale={locale} isOpen={isOpen} setIsOpen={setIsOpen} selectedGameMode={selectedGameMode} selectLane={selectLane}/>
             </BanPickRoomStartWrapper>
         )
 }
