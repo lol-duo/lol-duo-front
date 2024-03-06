@@ -11,8 +11,9 @@ const nextConfig = {
         SUGGESTION_API_URL: process.env.NEXT_PUBLIC_SUGGESTION_API_URL,
     },
     images: {
+        formats: ['image/avif', 'image/webp'],
         domains: ["s3.ap-northeast-2.amazonaws.com"]
-    }
+    },
 }
 
 module.exports = nextConfig
