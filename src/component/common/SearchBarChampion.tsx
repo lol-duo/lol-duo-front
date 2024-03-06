@@ -6,7 +6,7 @@ import React, {useState} from "react";
 import I18n from "@/component/locale/i18n";
 import SearchBarText from "@/component/common/SearchBarText";
 import Image from "next/image";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import {Popover, PopoverContent, PopoverTrigger} from "@nextui-org/popover";
 
 const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
@@ -34,7 +34,9 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
     const glassImg = imgURL.searchGlass;
 
     return (
-        <Popover placement={"bottom-start"} isOpen={isOpen} onOpenChange={(open) => setIsOpen(open)} >
+        <Popover placement={"bottom-start"} isOpen={isOpen} onOpenChange={(open) => setIsOpen(open)} style={{backgroundColor: "none"}} classNames={{
+            content: "bg-content1-none shadow-none hover:none focus:none",
+        }} >
             <PopoverTrigger>
                 <SearchBarChampionWrapper >
                     <div className="championCircle">
@@ -43,15 +45,16 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
                     {<SearchBarText text="Champion" isOpen={isOpen} selectedName={name}/>}
                 </SearchBarChampionWrapper>
             </PopoverTrigger>
-            <PopoverContent >
+            <PopoverContent>
                 <ChampionSearchWrapper style={{position: "relative", top:"15px"}}>
-                    <input className="championNameInput" type="text" value={userSearchState}
-                           onChange={(e) => setUserSearchState(e.target.value)}/>
-                    <Image className="glassIcon" src={glassImg} alt={glassImg} width={16} height={16}/>
+                    <div className="championNameInputWrapper">
+                        <input className="championNameInput" type="text" value={userSearchState}
+                               onChange={(e) => setUserSearchState(e.target.value)}/>
+                        <Image className="glassIcon" src={glassImg} alt={glassImg} width={16} height={16}/>
+                    </div>
                     <div className="championList">{
                         championList.filter((champion) => {
-                            if (language === "ko") return champion.ko_name.includes(userSearchState);
-                            else return champion.en_name.includes(userSearchState);
+                            return champion.ko_name.includes(userSearchState) || champion.en_name.includes(userSearchState);
                         }).map((champion) => {
                             return (
                                 <div className="champion" key={champion.id}
@@ -82,36 +85,44 @@ const ChampionSearchWrapper = styled.div`
   height: 253px;
   background-color: ${colorList.semantic.card};
     border-radius: 10px;
+    box-shadow: 0 0 10px 0 ${colorList.alpha.gray000_70};
     
-    .championNameInput {
-        position: relative;
-        background-color: ${colorList.semantic.card};
-        border: none;
-        border-bottom: 1px solid ${colorList.grayscale["100"]};
-        outline: none;
-        color: ${colorList.grayscale["100"]};
-        left: 16px;
-        top: 8px;
-        width: 213px;
+    .championNameInputWrapper {
+        display: flex;
+        flex-direction: row;
         
+        .championNameInput {
+            position: relative;
+            background-color: ${colorList.semantic.card};
+            border: none;
+            border-bottom: 1px solid ${colorList.grayscale["100"]};
+            outline: none;
+            color: ${colorList.grayscale["100"]};
+            left: 16px;
+            top: 8px;
+            width: 213px;
+
+        }
+        .glassIcon {
+            position: relative;
+            top: 8px;
+        }
     }
-    .glassIcon {
-        position: relative;
-        top: 8px;
-    }
+    
+    
     .championList {
         position: relative;
         top: 15px;
         left: 16px;
         width: 222px;
-        height: 216px;
+        height: 210px;
         overflow: auto;
         display: grid;
         gap: 4px;
         grid-template-columns: repeat(5, 41px);
         grid-template-rows: repeat(5, 36px);
         grid-column-gap: 0;
-        
+   
         ::-webkit-scrollbar {
             width: 10px; /* 스크롤바의 width */
         }

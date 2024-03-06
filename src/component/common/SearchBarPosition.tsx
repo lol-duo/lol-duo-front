@@ -4,7 +4,7 @@ import {SearchBarPositionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/react";
 import SearchBarPositionDropDown from "@/component/common/SearchBarPositionDropDown";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import SearchBarText from "@/component/common/SearchBarText";
 import {useState} from "react";
 import Image from "next/image";
@@ -20,8 +20,10 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
     const positionName = I18n('common.json').value.lane;
 
     return (
-        <Dropdown onOpenChange={setIsOpenTrue}>
-            <DropdownTrigger>
+        <Dropdown onOpenChange={setIsOpenTrue} style={{backgroundColor: "none"}} classNames={{
+            content: "bg-content1-none shadow-none hover:none focus:none",
+        }}>
+            <DropdownTrigger style={{backgroundColor: "none"}}>
                 <SearchBarPositionWrapper>
                     <div className="positionCircle">
                         <Image className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
@@ -30,8 +32,8 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
                     {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionName[positionState]}/>}
                 </SearchBarPositionWrapper>
             </DropdownTrigger>
-            <DropdownMenu aria-label="DuoDropDownMenu">
-                <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none', outline: 'none'}}>
+            <DropdownMenu aria-label="DuoDropDownMenu" style={{backgroundColor: "none"}} >
+                <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none', outline: 'none', backgroundColor: "none", border: "none"}} variant={"bordered"}>
                     <SearchBarPositionDropDown positionState={positionState} setPositionState={setPositionState}/>
                 </DropdownItem>
             </DropdownMenu>
@@ -47,12 +49,14 @@ const SearchBarPositionWrapper = styled.div`
   gap: 12px;
     margin-left: 32px;
     
+    
   .positionCircle {
     box-sizing: border-box;
     width: 44px;
     height: 44px;
     background-color: ${colorList.grayscale["400"]};
     border-radius: 50%;
+      
       
     position: relative;
     display: flex;

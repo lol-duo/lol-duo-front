@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import {PositionType, SearchBarPositionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import Image from "next/image";
 
 const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
@@ -13,7 +13,7 @@ const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
     return (
         <SearchBarPositionDropDownWrapper>
             <>{
-                positionTypeList.map((positionType, index) => (
+                positionTypeList.map((positionType) => (
                         (
                             positionState === positionType ?
                                 <div className="positionCircle" key={positionType}
@@ -48,8 +48,13 @@ const SearchBarPositionDropDownWrapper = styled.div`
   padding: 8px 16px 8px 16px;
   border-radius: 100px;
   background-color: ${colorList.semantic.card};
-
+    box-shadow: 0 0 10px 0 ${colorList.alpha.gray000_70};
+    position: relative;
+    top: 4px;
+    overflow: auto;
+    
   .positionCircle {
+      
     box-sizing: border-box;
     width: 44px;
     height: 44px;
