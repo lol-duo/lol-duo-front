@@ -31,10 +31,10 @@ const BanPickRoom: NextPage = () => {
     const isTimeLimitedRef = useRef<boolean>(isTimeLimited);
     const router = useRouter();
 
-    async function setLast(isTimeLimited: boolean) {
+    async function setLast() {
 
         //시간 제한 모드 일때만 실행 
-        if(isTimeLimited){
+        if(isTimeLimitedRef.current){
             isLast.current = true;
             setTimeout(() => {
                 if(now.current === 20) {
@@ -53,9 +53,9 @@ const BanPickRoom: NextPage = () => {
 
     }
 
-    async function setRandomChampion(current: number , isTimeLimited: boolean) {
+    async function setRandomChampion(current: number) {
         //시간 제한 모드 일때만 실행
-        if(isTimeLimited){
+        if(isTimeLimitedRef.current){
             setTimeout(() => {
                 if(now.current === current && now.current < 20) {
                     if (selectedChampion[current] == undefined) {
@@ -96,7 +96,7 @@ const BanPickRoom: NextPage = () => {
                                     }
                                 }));
                             }
-                            setLast(isTimeLimited);
+                            setLast();
                         } else {
                             for (let conn of connectionList.values()) {
                                 conn?.send(JSON.stringify({
@@ -113,7 +113,7 @@ const BanPickRoom: NextPage = () => {
                                     }
                                 }));
                             }
-                            setRandomChampion(now.current,isTimeLimited);
+                            setRandomChampion(now.current);
                         }
                     } else {
                         now.current++;
@@ -127,7 +127,7 @@ const BanPickRoom: NextPage = () => {
                                     }
                                 }));
                             }
-                            setLast(isTimeLimited);
+                            setLast();
                         } else {
                             for (let conn of connectionList.values()) {
                                 conn?.send(JSON.stringify({
@@ -137,7 +137,7 @@ const BanPickRoom: NextPage = () => {
                                     }
                                 }));
                             }
-                            setRandomChampion(now.current,isTimeLimited);
+                            setRandomChampion(now.current);
                         }
                     }
 
@@ -283,7 +283,7 @@ const BanPickRoom: NextPage = () => {
                                     type: "start",
                                 }));
                             }
-                            setRandomChampion(now.current,isTimeLimitedRef.current);
+                            setRandomChampion(now.current);
                         } else if (nowData.type === "banPick") {
                             let imgURL = `/centered/${nowData.message.img}_0.jpg`
                             if((now.current >= 0 && now.current <= 5) || (now.current >= 12 && now.current <= 15)) {
@@ -316,7 +316,7 @@ const BanPickRoom: NextPage = () => {
                                         }
                                     }));
                                 }
-                                setLast(isTimeLimited);
+                                setLast();
                             } else {
                                 for(let conn of connectionList.values()) {
                                     conn?.send(JSON.stringify({
@@ -326,7 +326,7 @@ const BanPickRoom: NextPage = () => {
                                         }
                                     }));
                                 }
-                                setRandomChampion(now.current,isTimeLimitedRef.current);
+                                setRandomChampion(now.current);
                             }
                         } else if (nowData.type === "root") {
                             rootId.current = nowData.id;
