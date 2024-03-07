@@ -13,9 +13,9 @@ const Home: NextPage = () => {
         <HomeCssWrapper>
             <Head>
                 <meta charSet="utf-8"/>
-                <link rel="icon" href="/favicon.svg"/>
-                <link rel="apple-touch-icon" href="/favicon.svg"/>
-                <link rel="shortcut icon" href="/favicon.svg"/>
+                <link rel="icon" href="/favicon.ico"/>
+                <link rel="apple-touch-icon" href="/favicon.ico"/>
+                <link rel="shortcut icon" href="/favicon.ico"/>
                 <meta name="keywords" content="LOL-DUO,LOL,DUO,롤듀오,롤,듀오,LOL,LOL듀오,LOL 듀오"/>
                 <meta name="author" content="LOL-DUO"/>
 
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
                 />
                 <meta content="width=device-width, initial-scale=1" name="viewport"/>
                 <meta content="#000000" name="theme-color"/>
-                <link href="/favicon.svg" rel="apple-touch-icon"/>
+                <link href="/favicon.ico" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
             <HomeHeader/>

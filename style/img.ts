@@ -34,4 +34,6 @@ export const imgURL = {
 
     swap: cloudFrontURL + "/banpick/swap.png",
     download: cloudFrontURL + "/banpick/download.png",
+
+    person: cloudFrontURL + "/banpick/person.webp",
 }

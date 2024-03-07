@@ -12,6 +12,7 @@ import ChatAndInfoBar from "@/component/banpick/Participate/ChatAndInfoBar";
 import TeamBar from "@/component/banpick/Participate/TeamBar";
 import InfoamtionBar from "@/component/banpick/Participate/InfoamtionBar";
 import TitleBar from "@/component/banpick/Participate/TitleBar";
+import {imgURL} from "@styles/img";
 
 const BanPickRoomParticipate: NextPage<{
     rootId?: string ,
@@ -43,6 +44,7 @@ const BanPickRoomParticipate: NextPage<{
     const connectionList = useRef(new Map<string, DataConnection>()).current;
     const rootIdRef = useRef<string>("");
     const peer = useRef<Peer>();
+    const [connectionListCount, setConnectionListCount] = useState<number>(0);
 
      // 각 팀의 정보
     const [redTeam, setRedTeam] = useState<TeamInfoType>({     user: "",   status: "none", userName: "" });
@@ -215,6 +217,7 @@ const BanPickRoomParticipate: NextPage<{
                     }
                 });
                 connectionList.set(id as string, conn2 as DataConnection);
+                setConnectionListCount(connectionList.size);
                 sendChat("방에 입장하였습니다.");
                 setChatList(chatList => [...chatList, {
                     chat: "방에 입장하였습니다.",
@@ -237,11 +240,14 @@ const BanPickRoomParticipate: NextPage<{
                                         }));
                                     });
                                     connectionList.set(nowData.message[i], conn as DataConnection);
+                                    setConnectionListCount(connectionList.size);
                                 }
                             }
                             for(let key of connectionList.keys()) {
-                                if(!nowData.message.includes(key) && key !== id)
+                                if(!nowData.message.includes(key) && key !== id) {
                                     connectionList.delete(key);
+                                    setConnectionListCount(connectionList.size);
+                                }
                             }
                         } else if(nowData.type === "join") {
                         } else if(nowData.type === "teamInfo") {
@@ -310,6 +316,7 @@ const BanPickRoomParticipate: NextPage<{
                     });
                     conn.on('close', () => {
                         connectionList.delete(conn.peer);
+                        setConnectionListCount(connectionList.size);
                         if(!isEnd.current) {
                             if (conn.peer === rootIdRef.current && isStartRef.current) {
                                 alert("방장이 나갔습니다.");
@@ -337,6 +344,10 @@ const BanPickRoomParticipate: NextPage<{
     }, [id]);
     return (
         <BanPickRoomParticipateWrapper>
+            <Person>
+                <img src={imgURL.person} alt="person" width={20} height={20}/>
+                {connectionListCount - 1}
+            </Person>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
             {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setTimeLimited ={setTimeLimited} ></TeamBar>}
@@ -351,12 +362,23 @@ const BanPickRoomParticipate: NextPage<{
 
 export default BanPickRoomParticipate;
 
+const Person = styled.div`
+    z-index: 2;
+    position: absolute;
+    top: -42px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-size: 14px;
+    color: ${colorList.grayscale["000"]};
+`
 
 const BanPickRoomParticipateWrapper = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
 `;
