@@ -30,9 +30,9 @@ const BanPickRoom: NextPage = () => {
     const [isTimeLimited, setIsTimeLimited] = useState<boolean>(true);
     const isTimeLimitedRef = useRef<boolean>(isTimeLimited);
     const router = useRouter();
-
+    const isRedSelect = useRef<boolean>(false);
+    const isBlueSelect = useRef<boolean>(false);
     async function setLast() {
-
         //시간 제한 모드 일때만 실행 
         if(isTimeLimitedRef.current){
             isLast.current = true;
@@ -54,6 +54,7 @@ const BanPickRoom: NextPage = () => {
     }
 
     async function setRandomChampion(current: number) {
+
         //시간 제한 모드 일때만 실행
         if(isTimeLimitedRef.current){
             setTimeout(() => {
@@ -148,13 +149,14 @@ const BanPickRoom: NextPage = () => {
     }
     //시간 제한 토글시
     useEffect(() => {
+        isTimeLimitedRef.current = isTimeLimited;
         for(let conn of connectionList.values()) {
             conn?.send(JSON.stringify({
                 type: "TimeLimitChange",
-                message: isTimeLimited
+                message: isTimeLimitedRef.current
             }));
         }
-        isTimeLimitedRef.current = isTimeLimited;
+        
     },[isTimeLimited]);
 
     useEffect(() => {
@@ -221,6 +223,14 @@ const BanPickRoom: NextPage = () => {
                                         type: "last",
                                         message: {
                                             now : now.current
+                                        }
+                                    }));
+                                }
+                                if(isRedSelect.current || isBlueSelect.current){
+                                    conn2?.send(JSON.stringify({
+                                        type: "laneSelect",
+                                        message: {
+                                            selectTeam : isRedSelect.current ? "red" : "blue"
                                         }
                                     }));
                                 }
@@ -389,6 +399,33 @@ const BanPickRoom: NextPage = () => {
                                     mode: "1:1"
                                 }));
                             }                               
+                        // 라인 확정
+                        } else if(nowData.type ==="laneSelect"){
+                            nowData.selectTeam === "red" ? isRedSelect.current = true : isBlueSelect.current = true;
+                            //Solo 모드에서 확정 버튼 누르거나, 1:1에서 둘 다 누른 경우
+                            if(currentMode.current === "solo" || (isRedSelect.current && isBlueSelect.current)){
+                                isEnd.current = true;
+                                now.current++;
+                                for(let conn of connectionList.values()) {
+                                    conn?.send(JSON.stringify({
+                                        type: "end",
+                                        message: {
+                                            now : now.current
+                                        }
+                                    }));
+                                }
+                            }
+                            //1:1 에서 한 팀이 라인 확정 누른 경우
+                            else{
+                                for(let conn of connectionList.values()) {
+                                    conn?.send(JSON.stringify({
+                                        type: "laneSelect",
+                                        message: {
+                                            selectTeam : nowData.selectTeam
+                                        }
+                                    }));
+                                }
+                            }
                         }
                     });
                     conn.on('close', () => {

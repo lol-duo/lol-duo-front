@@ -50,17 +50,18 @@ const MainList: NextPage<{
     myId:any,
     firstImage:any,
     secondImage:any,
+    selectLane:string,
 }> = (props) => {
 
     const { lane, setLane, search, setSearch, now, text, time} = props;
     const { championList, blueTurn, locale, sendMsg, me, setChampionSelect, selectedChampion,championSelect} = props;
-    const {chatList, setChat, sendChat, setChatList, chat, myUserId, redTeam, blueTeam, myId,firstImage,secondImage} = props;
+    const {chatList, setChat, sendChat, setChatList, chat, myUserId, redTeam, blueTeam, myId,firstImage,secondImage,selectLane} = props;
 
     return (
         <MainListWrapper>
             <Title subject={text.subject}/>
             <Timer time={time}/>
-            {now == 20 && <LastInfo text={text}/>}
+            {now == 20 && <LastInfo text={text} sendMsg={sendMsg} me={me} selectLane={selectLane}/>}
             {now == 21 && <Capture firstImage={firstImage} secondImage={secondImage}/>}
             {now == 21 && <EndInfo text={text}/> }
             <ChampionSelect lane={lane} setLane={setLane} search={search} setSearch={setSearch} now={now} 

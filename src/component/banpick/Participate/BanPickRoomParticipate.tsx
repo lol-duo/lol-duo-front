@@ -13,13 +13,18 @@ import TeamBar from "@/component/banpick/Participate/TeamBar";
 import InfoamtionBar from "@/component/banpick/Participate/InfoamtionBar";
 import TitleBar from "@/component/banpick/Participate/TitleBar";
 
-const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,setTimeLimited?:(value:boolean) => void}> = (props) => {
+const BanPickRoomParticipate: NextPage<{
+    rootId?: string ,
+    timeLimited?:boolean,
+    setTimeLimited?: (value:boolean) => void,
+    }> = (props) => {
     const {rootId,timeLimited,setTimeLimited} = props;
     const router = useRouter();
     let {id} = router.query;
     if(rootId != undefined) id = rootId;
     
     // text 정보
+    
     const text = I18n('banpick.json').value;
 
     // 랜덤 아이디 부여
@@ -45,13 +50,21 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
 
     //게임 모드
     const [selectedGameMode, setSelectedGameMode] = useState<string>("1:1");
+
+    //라인 확정
+    const [selectLane,setSelectLane] = useState<string>("");
+    
     //시간제한
     const [isTimeLimited, setIsTimeLimited] = useState<boolean>(timeLimited==undefined?true:timeLimited);
+    //Time() 함수에서 사용하기 위해 ref로 추가로 관리, useState인 isTimeLimited 사용시 갱신안되는 문제 발생
+    const isTimeLimitedRef = useRef<boolean>(isTimeLimited);
     useEffect(() => {
         if(setTimeLimited!=undefined){
             setTimeLimited(isTimeLimited);
         }
+        isTimeLimitedRef.current = isTimeLimited;
     }, [isTimeLimited]);
+
     //게임시작
     const [isStart, setIsStart] = useState<boolean>(false);
 
@@ -72,15 +85,13 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
         name_id: string,
     }[]>([]);
     const [now, setNow] = useState<number>(0);
-
     // Timer
     const isEnd = useRef<boolean>(false);
     const timerTime = useRef<number>(30);
     const [time, setTime] = useState<number|string>(30);
     const intervalId = useRef<NodeJS.Timeout | null>(null);
-    const Timer = (end?: boolean, last?: boolean, isTimeLimited?:boolean) => {
-
-        if(!isTimeLimited){
+    const Timer = (end?: boolean, last?: boolean) => {
+        if(!isTimeLimitedRef.current ){
             intervalId.current && clearInterval(intervalId.current);
             timerTime.current = 30;
             setTime(text.timeLimitInfo);
@@ -290,6 +301,8 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
                             setSelectedGameMode("1:1");                        
                         }else if(nowData.type ==="TimeLimitChange"){
                             setIsTimeLimited(nowData.message);
+                        }else if(nowData.type ==="laneSelect"){
+                            setSelectLane(nowData.message.selectTeam);
                         }
                         if(isEnd.current){
                             setNow(21);
@@ -326,10 +339,10 @@ const BanPickRoomParticipate: NextPage<{rootId?: string ,timeLimited?:boolean,se
         <BanPickRoomParticipateWrapper>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
-            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setIsTimeLimited={setIsTimeLimited}></TeamBar>}
+            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setTimeLimited ={setTimeLimited} ></TeamBar>}
             {
                 isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} chatList={chatList} setChatList={setChatList}
-                sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} selectedGameMode={selectedGameMode}/>
+                sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} selectedGameMode={selectedGameMode} hostId = {rootIdRef.current} selectLane={selectLane}/>
             }
             <ChatAndInfoBar isStart={isStartRef.current} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList} text={text} roomUrl={text.roomURL} roomId ={id}/>
         </BanPickRoomParticipateWrapper>

@@ -20,24 +20,26 @@ const PickCard: NextPage<{
     setIsOpen:Function
     turn:number,
     selectedGameMode:string,
+    selectLane:string,
     }> = (props) => {  
 
-    const {team,now, me, selectedChampion, changeChampion, imgURL, locale, isOpen, setIsOpen, turn,selectedGameMode} = props;
+    const {team,now, me, selectedChampion, changeChampion, imgURL, locale, isOpen, setIsOpen, turn,selectedGameMode,selectLane} = props;
     const blueTeamTurn = [6,9,10,17,18];
     const redTeamTurn = [7,8,11,16,19];
     const lane = ["TOP", "JUNGLE", "MID", "BOT", "SUPPORT"];
     const myLane = team === 0 ? lane[blueTeamTurn.indexOf(turn)] : lane[redTeamTurn.indexOf(turn)];
-    
+    //관전자가 SoloMode에서 픽 변경 가능한 문제 해결 위하여 추가
+    const isSoloModeHost = selectedGameMode === "solo" && (me === "blue" || me ==="red");
     if(team == 0){
         return (
             <PickCardWrapper  >
-                <Popover placement={"right"} isOpen={now === 20 && (me === "blue" || selectedGameMode ==="solo") ? isOpen == turn : false}  onOpenChange={(open) => {
+                <Popover placement={"right"} isOpen={now === 20 && (me === "blue" || isSoloModeHost ) && me!==selectLane ? isOpen == turn : false}  onOpenChange={(open) => {
                         setIsOpen(open ? turn : -1)
                     }}  style={{backgroundColor: "none"}} classNames={{
                     content: "bg-content1-none shadow-none hover:none focus:none",
                 }}>
                 <PopoverTrigger>
-                    <div className={now === turn ? "pick now blue" : now === 20 && (me === "blue" || selectedGameMode ==="solo")  ? "pick hover blue" : "pick blue"} >
+                    <div className={now === turn ? "pick now blue" : now === 20 && (me === "blue" || isSoloModeHost) && me!==selectLane  ? "pick hover blue" : "pick blue"} >
                         {
                             now == turn && <div className="now"/>
                         }
@@ -94,13 +96,13 @@ const PickCard: NextPage<{
     else{
         return (
             <PickCardWrapper>
-                <Popover placement={"left"} isOpen={now === 20 &&( me === "red" || selectedGameMode==="solo") ? isOpen == turn : false} onOpenChange={(open) => {
+                <Popover placement={"left"} isOpen={now === 20 &&( me === "red" || isSoloModeHost) && me!==selectLane ? isOpen == turn : false} onOpenChange={(open) => {
                     setIsOpen(open ? turn : -1)
                 }}  style={{backgroundColor: "none"}} classNames={{
                     content: "bg-content1-none shadow-none hover:none focus:none",
                 }}>
                     <PopoverTrigger>
-                <div className={now === turn ? "pick now red" : now === 20 && (me === "red" || selectedGameMode==="solo" )? "pick hover red" : "pick red"} >
+                <div className={now === turn ? "pick now red" : now === 20 && (me === "red" || isSoloModeHost) && me!==selectLane ? "pick hover red" : "pick red"} >
                     {
                         now == turn && <div className="now"/>
                     }

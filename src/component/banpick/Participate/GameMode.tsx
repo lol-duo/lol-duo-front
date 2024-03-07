@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import I18n from "@/component/locale/i18n";
 import fontList from "@styles/fontList";
 import {RadioGroup, Radio} from "@nextui-org/react";
-
+import colorList from "@styles/colorList";
 const GameMode: NextPage<{selectedGameMode:string,hostId:string, myUserId:string,setSelectedGameMode:(value: string) => void,sendMsg:Function,myId:any}> = (props) => {
     const { selectedGameMode, sendMsg,setSelectedGameMode,hostId ,myUserId,myId} = props;
     const text = I18n('banpick.json').value;
@@ -27,8 +27,12 @@ const GameMode: NextPage<{selectedGameMode:string,hostId:string, myUserId:string
                 onValueChange={(value) => handleRadioChange(value)}
                 orientation="horizontal"
             >
-                <CustomRadio value="1:1">1:1</CustomRadio>
-                <CustomRadio value="solo">{text.gameMode}</CustomRadio>
+                <Radio value="1:1">
+                    <span className="mode-text">1:1</span>
+                </Radio>
+                <Radio value="solo">
+                    <span className="mode-text">{text.gameMode}</span>
+                </Radio>
             </RadioGroup>
         </GameModeWrapper>
     );
@@ -48,20 +52,21 @@ justify-content: center;
 align-items: center;
 gap:20px;
 
-//font
-font-family: ${fontList.roboto.regular["14"].fontFamily};
-font-size: ${fontList.roboto.regular["14"].fontSize};
-font-weight: ${fontList.roboto.regular["14"].fontWeight};
-line-height: ${fontList.roboto.regular["14"].lineHeight};
-letter-spacing: ${fontList.roboto.regular["14"].letterSpacing};
-color: rgba(181, 181, 181, 1);
+    //font
+    .mode-text{
+        font-family: ${fontList.roboto.regular["14"].fontFamily};
+        font-size: ${fontList.roboto.regular["14"].fontSize};
+        font-weight: ${fontList.roboto.regular["14"].fontWeight};
+        line-height: ${fontList.roboto.regular["14"].lineHeight};
+        letter-spacing: ${fontList.roboto.regular["14"].letterSpacing};
+        color: rgba(181, 181, 181, 1);
+    }
+    //선택된 부분 안쪽 원
+    .bg-primary{
+        background-color: ${colorList.main.secondaryBeige};
+    }
+    .border-default{
+        border-color:${colorList.main.secondaryBeige} !important; 
+    }
 
 `
-const CustomRadio = styled(Radio)`
-    font-family: ${fontList.roboto.regular["14"].fontFamily};
-    font-size: ${fontList.roboto.regular["14"].fontSize};
-    font-weight: ${fontList.roboto.regular["14"].fontWeight};
-    line-height: ${fontList.roboto.regular["14"].lineHeight};
-    letter-spacing: ${fontList.roboto.regular["14"].letterSpacing};
-    color: rgba(181, 181, 181, 1);
-`;

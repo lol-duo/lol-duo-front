@@ -1667,5 +1667,3 @@ export default [
         ]
     }
 ]
-
-

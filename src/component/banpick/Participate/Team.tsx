@@ -43,7 +43,7 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
                         className="outButton"
                         onClick={() => sendTeamMsg({team: "blue", status: "none"})}>나가기</Button>}
                     {(selectedGameMode==="solo" || (blueTeam.user !== myId.current && blueTeam.status === "ready") ) && <Button
-                        disabled={true}>RED 팀 준비완료</Button>}
+                        disabled={true}>BLUE 팀 준비완료</Button>}
                 </div>
             </BlueWrapper>
         )

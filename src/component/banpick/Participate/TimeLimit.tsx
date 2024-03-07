@@ -3,30 +3,32 @@ import styled from "@emotion/styled";
 import React, { useState } from 'react';
 import I18n from "@/component/locale/i18n";
 import fontList from "@styles/fontList";
+import colorList from "@styles/colorList";
 import {Switch} from "@nextui-org/react";
 const TimeLimit: NextPage<{
-    isTimeLimited:any, 
-    setIsTimeLimited:(value:boolean) => void,
     hostId:string,
     myId:any,
+    isTimeLimited:boolean,
+    setTimeLimited :any,
     }> = (props) => {
     
-    const {isTimeLimited,hostId,myId,setIsTimeLimited} = props;
+    const {hostId,myId,isTimeLimited,setTimeLimited} = props;
     const text = I18n('banpick.json').value;
     // useState를 사용하여 초기값 설정
     const handleToggle = () => {
-        setIsTimeLimited(!isTimeLimited);
+        if(setTimeLimited != undefined){
+            setTimeLimited(!isTimeLimited);
+        }
     };
     return (
         <TimeLimitWrapper>
-            <div>{text.timeLimit} {isTimeLimited ? "ON" : "OFF"}</div>
+            <div className="TimeLimitText">{text.timeLimit} {isTimeLimited ? "ON" : "OFF"}</div>
             <Switch
                 isDisabled= {hostId != myId.current}
                 isSelected={isTimeLimited}
                 onChange={handleToggle}
             />
         </TimeLimitWrapper>
-        
     );
 }
 
@@ -44,6 +46,9 @@ justify-content: center;
 align-items: center;
 gap:20px;
 
+.TimeLimitText{
+    width:100px;
+}
 
 //font
 font-family: ${fontList.roboto.regular["14"].fontFamily};
@@ -53,5 +58,14 @@ line-height: ${fontList.roboto.regular["14"].lineHeight};
 letter-spacing: ${fontList.roboto.regular["14"].letterSpacing};
 color: rgba(181, 181, 181, 1);
 
-
+    //OFF
+    .bg-default-200{
+        background-color: ${colorList.grayscale["300"]}};
+    }
+    //ON
+    .group[data-selected=true] {
+        .bg-default-200{
+            background-color:${colorList.main.secondaryBeige};
+        }
+    }
 `
