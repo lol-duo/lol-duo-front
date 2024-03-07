@@ -14,7 +14,7 @@ const DuoMainBigCombiChampion: NextPage<{data: MainChampionInfo}> = (props) => {
             <div className="championImg">
                 <Image src={mainRuneImgUrl} alt={mainRuneImgUrl} width={24} height={24}/>
                 <div className="championImgLane">
-                    <Image className="champion" src={championImgUrl} alt={championImgUrl} width={64} height={64}/>
+                    <Image className="champion" src={`${championImgUrl}`} alt={championImgUrl} width={64} height={64}/>
                     <Image className="lane"  src={positionImgUrl} alt={positionImgUrl} width={24} height={24}/>
                 </div>
             </div>

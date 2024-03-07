@@ -1,6 +1,5 @@
-import { NextPage } from "next"
+import {NextPage} from "next"
 import styled from "@emotion/styled";
-import Image from "next/image";
 
 const BanCard: NextPage<{
     selectedChampion: {
@@ -23,7 +22,7 @@ const BanCard: NextPage<{
                 }
                 {
                     selectedChampion[turn] &&
-                    <Image className="img" src={`${selectedChampion[turn].img}`} alt={selectedChampion[turn].img} fill sizes="3840px"/>
+                    <img className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
                 }              
             </BanCardWrapper>
         )

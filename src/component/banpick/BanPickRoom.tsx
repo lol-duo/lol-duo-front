@@ -65,9 +65,9 @@ const BanPickRoom: NextPage = () => {
                             randomIndex = Math.floor(Math.random() * championList.length);
                             randomChampion = championList[randomIndex];
                         }
-                        let imgURL = `/centered/${randomChampion.name_id}_0.jpg`
+                        let imgURL = `/centered/${randomChampion.name_id}_0.webp`
                         if ((current >= 0 && current <= 5) || (current >= 12 && current <= 15)) {
-                            imgURL = `/champion/${randomChampion.name_id}.png`
+                            imgURL = `/champion/${randomChampion.name_id}.webp`
                         }
                         selectedChampion[current] = {
                             img: imgURL,
@@ -285,9 +285,9 @@ const BanPickRoom: NextPage = () => {
                             }
                             setRandomChampion(now.current);
                         } else if (nowData.type === "banPick") {
-                            let imgURL = `/centered/${nowData.message.img}_0.jpg`
+                            let imgURL = `/centered/${nowData.message.img}_0.webp`
                             if((now.current >= 0 && now.current <= 5) || (now.current >= 12 && now.current <= 15)) {
-                                imgURL = `/champion/${nowData.message.img}.png`
+                                imgURL = `/champion/${nowData.message.img}.webp`
                             }
                             selectedChampion[now.current] = {
                                 img: imgURL,

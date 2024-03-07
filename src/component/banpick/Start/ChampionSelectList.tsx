@@ -1,6 +1,5 @@
-import { NextPage } from "next";
+import {NextPage} from "next";
 import styled from "@emotion/styled";
-import Image from "next/image";
 import colorList from "@styles/colorList";
 
 const ChampionSelectList: NextPage<{
@@ -43,18 +42,18 @@ const ChampionSelectList: NextPage<{
                             return null;
                         }
                         if (selectedChampion.find((value) => value.en_name === item.en_name)) {
-                            return <Image className="img none" src={`/champion/${item.image}`} alt={item.name_id}
+                            return <img className="img none" src={`https://d3b83p9ttz58gf.cloudfront.net/champion/${item.image}`} alt={item.name_id}
                                             width={50} height={50} key={locale == "ko" ? item.ko_name : item.en_name}/>
                         }
                         return (
-                            <Image onClick={() => {
+                            <img onClick={() => {
                                 if ((me === "red" && !blueTurn.includes(now)) || (me === "blue" && blueTurn.includes(now))) {
                                     setChampionSelect(true);
                                     sendMsg({type: "banPick", message: {img: item.name_id, en_name: item.en_name, ko_name: item.ko_name, name_id: item.name_id}});
                                 } else{
                                     return;
                                 }
-                            }} className="img" src={`/champion/${item.image}`} alt={item.name_id} width={50} height={50}
+                            }} className="img" src={`https://d3b83p9ttz58gf.cloudfront.net/champion/${item.image}`} alt={item.name_id} width={50} height={50}
                                     key={locale == "ko" ? item.ko_name : item.en_name}/>
                         )
                     }).sort((a, b) => {

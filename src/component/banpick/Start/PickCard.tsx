@@ -44,7 +44,7 @@ const PickCard: NextPage<{
                         }
                         {
                             selectedChampion[turn] &&
-                            <Image className="img" src={`${selectedChampion[turn].img}`} alt={selectedChampion[turn].img} fill sizes="3840px"/>
+                            <img loading="eager" className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
                         }
                         {
                             selectedChampion[turn] &&
@@ -107,32 +107,32 @@ const PickCard: NextPage<{
                     }
                     {
                         selectedChampion[turn] &&
-                                <Image loading="lazy" className="img" src={selectedChampion[turn].img} alt={selectedChampion[turn].img} fill sizes="3840px"/>
-                    }
-                    {
-                        selectedChampion[turn] &&
-                        <div className="championName red">
-                            <span>{locale==="ko" ? selectedChampion[turn].ko_name : selectedChampion[turn].en_name}</span>
-                        </div>
-                    }
-                    {
-                        now >= 20 &&
-                        <div className="swap">
-                            <div className="swap-border">
-                                <Image loading="lazy" src="/swap.png" alt="/swap.png"
-                                    height={45} width={45}/>
+                                    <img loading="eager" className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                        }
+                        {
+                            selectedChampion[turn] &&
+                            <div className="championName red">
+                                <span>{locale==="ko" ? selectedChampion[turn].ko_name : selectedChampion[turn].en_name}</span>
                             </div>
+                        }
+                        {
+                            now >= 20 &&
+                            <div className="swap">
+                                <div className="swap-border">
+                                    <Image loading="lazy" src="/swap.png" alt="/swap.png"
+                                        height={45} width={45}/>
+                                </div>
 
-                        </div>
-                    }
-                    {
-                        now >= 20 &&
-                        <div className="championLane red">
-                            <Image loading="lazy" src={imgURL.laneImg[myLane]} alt="/lane/TOP.svg"
-                                height={30} width={30}/>
-                        </div>
-                    }
-                </div>
+                            </div>
+                        }
+                        {
+                            now >= 20 &&
+                            <div className="championLane red">
+                                <Image loading="lazy" src={imgURL.laneImg[myLane]} alt="/lane/TOP.svg"
+                                    height={30} width={30}/>
+                            </div>
+                        }
+                    </div>
                     </PopoverTrigger>
                     <PopoverContent>
                         <PopUp>
@@ -197,7 +197,9 @@ position: relative;
         }
 
         .img {
+            position: absolute;
             height: auto !important;
+            inset: 0;
         }
 
         .championName{

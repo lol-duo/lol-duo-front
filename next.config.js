@@ -11,7 +11,13 @@ const nextConfig = {
         SUGGESTION_API_URL: process.env.NEXT_PUBLIC_SUGGESTION_API_URL,
     },
     images: {
-        domains: ["s3.ap-northeast-2.amazonaws.com"]
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: "d3b83p9ttz58gf.cloudfront.net"
+            },
+        ],
+        formats: ['image/webp'],
     }
 }
 

@@ -40,7 +40,7 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
             <PopoverTrigger>
                 <SearchBarChampionWrapper >
                     <div className="championCircle">
-                        <Image className="championImg" src={imgUrl} width={44} height={44} alt={imgUrl}/>
+                        <Image className="championImg" src={`${imgUrl}`} width={44} height={44} alt={imgUrl}/>
                     </div>
                     {<SearchBarText text="Champion" isOpen={isOpen} selectedName={name}/>}
                 </SearchBarChampionWrapper>
@@ -66,8 +66,9 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
                                          });
                                          setIsOpen(false);
                                      }}>
-                                    <Image className="championImg" src={`/champion/${champion.image}`} width={36} height={36}
-                                           alt={`/champion/${champion.image}`}/>
+                                    {champion.id === 0 ? <Image className="championImg" src={`/champion/${champion.image}`} width={36} height={36}
+                                                                alt={`/champion/${champion.image}`}/> : <Image className="championImg" src={`https://d3b83p9ttz58gf.cloudfront.net/champion/${champion.image}`} width={36} height={36}
+                                                                                                               alt={`/champion/${champion.image}`}/>}
                                 </div>
                             )
                         })
