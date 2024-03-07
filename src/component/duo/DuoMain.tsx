@@ -7,6 +7,7 @@ import DuoTable from "@/component/duo/DuoTable";
 import {useRouter} from "next/router";
 import I18n from "@/component/locale/i18n";
 import {PositionTypeGuard} from "@/types/SearchBarTypeGaurd";
+import {imgURL} from "@styles/img";
 
 const DuoMain: NextPage = () => {
 
@@ -23,12 +24,12 @@ const DuoMain: NextPage = () => {
     const [firstChampion, setFirstChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: "/champion/ALL.svg"
+        imgUrl: imgURL.allChampion
     });
     const [secondChampion, setSecondChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: "/champion/ALL.svg"
+        imgUrl: imgURL.allChampion
     });
 
     const setPosition = (position: string, setPositionFunc: Function) => {
@@ -45,13 +46,13 @@ const DuoMain: NextPage = () => {
             setChampionFunc({
                 id: championInfo.id,
                 name: language === "ko" ? championInfo.ko_name : championInfo.en_name,
-                imgUrl: `/champion/${championInfo.image}`
+                imgUrl: `https://d3b83p9ttz58gf.cloudfront.net/champion/${championInfo.image}`
             });
         } else {
             setChampionFunc({
                 id: 0,
                 name: "All",
-                imgUrl: "/champion/ALL.svg"
+                imgUrl: imgURL.allChampion
             });
         }
     };

@@ -7,6 +7,7 @@ import SoloTable from "@/component/solo/SoloTable";
 import {PositionTypeGuard} from "@/types/SearchBarTypeGaurd";
 import {useRouter} from "next/router";
 import I18n from "@/component/locale/i18n";
+import {imgURL} from "@styles/img";
 
 const SoloMain: NextPage = () => {
 
@@ -22,7 +23,7 @@ const SoloMain: NextPage = () => {
     const [nowChampion, setNowChampion] = useState<ChampionInfo>({
         id: 0,
         name: "All",
-        imgUrl: "/champion/ALL.svg"
+        imgUrl: imgURL.allChampion
     });
 
     const setPosition = (position: string, setPositionFunc: Function) => {
@@ -39,13 +40,13 @@ const SoloMain: NextPage = () => {
             setChampionFunc({
                 id: championInfo.id,
                 name: language === "ko" ? championInfo.ko_name : championInfo.en_name,
-                imgUrl: `/champion/${championInfo.image}`
+                imgUrl: `https://d3b83p9ttz58gf.cloudfront.net/champion/${championInfo.image}`
             });
         } else {
             setChampionFunc({
                 id: 0,
                 name: "All",
-                imgUrl: "/champion/ALL.svg"
+                imgUrl: imgURL.allChampion
             });
         }
     };

@@ -5,8 +5,7 @@ import fontList from "../../../style/fontList";
 import {useQuery} from "react-query";
 import {soloMainInfo} from "@/api/main";
 import {SearchBarProps} from "@/types/SearchBar";
-import Image from "next/image";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import I18n from "@/component/locale/i18n";
 import SoloMainCombi from "@/component/solo/SoloMainCombi";
 
@@ -72,7 +71,7 @@ const SoloTable: NextPage<SearchBarProps> = (props) => {
                         )})
                 }
                 {
-                    isLoading && <Image src={imgURL.loading} alt={imgURL.loading} width={50} height={50} className={"loading"}/>
+                    isLoading && <img src={imgURL.loading} alt={imgURL.loading} width={50} height={50} className={"loading"}/>
                 }
                 {
                     data && data.length < 1 && <div className="noInfo">{noData}</div>

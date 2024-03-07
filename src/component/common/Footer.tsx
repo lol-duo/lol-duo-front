@@ -2,8 +2,7 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import fontList from "../../../style/fontList";
 import colorList from "../../../style/colorList";
-import {imgURL} from "../../../style/img";
-import Image from "next/image";
+import {imgURL} from "@styles/img";
 
 const Footer: NextPage = () => {
 
@@ -13,7 +12,7 @@ const Footer: NextPage = () => {
     return (
         <FooterWrapper>
             <div className="logo">
-                <Image className="logoImg" src={imgURL.logoDark} alt={imgURL.logoDark} width={165} height={32}/>
+                <img className="logoImg" src={imgURL.logoDark} alt={imgURL.logoDark} width={165} height={32}/>
             </div>
             <div className="text">{
                 riotText

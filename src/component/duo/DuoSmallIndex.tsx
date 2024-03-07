@@ -1,8 +1,7 @@
 import {NextPage} from "next";
 import {DuoMainInfoProps} from "@/types/api";
 import DuoMainSmallCombi from "@/component/duo/DuoMainSmallCombi";
-import Image from "next/image";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import fontList from "../../../style/fontList";
@@ -20,11 +19,11 @@ const DuoSmallIndex: NextPage<{data: DuoMainInfoProps, idx: number}> = (props) =
                 <div className="combi">
                     <DuoMainSmallCombi data={data.champion1}/>
                     <div className="winRate">
-                        <Image src={imgURL.listImg} alt={imgURL.listImg} width={20} height={1}/>
+                        <img src={imgURL.listImg} alt={imgURL.listImg} width={20} height={1}/>
                         <div className="winRateText">
                             {data.winRate}
                         </div>
-                        <Image src={imgURL.listImg} alt={imgURL.listImg} width={20} height={1}/>
+                        <img src={imgURL.listImg} alt={imgURL.listImg} width={20} height={1}/>
                     </div>
                     <DuoMainSmallCombi data={data.champion2}/>
                 </div>

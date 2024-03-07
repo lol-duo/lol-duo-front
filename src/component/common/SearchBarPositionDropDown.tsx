@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import {PositionType, SearchBarPositionProps} from "@/types/SearchBar";
 import colorList from "../../../style/colorList";
 import {imgURL} from "@styles/img";
-import Image from "next/image";
 
 const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
 
@@ -19,12 +18,12 @@ const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
                                 <div className="positionCircle" key={positionType}
                                      style={{backgroundColor: colorList.alpha.secondaryBeige_20}}
                                      onClick={() => setPositionState(positionType)}>
-                                    <Image key={positionType + "img"} className="positionImg" width={24} height={24}
+                                    <img key={positionType + "img"} className="positionImg" width={24} height={24}
                                            src={imgURL.laneImg[positionType]}
                                            alt={imgURL.laneImg[positionType]}/>
                                 </div> : <div className="positionCircle" key={positionType}
                                               onClick={() => setPositionState(positionType)}>
-                                    <Image key={positionType + "img"} className="positionImg" width={24} height={24}
+                                    <img key={positionType + "img"} className="positionImg" width={24} height={24}
                                            src={imgURL.laneImg[positionType]}
                                            alt={imgURL.laneImg[positionType]}/>
                                 </div>
@@ -40,18 +39,17 @@ const SearchBarPositionDropDown: NextPage<SearchBarPositionProps> = (props) => {
 export default SearchBarPositionDropDown;
 
 const SearchBarPositionDropDownWrapper = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  gap: 8px;
-  width: 336px;
-  height: 60px;
-  padding: 8px 16px 8px 16px;
-  border-radius: 100px;
-  background-color: ${colorList.semantic.card};
+    
+    display: flex;
+    gap: 8px;
+    width: 336px;
+    height: 60px;
+    padding: 8px 16px 8px 16px;
+    border-radius: 100px;
+    background-color: ${colorList.semantic.card};
     box-shadow: 0 0 10px 0 ${colorList.alpha.gray000_70};
     position: relative;
     top: 4px;
-    overflow: auto;
     
   .positionCircle {
       

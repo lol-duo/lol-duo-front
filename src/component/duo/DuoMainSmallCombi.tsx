@@ -2,7 +2,6 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import fontList from "../../../style/fontList";
-import Image from "next/image";
 import {MainChampionInfo} from "@/types/api";
 
 
@@ -13,10 +12,10 @@ const DuoMainSmallCombi: NextPage<{data: MainChampionInfo}> = (props) => {
     return (
         <MainSmallCombiWrapper>
             <div className="championImg">
-                <Image src={mainRuneImgUrl} alt={mainRuneImgUrl} width={20} height={20}/>
+                <img src={mainRuneImgUrl} alt={mainRuneImgUrl} width={20} height={20}/>
                 <div className="championImgLane">
-                    <Image className="champion" src={`${championImgUrl}`} alt={championImgUrl} width={40} height={40}/>
-                    <Image className="lane"  src={positionImgUrl} alt={positionImgUrl} width={20} height={20}/>
+                    <img className="champion" src={championImgUrl} alt={championImgUrl} width={40} height={40}/>
+                    <img className="lane"  src={positionImgUrl} alt={positionImgUrl} width={20} height={20}/>
                 </div>
             </div>
             <div className="championName">
