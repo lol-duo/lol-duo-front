@@ -7,7 +7,6 @@ import SearchBarPositionDropDown from "@/component/common/SearchBarPositionDropD
 import {imgURL} from "@styles/img";
 import SearchBarText from "@/component/common/SearchBarText";
 import {useState} from "react";
-import Image from "next/image";
 import I18n from "@/component/locale/i18n";
 
 const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
@@ -26,29 +25,38 @@ const SearchBarPosition: NextPage<SearchBarPositionProps> = (props) => {
             <DropdownTrigger style={{backgroundColor: "none"}}>
                 <SearchBarPositionWrapper>
                     <div className="positionCircle">
-                        <Image className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
+                        <img className="positionImg" src={imgURL.laneImg[positionState]} width={24} height={24}
                                alt={imgURL.laneImg[positionState]}/>
                     </div>
                     {<SearchBarText text="Position" isOpen={isOpen} selectedName={positionName[positionState]}/>}
                 </SearchBarPositionWrapper>
             </DropdownTrigger>
-            <DropdownMenu aria-label="DuoDropDownMenu" style={{backgroundColor: "none"}} >
-                <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none', outline: 'none', backgroundColor: "none", border: "none"}} variant={"bordered"}>
-                    <SearchBarPositionDropDown positionState={positionState} setPositionState={setPositionState}/>
-                </DropdownItem>
-            </DropdownMenu>
+            <Overflow>
+                <DropdownMenu aria-label="DuoDropDownMenu" style={{backgroundColor: "none"}} >
+
+                    <DropdownItem aria-label="DuoDropDownItem" style={{listStyle: 'none', outline: 'none', backgroundColor: "none", border: "none"}} variant={"bordered"}>
+                        <SearchBarPositionDropDown positionState={positionState} setPositionState={setPositionState}/>
+                    </DropdownItem>
+                </DropdownMenu>
+            </Overflow>
         </Dropdown>
     );
 }
 
 export default SearchBarPosition;
 
+const Overflow = styled.div`
+ 
+    .truncate {
+        overflow: visible !important;
+    }
+`
+
 const SearchBarPositionWrapper = styled.div`
   position: relative;
   display: flex;
   gap: 12px;
     margin-left: 32px;
-    
     
   .positionCircle {
     box-sizing: border-box;

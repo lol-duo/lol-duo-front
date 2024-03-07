@@ -5,7 +5,6 @@ import colorList from "../../../style/colorList";
 import React, {useState} from "react";
 import I18n from "@/component/locale/i18n";
 import SearchBarText from "@/component/common/SearchBarText";
-import Image from "next/image";
 import {imgURL} from "@styles/img";
 import {Popover, PopoverContent, PopoverTrigger} from "@nextui-org/popover";
 
@@ -40,7 +39,7 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
             <PopoverTrigger>
                 <SearchBarChampionWrapper >
                     <div className="championCircle">
-                        <Image className="championImg" src={imgUrl} width={44} height={44} alt={imgUrl}/>
+                        <img className="championImg" src={imgUrl} width={44} height={44} alt={imgUrl}/>
                     </div>
                     {<SearchBarText text="Champion" isOpen={isOpen} selectedName={name}/>}
                 </SearchBarChampionWrapper>
@@ -50,7 +49,7 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
                     <div className="championNameInputWrapper">
                         <input className="championNameInput" type="text" value={userSearchState}
                                onChange={(e) => setUserSearchState(e.target.value)}/>
-                        <Image className="glassIcon" src={glassImg} alt={glassImg} width={16} height={16}/>
+                        <img className="glassIcon" src={glassImg} alt={glassImg} width={16} height={16}/>
                     </div>
                     <div className="championList">{
                         championList.filter((champion) => {
@@ -66,8 +65,7 @@ const SearchBarChampion: NextPage<SearchBarChampionProps> = (props) => {
                                          });
                                          setIsOpen(false);
                                      }}>
-                                    <Image className="championImg" src={`/champion/${champion.image}`} width={36} height={36}
-                                           alt={`/champion/${champion.image}`}/>
+                                    <img className="championImg" src={`https://d3b83p9ttz58gf.cloudfront.net/champion/${champion.image}`} width={36} height={36} alt={`/champion/${champion.image}`}/>
                                 </div>
                             )
                         })

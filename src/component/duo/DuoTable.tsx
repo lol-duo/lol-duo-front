@@ -6,8 +6,7 @@ import DuoBigTable from "@/component/duo/DuoBigTable";
 import {useQuery} from "react-query";
 import {duoMainInfo} from "@/api/main";
 import {DuoSearchBarProps} from "@/types/SearchBar";
-import Image from "next/image";
-import {imgURL} from "../../../style/img";
+import {imgURL} from "@styles/img";
 import DuoSmallTable from "@/component/duo/DuoSmallTable";
 import I18n from "@/component/locale/i18n";
 
@@ -41,7 +40,7 @@ const DuoTable: NextPage<DuoSearchBarProps> = (props) => {
             </DuoTableHeaderWrapper>
             <DuoTableBodyWrapper>
                 {
-                    isLoading && <Image src={imgURL.loading} alt={imgURL.loading} width={50} height={50} className={"loading"}/>
+                    isLoading && <img src={imgURL.loading} alt={imgURL.loading} width={50} height={50} className={"loading"}/>
                 }
                 {
                     data && data.length > 3 && <DuoBigTable data={data}/>

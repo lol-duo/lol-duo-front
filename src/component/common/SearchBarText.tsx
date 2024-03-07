@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 import fontList from "../../../style/fontList";
 import colorList from "../../../style/colorList";
 import {SearchBarTextProps} from "@/types/SearchBar";
-import {imgURL} from "../../../style/img";
-import Image from "next/image";
+import {imgURL} from "@styles/img";
 
 const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
     const {text, isOpen, selectedName} = props;
@@ -15,8 +14,8 @@ const SearchBarText: NextPage<SearchBarTextProps> = (props) => {
                 {text}
                 {
                     isOpen ?
-                        <Image className="Arrow" src={imgURL.upArrow} alt={imgURL.upArrow} width={16} height={16}/> :
-                        <Image className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow} width={16} height={16}/>
+                        <img className="Arrow" src={imgURL.upArrow} alt={imgURL.upArrow} width={16} height={16}/> :
+                        <img className="Arrow" src={imgURL.downArrow} alt={imgURL.downArrow} width={16} height={16}/>
                 }
             </div>
             <div className="selectedName">{selectedName}</div>

@@ -31,6 +31,7 @@ const SearchBarWrapper = styled.div`
   align-items: center;
   gap: 16px;
 
+    
   .Bar {
     border: 1px solid ${colorList.grayscale["300"]};
     width: 0;

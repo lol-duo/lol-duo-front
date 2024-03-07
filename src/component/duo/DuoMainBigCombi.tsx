@@ -2,7 +2,6 @@ import {NextPage} from "next";
 import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import fontList from "../../../style/fontList";
-import Image from "next/image";
 import {DuoMainInfoProps, MainChampionInfo} from "@/types/api";
 import DonutChart from "@/component/duo/DonutChart";
 
@@ -12,10 +11,10 @@ const DuoMainBigCombiChampion: NextPage<{data: MainChampionInfo}> = (props) => {
     return (
         <DuoMainBigCombiChampionWrapper>
             <div className="championImg">
-                <Image src={mainRuneImgUrl} alt={mainRuneImgUrl} width={24} height={24}/>
+                <img src={mainRuneImgUrl} alt={mainRuneImgUrl} width={24} height={24}/>
                 <div className="championImgLane">
-                    <Image className="champion" src={championImgUrl} alt={championImgUrl} width={64} height={64}/>
-                    <Image className="lane"  src={positionImgUrl} alt={positionImgUrl} width={24} height={24}/>
+                    <img className="champion" src={championImgUrl} alt={championImgUrl} width={64} height={64}/>
+                    <img className="lane"  src={positionImgUrl} alt={positionImgUrl} width={24} height={24}/>
                 </div>
             </div>
             <div className="championName">
@@ -30,7 +29,7 @@ const DuoMainBigCombi: NextPage<{ data: DuoMainInfoProps, rankImg: string, donut
 
     return (
         <DuoMainBigCombiWrapper>
-            <Image src={props.rankImg} alt={props.rankImg} width={32} height={32}/>
+            <img src={props.rankImg} alt={props.rankImg} width={32} height={32}/>
             <div className="champion">
                 <DuoMainBigCombiChampion data={props.data.champion1}/>
                 <DonutChart color={props.donutColor} percent={props.data.winRate}/>

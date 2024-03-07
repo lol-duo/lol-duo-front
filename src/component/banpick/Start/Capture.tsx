@@ -1,8 +1,8 @@
-import { NextPage } from "next";
+import {NextPage} from "next";
 import styled from "@emotion/styled";
-import { Button } from "@nextui-org/react";
-import Image from "next/image";
+import {Button} from "@nextui-org/react";
 import colorList from "@styles/colorList";
+import {imgURL} from "@styles/img";
 
 const Capture: NextPage<{firstImage:any,secondImage:any}> = (props) => {
 
@@ -11,18 +11,18 @@ const Capture: NextPage<{firstImage:any,secondImage:any}> = (props) => {
     return (
         <CaptureWrapper>
             <Button className="captureBox">
-                <Image onClick={()=>{
+                <img onClick={()=>{
                     if(firstImage.current){
                         firstImage.current.click();
                     }
-                }} className="captureImg" src="/download.png" alt="/download.png" width={50} height={50} sizes="3840px" />
+                }} className="captureImg" src={imgURL.download} alt={imgURL.download} width={50} height={50} sizes="3840px" />
             </Button>
             <Button className="captureBox">
-            <Image onClick={() => {
+            <img onClick={() => {
                 if (secondImage.current) {
                     secondImage.current.click();
                 }
-            }} className="captureImg" src="/download.png" alt="/download.png"  width={50} height={50} sizes="3840px" />
+            }} className="captureImg" src={imgURL.download} alt={imgURL.download}  width={50} height={50} sizes="3840px" />
             </Button>
         </CaptureWrapper>
     )

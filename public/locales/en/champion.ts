@@ -10,7 +10,7 @@ export default [
         "id" : 1,
         "en_name" : "Annie",
         "name_id" : "Annie",
-        "image" : "Annie.avif",
+        "image" : "Annie.webp",
         "ko_name" : "애니",
         "positionList": [
             "MIDDLE"
@@ -20,7 +20,7 @@ export default [
         "id" : 2,
         "en_name" : "Olaf",
         "name_id" : "Olaf",
-        "image" : "Olaf.avif",
+        "image" : "Olaf.webp",
         "ko_name" : "올라프",
         "positionList": [
             "TOP"
@@ -30,7 +30,7 @@ export default [
         "id" : 3,
         "en_name" : "Galio",
         "name_id" : "Galio",
-        "image" : "Galio.avif",
+        "image" : "Galio.webp",
         "ko_name" : "갈리오",
         "positionList": [
             "MIDDLE"
@@ -40,7 +40,7 @@ export default [
         "id" : 4,
         "en_name" : "Twisted Fate",
         "name_id" : "TwistedFate",
-        "image" : "TwistedFate.avif",
+        "image" : "TwistedFate.webp",
         "ko_name" : "트위스티드 페이트",
         "positionList": [
             "MIDDLE"
@@ -50,7 +50,7 @@ export default [
         "id" : 5,
         "en_name" : "Xin Zhao",
         "name_id" : "XinZhao",
-        "image" : "XinZhao.avif",
+        "image" : "XinZhao.webp",
         "ko_name" : "신 짜오",
         "positionList": [
             "JUNGLE"
@@ -60,7 +60,7 @@ export default [
         "id" : 6,
         "en_name" : "Urgot",
         "name_id" : "Urgot",
-        "image" : "Urgot.avif",
+        "image" : "Urgot.webp",
         "ko_name" : "우르곳",
         "positionList": [
             "TOP"
@@ -70,7 +70,7 @@ export default [
         "id" : 7,
         "en_name" : "LeBlanc",
         "name_id" : "Leblanc",
-        "image" : "Leblanc.avif",
+        "image" : "Leblanc.webp",
         "ko_name" : "르블랑",
         "positionList": [
             "MIDDLE"
@@ -80,7 +80,7 @@ export default [
         "id" : 8,
         "en_name" : "Vladimir",
         "name_id" : "Vladimir",
-        "image" : "Vladimir.avif",
+        "image" : "Vladimir.webp",
         "ko_name" : "블라디미르",
         "positionList": [
             "MIDDLE"
@@ -90,7 +90,7 @@ export default [
         "id" : 9,
         "en_name" : "Fiddlesticks",
         "name_id" : "Fiddlesticks",
-        "image" : "Fiddlesticks.avif",
+        "image" : "Fiddlesticks.webp",
         "ko_name" : "피들스틱",
         "positionList": [
             "JUNGLE"
@@ -100,7 +100,7 @@ export default [
         "id" : 10,
         "en_name" : "Kayle",
         "name_id" : "Kayle",
-        "image" : "Kayle.avif",
+        "image" : "Kayle.webp",
         "ko_name" : "케일",
         "positionList": [
             "TOP"
@@ -110,7 +110,7 @@ export default [
         "id" : 11,
         "en_name" : "Master Yi",
         "name_id" : "MasterYi",
-        "image" : "MasterYi.avif",
+        "image" : "MasterYi.webp",
         "ko_name" : "마스터 이",
         "positionList": [
             "JUNGLE"
@@ -120,7 +120,7 @@ export default [
         "id" : 12,
         "en_name" : "Alistar",
         "name_id" : "Alistar",
-        "image" : "Alistar.avif",
+        "image" : "Alistar.webp",
         "ko_name" : "알리스타",
         "positionList": [
             "UTILITY"
@@ -130,7 +130,7 @@ export default [
         "id" : 13,
         "en_name" : "Ryze",
         "name_id" : "Ryze",
-        "image" : "Ryze.avif",
+        "image" : "Ryze.webp",
         "ko_name" : "라이즈",
         "positionList": [
             "MIDDLE"
@@ -140,7 +140,7 @@ export default [
         "id" : 14,
         "en_name" : "Sion",
         "name_id" : "Sion",
-        "image" : "Sion.avif",
+        "image" : "Sion.webp",
         "ko_name" : "사이온",
         "positionList": [
             "TOP"
@@ -150,7 +150,7 @@ export default [
         "id" : 15,
         "en_name" : "Sivir",
         "name_id" : "Sivir",
-        "image" : "Sivir.avif",
+        "image" : "Sivir.webp",
         "ko_name" : "시비르",
         "positionList": [
             "BOTTOM"
@@ -160,7 +160,7 @@ export default [
         "id" : 16,
         "en_name" : "Soraka",
         "name_id" : "Soraka",
-        "image" : "Soraka.avif",
+        "image" : "Soraka.webp",
         "ko_name" : "소라카",
         "positionList": [
             "UTILITY"
@@ -170,7 +170,7 @@ export default [
         "id" : 17,
         "en_name" : "Teemo",
         "name_id" : "Teemo",
-        "image" : "Teemo.avif",
+        "image" : "Teemo.webp",
         "ko_name" : "티모",
         "positionList": [
             "TOP"
@@ -180,7 +180,7 @@ export default [
         "id" : 18,
         "en_name" : "Tristana",
         "name_id" : "Tristana",
-        "image" : "Tristana.avif",
+        "image" : "Tristana.webp",
         "ko_name" : "트리스타나",
         "positionList": [
             "BOTTOM"
@@ -190,7 +190,7 @@ export default [
         "id" : 19,
         "en_name" : "Warwick",
         "name_id" : "Warwick",
-        "image" : "Warwick.avif",
+        "image" : "Warwick.webp",
         "ko_name" : "워윅",
         "positionList": [
             "JUNGLE"
@@ -200,7 +200,7 @@ export default [
         "id" : 20,
         "en_name" : "Nunu & Willump",
         "name_id" : "Nunu",
-        "image" : "Nunu.avif",
+        "image" : "Nunu.webp",
         "ko_name" : "누누와 윌럼프",
         "positionList": [
             "JUNGLE"
@@ -210,7 +210,7 @@ export default [
         "id" : 21,
         "en_name" : "Miss Fortune",
         "name_id" : "MissFortune",
-        "image" : "MissFortune.avif",
+        "image" : "MissFortune.webp",
         "ko_name" : "미스 포츈",
         "positionList": [
             "BOTTOM"
@@ -220,7 +220,7 @@ export default [
         "id" : 22,
         "en_name" : "Ashe",
         "name_id" : "Ashe",
-        "image" : "Ashe.avif",
+        "image" : "Ashe.webp",
         "ko_name" : "애쉬",
         "positionList": [
             "BOTTOM" ,"UTILITY"
@@ -230,7 +230,7 @@ export default [
         "id" : 23,
         "en_name" : "Tryndamere",
         "name_id" : "Tryndamere",
-        "image" : "Tryndamere.avif",
+        "image" : "Tryndamere.webp",
         "ko_name" : "트린다미어",
         "positionList": [
             "TOP"
@@ -240,7 +240,7 @@ export default [
         "id" : 24,
         "en_name" : "Jax",
         "name_id" : "Jax",
-        "image" : "Jax.avif",
+        "image" : "Jax.webp",
         "ko_name" : "잭스",
         "positionList": [
             "TOP"
@@ -250,7 +250,7 @@ export default [
         "id" : 25,
         "en_name" : "Morgana",
         "name_id" : "Morgana",
-        "image" : "Morgana.avif",
+        "image" : "Morgana.webp",
         "ko_name" : "모르가나",
         "positionList": [
             "UTILITY"
@@ -260,7 +260,7 @@ export default [
         "id" : 26,
         "en_name" : "Zilean",
         "name_id" : "Zilean",
-        "image" : "Zilean.avif",
+        "image" : "Zilean.webp",
         "ko_name" : "질리언",
         "positionList": [
             "UTILITY"
@@ -270,7 +270,7 @@ export default [
         "id" : 27,
         "en_name" : "Singed",
         "name_id" : "Singed",
-        "image" : "Singed.avif",
+        "image" : "Singed.webp",
         "ko_name" : "신지드",
         "positionList": [
             "TOP"
@@ -280,7 +280,7 @@ export default [
         "id" : 28,
         "en_name" : "Evelynn",
         "name_id" : "Evelynn",
-        "image" : "Evelynn.avif",
+        "image" : "Evelynn.webp",
         "ko_name" : "이블린",
         "positionList": [
             "JUNGLE"
@@ -290,7 +290,7 @@ export default [
         "id" : 29,
         "en_name" : "Twitch",
         "name_id" : "Twitch",
-        "image" : "Twitch.avif",
+        "image" : "Twitch.webp",
         "ko_name" : "트위치",
         "positionList": [
             "BOTTOM"
@@ -300,7 +300,7 @@ export default [
         "id" : 30,
         "en_name" : "Karthus",
         "name_id" : "Karthus",
-        "image" : "Karthus.avif",
+        "image" : "Karthus.webp",
         "ko_name" : "카서스",
         "positionList": [
             "JUNGLE"
@@ -310,7 +310,7 @@ export default [
         "id" : 31,
         "en_name" : "Cho'Gath",
         "name_id" : "Chogath",
-        "image" : "Chogath.avif",
+        "image" : "Chogath.webp",
         "ko_name" : "초가스",
         "positionList": [
             "TOP"
@@ -320,7 +320,7 @@ export default [
         "id" : 32,
         "en_name" : "Amumu",
         "name_id" : "Amumu",
-        "image" : "Amumu.avif",
+        "image" : "Amumu.webp",
         "ko_name" : "아무무",
         "positionList": [
             "JUNGLE"
@@ -330,7 +330,7 @@ export default [
         "id" : 33,
         "en_name" : "Rammus",
         "name_id" : "Rammus",
-        "image" : "Rammus.avif",
+        "image" : "Rammus.webp",
         "ko_name" : "람머스",
         "positionList": [
             "JUNGLE"
@@ -340,7 +340,7 @@ export default [
         "id" : 34,
         "en_name" : "Anivia",
         "name_id" : "Anivia",
-        "image" : "Anivia.avif",
+        "image" : "Anivia.webp",
         "ko_name" : "애니비아",
         "positionList": [
             "MIDDLE"
@@ -350,7 +350,7 @@ export default [
         "id" : 35,
         "en_name" : "Shaco",
         "name_id" : "Shaco",
-        "image" : "Shaco.avif",
+        "image" : "Shaco.webp",
         "ko_name" : "샤코",
         "positionList": [
             "JUNGLE"
@@ -360,7 +360,7 @@ export default [
         "id" : 36,
         "en_name" : "Dr. Mundo",
         "name_id" : "DrMundo",
-        "image" : "DrMundo.avif",
+        "image" : "DrMundo.webp",
         "ko_name" : "문도 박사",
         "positionList": [
             "TOP"
@@ -370,7 +370,7 @@ export default [
         "id" : 37,
         "en_name" : "Sona",
         "name_id" : "Sona",
-        "image" : "Sona.avif",
+        "image" : "Sona.webp",
         "ko_name" : "소나",
         "positionList": [
             "UTILITY"
@@ -380,7 +380,7 @@ export default [
         "id" : 38,
         "en_name" : "Kassadin",
         "name_id" : "Kassadin",
-        "image" : "Kassadin.avif",
+        "image" : "Kassadin.webp",
         "ko_name" : "카사딘",
         "positionList": [
             "MIDDLE"
@@ -390,7 +390,7 @@ export default [
         "id" : 39,
         "en_name" : "Irelia",
         "name_id" : "Irelia",
-        "image" : "Irelia.avif",
+        "image" : "Irelia.webp",
         "ko_name" : "이렐리아",
         "positionList": [
             "TOP", "MIDDLE"
@@ -400,7 +400,7 @@ export default [
         "id" : 40,
         "en_name" : "Janna",
         "name_id" : "Janna",
-        "image" : "Janna.avif",
+        "image" : "Janna.webp",
         "ko_name" : "잔나",
         "positionList": [
             "UTILITY"
@@ -410,7 +410,7 @@ export default [
         "id" : 41,
         "en_name" : "Gangplank",
         "name_id" : "Gangplank",
-        "image" : "Gangplank.avif",
+        "image" : "Gangplank.webp",
         "ko_name" : "갱플랭크",
         "positionList": [
             "TOP"
@@ -420,7 +420,7 @@ export default [
         "id" : 42,
         "en_name" : "Corki",
         "name_id" : "Corki",
-        "image" : "Corki.avif",
+        "image" : "Corki.webp",
         "ko_name" : "코르키",
         "positionList": [
             "MIDDLE"
@@ -430,7 +430,7 @@ export default [
         "id" : 43,
         "en_name" : "Karma",
         "name_id" : "Karma",
-        "image" : "Karma.avif",
+        "image" : "Karma.webp",
         "ko_name" : "카르마",
         "positionList": [
             "UTILITY"
@@ -440,7 +440,7 @@ export default [
         "id" : 44,
         "en_name" : "Taric",
         "name_id" : "Taric",
-        "image" : "Taric.avif",
+        "image" : "Taric.webp",
         "ko_name" : "타릭",
         "positionList": [
             "UTILITY"
@@ -450,7 +450,7 @@ export default [
         "id" : 45,
         "en_name" : "Veigar",
         "name_id" : "Veigar",
-        "image" : "Veigar.avif",
+        "image" : "Veigar.webp",
         "ko_name" : "베이가",
         "positionList": [
             "MIDDLE"
@@ -460,7 +460,7 @@ export default [
         "id" : 48,
         "en_name" : "Trundle",
         "name_id" : "Trundle",
-        "image" : "Trundle.avif",
+        "image" : "Trundle.webp",
         "ko_name" : "트런들",
         "positionList": [
             "TOP"
@@ -470,7 +470,7 @@ export default [
         "id" : 50,
         "en_name" : "Swain",
         "name_id" : "Swain",
-        "image" : "Swain.avif",
+        "image" : "Swain.webp",
         "ko_name" : "스웨인",
         "positionList": [
             "UTILITY"
@@ -480,7 +480,7 @@ export default [
         "id" : 51,
         "en_name" : "Caitlyn",
         "name_id" : "Caitlyn",
-        "image" : "Caitlyn.avif",
+        "image" : "Caitlyn.webp",
         "ko_name" : "케이틀린",
         "positionList": [
             "BOTTOM"
@@ -490,7 +490,7 @@ export default [
         "id" : 53,
         "en_name" : "Blitzcrank",
         "name_id" : "Blitzcrank",
-        "image" : "Blitzcrank.avif",
+        "image" : "Blitzcrank.webp",
         "ko_name" : "블리츠크랭크",
         "positionList": [
             "UTILITY"
@@ -500,7 +500,7 @@ export default [
         "id" : 54,
         "en_name" : "Malphite",
         "name_id" : "Malphite",
-        "image" : "Malphite.avif",
+        "image" : "Malphite.webp",
         "ko_name" : "말파이트",
         "positionList": [
             "TOP"
@@ -510,7 +510,7 @@ export default [
         "id" : 55,
         "en_name" : "Katarina",
         "name_id" : "Katarina",
-        "image" : "Katarina.avif",
+        "image" : "Katarina.webp",
         "ko_name" : "카타리나",
         "positionList": [
             "MIDDLE"
@@ -520,7 +520,7 @@ export default [
         "id" : 56,
         "en_name" : "Nocturne",
         "name_id" : "Nocturne",
-        "image" : "Nocturne.avif",
+        "image" : "Nocturne.webp",
         "ko_name" : "녹턴",
         "positionList": [
             "JUNGLE"
@@ -530,7 +530,7 @@ export default [
         "id" : 57,
         "en_name" : "Maokai",
         "name_id" : "Maokai",
-        "image" : "Maokai.avif",
+        "image" : "Maokai.webp",
         "ko_name" : "마오카이",
         "positionList": [
             "JUNGLE"
@@ -540,7 +540,7 @@ export default [
         "id" : 58,
         "en_name" : "Renekton",
         "name_id" : "Renekton",
-        "image" : "Renekton.avif",
+        "image" : "Renekton.webp",
         "ko_name" : "레넥톤",
         "positionList": [
             "TOP"
@@ -550,7 +550,7 @@ export default [
         "id" : 59,
         "en_name" : "Jarvan IV",
         "name_id" : "JarvanIV",
-        "image" : "JarvanIV.avif",
+        "image" : "JarvanIV.webp",
         "ko_name" : "자르반 4세",
         "positionList": [
             "JUNGLE"
@@ -560,7 +560,7 @@ export default [
         "id" : 60,
         "en_name" : "Elise",
         "name_id" : "Elise",
-        "image" : "Elise.avif",
+        "image" : "Elise.webp",
         "ko_name" : "엘리스",
         "positionList": [
             "JUNGLE"
@@ -570,7 +570,7 @@ export default [
         "id" : 61,
         "en_name" : "Orianna",
         "name_id" : "Orianna",
-        "image" : "Orianna.avif",
+        "image" : "Orianna.webp",
         "ko_name" : "오리아나",
         "positionList": [
             "MIDDLE"
@@ -580,7 +580,7 @@ export default [
         "id" : 62,
         "en_name" : "Wukong",
         "name_id" : "MonkeyKing",
-        "image" : "MonkeyKing.avif",
+        "image" : "MonkeyKing.webp",
         "ko_name" : "오공",
         "positionList": [
             "JUNGLE"
@@ -590,7 +590,7 @@ export default [
         "id" : 63,
         "en_name" : "Brand",
         "name_id" : "Brand",
-        "image" : "Brand.avif",
+        "image" : "Brand.webp",
         "ko_name" : "브랜드",
         "positionList": [
             "JUNGLE", "UTILITY"
@@ -600,7 +600,7 @@ export default [
         "id" : 64,
         "en_name" : "Lee Sin",
         "name_id" : "LeeSin",
-        "image" : "LeeSin.avif",
+        "image" : "LeeSin.webp",
         "ko_name" : "리 신",
         "positionList": [
             "JUNGLE"
@@ -610,7 +610,7 @@ export default [
         "id" : 67,
         "en_name" : "Vayne",
         "name_id" : "Vayne",
-        "image" : "Vayne.avif",
+        "image" : "Vayne.webp",
         "ko_name" : "베인",
         "positionList": [
             "BOTTOM"
@@ -620,7 +620,7 @@ export default [
         "id" : 68,
         "en_name" : "Rumble",
         "name_id" : "Rumble",
-        "image" : "Rumble.avif",
+        "image" : "Rumble.webp",
         "ko_name" : "럼블",
         "positionList": [
             "TOP"
@@ -630,7 +630,7 @@ export default [
         "id" : 69,
         "en_name" : "Cassiopeia",
         "name_id" : "Cassiopeia",
-        "image" : "Cassiopeia.avif",
+        "image" : "Cassiopeia.webp",
         "ko_name" : "카시오페아",
         "positionList": [
             "MIDDLE"
@@ -640,7 +640,7 @@ export default [
         "id" : 72,
         "en_name" : "Skarner",
         "name_id" : "Skarner",
-        "image" : "Skarner.avif",
+        "image" : "Skarner.webp",
         "ko_name" : "스카너",
         "positionList": [
             "JUNGLE"
@@ -650,7 +650,7 @@ export default [
         "id" : 74,
         "en_name" : "Heimerdinger",
         "name_id" : "Heimerdinger",
-        "image" : "Heimerdinger.avif",
+        "image" : "Heimerdinger.webp",
         "ko_name" : "하이머딩거",
         "positionList": [
             "UTILITY"
@@ -660,7 +660,7 @@ export default [
         "id" : 75,
         "en_name" : "Nasus",
         "name_id" : "Nasus",
-        "image" : "Nasus.avif",
+        "image" : "Nasus.webp",
         "ko_name" : "나서스",
         "positionList": [
             "TOP"
@@ -670,7 +670,7 @@ export default [
         "id" : 76,
         "en_name" : "Nidalee",
         "name_id" : "Nidalee",
-        "image" : "Nidalee.avif",
+        "image" : "Nidalee.webp",
         "ko_name" : "니달리",
         "positionList": [
             "JUNGLE"
@@ -680,7 +680,7 @@ export default [
         "id" : 77,
         "en_name" : "Udyr",
         "name_id" : "Udyr",
-        "image" : "Udyr.avif",
+        "image" : "Udyr.webp",
         "ko_name" : "우디르",
         "positionList": [
             "JUNGLE"
@@ -690,7 +690,7 @@ export default [
         "id" : 78,
         "en_name" : "Poppy",
         "name_id" : "Poppy",
-        "image" : "Poppy.avif",
+        "image" : "Poppy.webp",
         "ko_name" : "뽀삐",
         "positionList": [
             "JUNGLE"
@@ -700,7 +700,7 @@ export default [
         "id" : 79,
         "en_name" : "Gragas",
         "name_id" : "Gragas",
-        "image" : "Gragas.avif",
+        "image" : "Gragas.webp",
         "ko_name" : "그라가스",
         "positionList": [
             "JUNGLE"
@@ -710,7 +710,7 @@ export default [
         "id" : 80,
         "en_name" : "Pantheon",
         "name_id" : "Pantheon",
-        "image" : "Pantheon.avif",
+        "image" : "Pantheon.webp",
         "ko_name" : "판테온",
         "positionList": [
             "TOP", "MIDDLE" ,"UTILITY"
@@ -720,7 +720,7 @@ export default [
         "id" : 81,
         "en_name" : "Ezreal",
         "name_id" : "Ezreal",
-        "image" : "Ezreal.avif",
+        "image" : "Ezreal.webp",
         "ko_name" : "이즈리얼",
         "positionList": [
             "BOTTOM"
@@ -730,7 +730,7 @@ export default [
         "id" : 82,
         "en_name" : "Mordekaiser",
         "name_id" : "Mordekaiser",
-        "image" : "Mordekaiser.avif",
+        "image" : "Mordekaiser.webp",
         "ko_name" : "모데카이저",
         "positionList": [
             "TOP"
@@ -740,7 +740,7 @@ export default [
         "id" : 83,
         "en_name" : "Yorick",
         "name_id" : "Yorick",
-        "image" : "Yorick.avif",
+        "image" : "Yorick.webp",
         "ko_name" : "요릭",
         "positionList": [
             "TOP"
@@ -750,7 +750,7 @@ export default [
         "id" : 84,
         "en_name" : "Akali",
         "name_id" : "Akali",
-        "image" : "Akali.avif",
+        "image" : "Akali.webp",
         "ko_name" : "아칼리",
         "positionList": [
             "TOP", "MIDDLE"
@@ -760,7 +760,7 @@ export default [
         "id" : 85,
         "en_name" : "Kennen",
         "name_id" : "Kennen",
-        "image" : "Kennen.avif",
+        "image" : "Kennen.webp",
         "ko_name" : "케넨",
         "positionList": [
             "TOP"
@@ -770,7 +770,7 @@ export default [
         "id" : 86,
         "en_name" : "Garen",
         "name_id" : "Garen",
-        "image" : "Garen.avif",
+        "image" : "Garen.webp",
         "ko_name" : "가렌",
         "positionList": [
             "TOP"
@@ -780,7 +780,7 @@ export default [
         "id" : 89,
         "en_name" : "Leona",
         "name_id" : "Leona",
-        "image" : "Leona.avif",
+        "image" : "Leona.webp",
         "ko_name" : "레오나",
         "positionList": [
             "UTILITY"
@@ -790,7 +790,7 @@ export default [
         "id" : 90,
         "en_name" : "Malzahar",
         "name_id" : "Malzahar",
-        "image" : "Malzahar.avif",
+        "image" : "Malzahar.webp",
         "ko_name" : "말자하",
         "positionList": [
             "MIDDLE"
@@ -800,7 +800,7 @@ export default [
         "id" : 91,
         "en_name" : "Talon",
         "name_id" : "Talon",
-        "image" : "Talon.avif",
+        "image" : "Talon.webp",
         "ko_name" : "탈론",
         "positionList": [
             "MIDDLE"
@@ -810,7 +810,7 @@ export default [
         "id" : 92,
         "en_name" : "Riven",
         "name_id" : "Riven",
-        "image" : "Riven.avif",
+        "image" : "Riven.webp",
         "ko_name" : "리븐",
         "positionList": [
             "TOP"
@@ -820,7 +820,7 @@ export default [
         "id" : 96,
         "en_name" : "Kog'Maw",
         "name_id" : "KogMaw",
-        "image" : "KogMaw.avif",
+        "image" : "KogMaw.webp",
         "ko_name" : "코그모",
         "positionList": [
             "BOTTOM"
@@ -830,7 +830,7 @@ export default [
         "id" : 98,
         "en_name" : "Shen",
         "name_id" : "Shen",
-        "image" : "Shen.avif",
+        "image" : "Shen.webp",
         "ko_name" : "쉔",
         "positionList": [
             "TOP"
@@ -840,7 +840,7 @@ export default [
         "id" : 99,
         "en_name" : "Lux",
         "name_id" : "Lux",
-        "image" : "Lux.avif",
+        "image" : "Lux.webp",
         "ko_name" : "럭스",
         "positionList": [
             "MIDDLE", "UTILITY"
@@ -850,7 +850,7 @@ export default [
         "id" : 101,
         "en_name" : "Xerath",
         "name_id" : "Xerath",
-        "image" : "Xerath.avif",
+        "image" : "Xerath.webp",
         "ko_name" : "제라스",
         "positionList": [
             "MIDDLE" ,"UTILITY"
@@ -860,7 +860,7 @@ export default [
         "id" : 102,
         "en_name" : "Shyvana",
         "name_id" : "Shyvana",
-        "image" : "Shyvana.avif",
+        "image" : "Shyvana.webp",
         "ko_name" : "쉬바나",
         "positionList": [
             "JUNGLE"
@@ -870,7 +870,7 @@ export default [
         "id" : 103,
         "en_name" : "Ahri",
         "name_id" : "Ahri",
-        "image" : "Ahri.avif",
+        "image" : "Ahri.webp",
         "ko_name" : "아리",
         "positionList": [
             "MIDDLE"
@@ -880,7 +880,7 @@ export default [
         "id" : 104,
         "en_name" : "Graves",
         "name_id" : "Graves",
-        "image" : "Graves.avif",
+        "image" : "Graves.webp",
         "ko_name" : "그레이브즈",
         "positionList": [
             "JUNGLE"
@@ -890,7 +890,7 @@ export default [
         "id" : 105,
         "en_name" : "Fizz",
         "name_id" : "Fizz",
-        "image" : "Fizz.avif",
+        "image" : "Fizz.webp",
         "ko_name" : "피즈",
         "positionList": [
             "MIDDLE"
@@ -900,7 +900,7 @@ export default [
         "id" : 106,
         "en_name" : "Volibear",
         "name_id" : "Volibear",
-        "image" : "Volibear.avif",
+        "image" : "Volibear.webp",
         "ko_name" : "볼리베어",
         "positionList": [
             "TOP"
@@ -910,7 +910,7 @@ export default [
         "id" : 107,
         "en_name" : "Rengar",
         "name_id" : "Rengar",
-        "image" : "Rengar.avif",
+        "image" : "Rengar.webp",
         "ko_name" : "렝가",
         "positionList": [
             "JUNGLE"
@@ -920,7 +920,7 @@ export default [
         "id" : 110,
         "en_name" : "Varus",
         "name_id" : "Varus",
-        "image" : "Varus.avif",
+        "image" : "Varus.webp",
         "ko_name" : "바루스",
         "positionList": [
             "BOTTOM"
@@ -930,7 +930,7 @@ export default [
         "id" : 111,
         "en_name" : "Nautilus",
         "name_id" : "Nautilus",
-        "image" : "Nautilus.avif",
+        "image" : "Nautilus.webp",
         "ko_name" : "노틸러스",
         "positionList": [
             "UTILITY"
@@ -940,7 +940,7 @@ export default [
         "id" : 112,
         "en_name" : "Viktor",
         "name_id" : "Viktor",
-        "image" : "Viktor.avif",
+        "image" : "Viktor.webp",
         "ko_name" : "빅토르",
         "positionList": [
             "MIDDLE"
@@ -950,7 +950,7 @@ export default [
         "id" : 113,
         "en_name" : "Sejuani",
         "name_id" : "Sejuani",
-        "image" : "Sejuani.avif",
+        "image" : "Sejuani.webp",
         "ko_name" : "세주아니",
         "positionList": [
             "JUNGLE"
@@ -960,7 +960,7 @@ export default [
         "id" : 114,
         "en_name" : "Fiora",
         "name_id" : "Fiora",
-        "image" : "Fiora.avif",
+        "image" : "Fiora.webp",
         "ko_name" : "피오라",
         "positionList": [
             "TOP"
@@ -970,7 +970,7 @@ export default [
         "id" : 115,
         "en_name" : "Ziggs",
         "name_id" : "Ziggs",
-        "image" : "Ziggs.avif",
+        "image" : "Ziggs.webp",
         "ko_name" : "직스",
         "positionList": [
             "BOTTOM"
@@ -980,7 +980,7 @@ export default [
         "id" : 117,
         "en_name" : "Lulu",
         "name_id" : "Lulu",
-        "image" : "Lulu.avif",
+        "image" : "Lulu.webp",
         "ko_name" : "룰루",
         "positionList": [
             "UTILITY"
@@ -990,7 +990,7 @@ export default [
         "id" : 119,
         "en_name" : "Draven",
         "name_id" : "Draven",
-        "image" : "Draven.avif",
+        "image" : "Draven.webp",
         "ko_name" : "드레이븐",
         "positionList": [
             "BOTTOM"
@@ -1000,7 +1000,7 @@ export default [
         "id" : 120,
         "en_name" : "Hecarim",
         "name_id" : "Hecarim",
-        "image" : "Hecarim.avif",
+        "image" : "Hecarim.webp",
         "ko_name" : "헤카림",
         "positionList": [
             "JUNGLE"
@@ -1010,7 +1010,7 @@ export default [
         "id" : 121,
         "en_name" : "Kha'Zix",
         "name_id" : "Khazix",
-        "image" : "Khazix.avif",
+        "image" : "Khazix.webp",
         "ko_name" : "카직스",
         "positionList": [
             "JUNGLE"
@@ -1020,7 +1020,7 @@ export default [
         "id" : 122,
         "en_name" : "Darius",
         "name_id" : "Darius",
-        "image" : "Darius.avif",
+        "image" : "Darius.webp",
         "ko_name" : "다리우스",
         "positionList": [
             "TOP"
@@ -1030,7 +1030,7 @@ export default [
         "id" : 126,
         "en_name" : "Jayce",
         "name_id" : "Jayce",
-        "image" : "Jayce.avif",
+        "image" : "Jayce.webp",
         "ko_name" : "제이스",
         "positionList": [
             "TOP", "MIDDLE"
@@ -1040,7 +1040,7 @@ export default [
         "id" : 127,
         "en_name" : "Lissandra",
         "name_id" : "Lissandra",
-        "image" : "Lissandra.avif",
+        "image" : "Lissandra.webp",
         "ko_name" : "리산드라",
         "positionList": [
             "MIDDLE"
@@ -1050,7 +1050,7 @@ export default [
         "id" : 131,
         "en_name" : "Diana",
         "name_id" : "Diana",
-        "image" : "Diana.avif",
+        "image" : "Diana.webp",
         "ko_name" : "다이애나",
         "positionList": [
             "JUNGLE"
@@ -1060,7 +1060,7 @@ export default [
         "id" : 133,
         "en_name" : "Quinn",
         "name_id" : "Quinn",
-        "image" : "Quinn.avif",
+        "image" : "Quinn.webp",
         "ko_name" : "퀸",
         "positionList": [
             "TOP"
@@ -1070,7 +1070,7 @@ export default [
         "id" : 134,
         "en_name" : "Syndra",
         "name_id" : "Syndra",
-        "image" : "Syndra.avif",
+        "image" : "Syndra.webp",
         "ko_name" : "신드라",
         "positionList": [
             "MIDDLE"
@@ -1080,7 +1080,7 @@ export default [
         "id" : 136,
         "en_name" : "Aurelion Sol",
         "name_id" : "AurelionSol",
-        "image" : "AurelionSol.avif",
+        "image" : "AurelionSol.webp",
         "ko_name" : "아우렐리온 솔",
         "positionList": [
             "MIDDLE"
@@ -1090,7 +1090,7 @@ export default [
         "id" : 141,
         "en_name" : "Kayn",
         "name_id" : "Kayn",
-        "image" : "Kayn.avif",
+        "image" : "Kayn.webp",
         "ko_name" : "케인",
         "positionList": [
             "JUNGLE"
@@ -1100,7 +1100,7 @@ export default [
         "id" : 142,
         "en_name" : "Zoe",
         "name_id" : "Zoe",
-        "image" : "Zoe.avif",
+        "image" : "Zoe.webp",
         "ko_name" : "조이",
         "positionList": [
             "MIDDLE"
@@ -1110,7 +1110,7 @@ export default [
         "id" : 143,
         "en_name" : "Zyra",
         "name_id" : "Zyra",
-        "image" : "Zyra.avif",
+        "image" : "Zyra.webp",
         "ko_name" : "자이라",
         "positionList": [
             "UTILITY"
@@ -1120,7 +1120,7 @@ export default [
         "id" : 145,
         "en_name" : "Kai'Sa",
         "name_id" : "Kaisa",
-        "image" : "Kaisa.avif",
+        "image" : "Kaisa.webp",
         "ko_name" : "카이사",
         "positionList": [
             "BOTTOM"
@@ -1130,7 +1130,7 @@ export default [
         "id" : 147,
         "en_name" : "Seraphine",
         "name_id" : "Seraphine",
-        "image" : "Seraphine.avif",
+        "image" : "Seraphine.webp",
         "ko_name" : "세라핀",
         "positionList": [
             "UTILITY"
@@ -1140,7 +1140,7 @@ export default [
         "id" : 150,
         "en_name" : "Gnar",
         "name_id" : "Gnar",
-        "image" : "Gnar.avif",
+        "image" : "Gnar.webp",
         "ko_name" : "나르",
         "positionList": [
             "TOP"
@@ -1150,7 +1150,7 @@ export default [
         "id" : 154,
         "en_name" : "Zac",
         "name_id" : "Zac",
-        "image" : "Zac.avif",
+        "image" : "Zac.webp",
         "ko_name" : "자크",
         "positionList": [
             "JUNGLE"
@@ -1160,7 +1160,7 @@ export default [
         "id" : 157,
         "en_name" : "Yasuo",
         "name_id" : "Yasuo",
-        "image" : "Yasuo.avif",
+        "image" : "Yasuo.webp",
         "ko_name" : "야스오",
         "positionList": [
             "TOP", "MIDDLE", "BOTTOM"
@@ -1170,7 +1170,7 @@ export default [
         "id" : 161,
         "en_name" : "Vel'Koz",
         "name_id" : "Velkoz",
-        "image" : "Velkoz.avif",
+        "image" : "Velkoz.webp",
         "ko_name" : "벨코즈",
         "positionList": [
             "UTILITY"
@@ -1180,7 +1180,7 @@ export default [
         "id" : 163,
         "en_name" : "Taliyah",
         "name_id" : "Taliyah",
-        "image" : "Taliyah.avif",
+        "image" : "Taliyah.webp",
         "ko_name" : "탈리야",
         "positionList": [
             "JUNGLE"
@@ -1190,7 +1190,7 @@ export default [
         "id" : 164,
         "en_name" : "Camille",
         "name_id" : "Camille",
-        "image" : "Camille.avif",
+        "image" : "Camille.webp",
         "ko_name" : "카밀",
         "positionList": [
             "TOP"
@@ -1200,7 +1200,7 @@ export default [
         "id" : 166,
         "en_name" : "Akshan",
         "name_id" : "Akshan",
-        "image" : "Akshan.avif",
+        "image" : "Akshan.webp",
         "ko_name" : "아크샨",
         "positionList": [
             "MIDDLE"
@@ -1210,7 +1210,7 @@ export default [
         "id" : 200,
         "en_name" : "Bel'Veth",
         "name_id" : "Belveth",
-        "image" : "Belveth.avif",
+        "image" : "Belveth.webp",
         "ko_name" : "벨베스",
         "positionList": [
             "JUNGLE"
@@ -1220,7 +1220,7 @@ export default [
         "id" : 201,
         "en_name" : "Braum",
         "name_id" : "Braum",
-        "image" : "Braum.avif",
+        "image" : "Braum.webp",
         "ko_name" : "브라움",
         "positionList": [
             "UTILITY"
@@ -1230,7 +1230,7 @@ export default [
         "id" : 202,
         "en_name" : "Jhin",
         "name_id" : "Jhin",
-        "image" : "Jhin.avif",
+        "image" : "Jhin.webp",
         "ko_name" : "진",
         "positionList": [
             "BOTTOM"
@@ -1240,7 +1240,7 @@ export default [
         "id" : 203,
         "en_name" : "Kindred",
         "name_id" : "Kindred",
-        "image" : "Kindred.avif",
+        "image" : "Kindred.webp",
         "ko_name" : "킨드레드",
         "positionList": [
             "JUNGLE"
@@ -1250,7 +1250,7 @@ export default [
         "id" : 221,
         "en_name" : "Zeri",
         "name_id" : "Zeri",
-        "image" : "Zeri.avif",
+        "image" : "Zeri.webp",
         "ko_name" : "제리",
         "positionList": [
             "BOTTOM"
@@ -1260,7 +1260,7 @@ export default [
         "id" : 222,
         "en_name" : "Jinx",
         "name_id" : "Jinx",
-        "image" : "Jinx.avif",
+        "image" : "Jinx.webp",
         "ko_name" : "징크스",
         "positionList": [
             "BOTTOM"
@@ -1270,7 +1270,7 @@ export default [
         "id" : 223,
         "en_name" : "Tahm Kench",
         "name_id" : "TahmKench",
-        "image" : "TahmKench.avif",
+        "image" : "TahmKench.webp",
         "ko_name" : "탐 켄치",
         "positionList": [
             "TOP"
@@ -1280,7 +1280,7 @@ export default [
         "id" : 233,
         "en_name" : "Briar",
         "name_id" : "Briar",
-        "image" : "Briar.avif",
+        "image" : "Briar.webp",
         "ko_name" : "브라이어",
         "positionList": [
             "JUNGLE"
@@ -1290,7 +1290,7 @@ export default [
         "id" : 234,
         "en_name" : "Viego",
         "name_id" : "Viego",
-        "image" : "Viego.avif",
+        "image" : "Viego.webp",
         "ko_name" : "비에고",
         "positionList": [
             "JUNGLE"
@@ -1300,7 +1300,7 @@ export default [
         "id" : 235,
         "en_name" : "Senna",
         "name_id" : "Senna",
-        "image" : "Senna.avif",
+        "image" : "Senna.webp",
         "ko_name" : "세나",
         "positionList": [
             "UTILITY"
@@ -1310,7 +1310,7 @@ export default [
         "id" : 236,
         "en_name" : "Lucian",
         "name_id" : "Lucian",
-        "image" : "Lucian.avif",
+        "image" : "Lucian.webp",
         "ko_name" : "루시안",
         "positionList": [
             "BOTTOM"
@@ -1320,7 +1320,7 @@ export default [
         "id" : 238,
         "en_name" : "Zed",
         "name_id" : "Zed",
-        "image" : "Zed.avif",
+        "image" : "Zed.webp",
         "ko_name" : "제드",
         "positionList": [
             "MIDDLE"
@@ -1330,7 +1330,7 @@ export default [
         "id" : 240,
         "en_name" : "Kled",
         "name_id" : "Kled",
-        "image" : "Kled.avif",
+        "image" : "Kled.webp",
         "ko_name" : "클레드",
         "positionList": [
             "TOP"
@@ -1340,7 +1340,7 @@ export default [
         "id" : 245,
         "en_name" : "Ekko",
         "name_id" : "Ekko",
-        "image" : "Ekko.avif",
+        "image" : "Ekko.webp",
         "ko_name" : "에코",
         "positionList": [
             "JUNGLE", "MIDDLE"
@@ -1350,7 +1350,7 @@ export default [
         "id" : 246,
         "en_name" : "Qiyana",
         "name_id" : "Qiyana",
-        "image" : "Qiyana.avif",
+        "image" : "Qiyana.webp",
         "ko_name" : "키아나",
         "positionList": [
             "MIDDLE"
@@ -1360,7 +1360,7 @@ export default [
         "id" : 254,
         "en_name" : "Vi",
         "name_id" : "Vi",
-        "image" : "Vi.avif",
+        "image" : "Vi.webp",
         "ko_name" : "바이",
         "positionList": [
             "JUNGLE"
@@ -1370,7 +1370,7 @@ export default [
         "id" : 266,
         "en_name" : "Aatrox",
         "name_id" : "Aatrox",
-        "image" : "Aatrox.avif",
+        "image" : "Aatrox.webp",
         "ko_name" : "아트록스",
         "positionList": [
             "TOP"
@@ -1380,7 +1380,7 @@ export default [
         "id" : 267,
         "en_name" : "Nami",
         "name_id" : "Nami",
-        "image" : "Nami.avif",
+        "image" : "Nami.webp",
         "ko_name" : "나미",
         "positionList": [
             "UTILITY"
@@ -1390,7 +1390,7 @@ export default [
         "id" : 268,
         "en_name" : "Azir",
         "name_id" : "Azir",
-        "image" : "Azir.avif",
+        "image" : "Azir.webp",
         "ko_name" : "아지르",
         "positionList": [
             "MIDDLE"
@@ -1400,7 +1400,7 @@ export default [
         "id" : 350,
         "en_name" : "Yuumi",
         "name_id" : "Yuumi",
-        "image" : "Yuumi.avif",
+        "image" : "Yuumi.webp",
         "ko_name" : "유미",
         "positionList": [
             "UTILITY"
@@ -1410,7 +1410,7 @@ export default [
         "id" : 360,
         "en_name" : "Samira",
         "name_id" : "Samira",
-        "image" : "Samira.avif",
+        "image" : "Samira.webp",
         "ko_name" : "사미라",
         "positionList": [
             "BOTTOM"
@@ -1420,7 +1420,7 @@ export default [
         "id" : 412,
         "en_name" : "Thresh",
         "name_id" : "Thresh",
-        "image" : "Thresh.avif",
+        "image" : "Thresh.webp",
         "ko_name" : "쓰레쉬",
         "positionList": [
             "UTILITY"
@@ -1430,7 +1430,7 @@ export default [
         "id" : 420,
         "en_name" : "Illaoi",
         "name_id" : "Illaoi",
-        "image" : "Illaoi.avif",
+        "image" : "Illaoi.webp",
         "ko_name" : "일라오이",
         "positionList": [
             "TOP"
@@ -1440,7 +1440,7 @@ export default [
         "id" : 421,
         "en_name" : "Rek'Sai",
         "name_id" : "RekSai",
-        "image" : "RekSai.avif",
+        "image" : "RekSai.webp",
         "ko_name" : "렉사이",
         "positionList": [
             "JUNGLE"
@@ -1450,7 +1450,7 @@ export default [
         "id" : 427,
         "en_name" : "Ivern",
         "name_id" : "Ivern",
-        "image" : "Ivern.avif",
+        "image" : "Ivern.webp",
         "ko_name" : "아이번",
         "positionList": [
             "JUNGLE"
@@ -1460,7 +1460,7 @@ export default [
         "id" : 429,
         "en_name" : "Kalista",
         "name_id" : "Kalista",
-        "image" : "Kalista.avif",
+        "image" : "Kalista.webp",
         "ko_name" : "칼리스타",
         "positionList": [
             "BOTTOM"
@@ -1470,7 +1470,7 @@ export default [
         "id" : 432,
         "en_name" : "Bard",
         "name_id" : "Bard",
-        "image" : "Bard.avif",
+        "image" : "Bard.webp",
         "ko_name" : "바드",
         "positionList": [
             "UTILITY"
@@ -1480,7 +1480,7 @@ export default [
         "id" : 497,
         "en_name" : "Rakan",
         "name_id" : "Rakan",
-        "image" : "Rakan.avif",
+        "image" : "Rakan.webp",
         "ko_name" : "라칸",
         "positionList": [
             "UTILITY"
@@ -1490,7 +1490,7 @@ export default [
         "id" : 498,
         "en_name" : "Xayah",
         "name_id" : "Xayah",
-        "image" : "Xayah.avif",
+        "image" : "Xayah.webp",
         "ko_name" : "자야",
         "positionList": [
             "BOTTOM"
@@ -1500,7 +1500,7 @@ export default [
         "id" : 516,
         "en_name" : "Ornn",
         "name_id" : "Ornn",
-        "image" : "Ornn.avif",
+        "image" : "Ornn.webp",
         "ko_name" : "오른",
         "positionList": [
             "TOP"
@@ -1510,7 +1510,7 @@ export default [
         "id" : 517,
         "en_name" : "Sylas",
         "name_id" : "Sylas",
-        "image" : "Sylas.avif",
+        "image" : "Sylas.webp",
         "ko_name" : "사일러스",
         "positionList": [
             "JUNGLE", "MIDDLE"
@@ -1520,7 +1520,7 @@ export default [
         "id" : 518,
         "en_name" : "Neeko",
         "name_id" : "Neeko",
-        "image" : "Neeko.avif",
+        "image" : "Neeko.webp",
         "ko_name" : "니코",
         "positionList": [
             "MIDDLE", "UTILITY"
@@ -1530,7 +1530,7 @@ export default [
         "id" : 523,
         "en_name" : "Aphelios",
         "name_id" : "Aphelios",
-        "image" : "Aphelios.avif",
+        "image" : "Aphelios.webp",
         "ko_name" : "아펠리오스",
         "positionList": [
             "BOTTOM"
@@ -1540,7 +1540,7 @@ export default [
         "id" : 526,
         "en_name" : "Rell",
         "name_id" : "Rell",
-        "image" : "Rell.avif",
+        "image" : "Rell.webp",
         "ko_name" : "렐",
         "positionList": [
             "UTILITY"
@@ -1550,7 +1550,7 @@ export default [
         "id" : 555,
         "en_name" : "Pyke",
         "name_id" : "Pyke",
-        "image" : "Pyke.avif",
+        "image" : "Pyke.webp",
         "ko_name" : "파이크",
         "positionList": [
             "UTILITY"
@@ -1560,7 +1560,7 @@ export default [
         "id" : 711,
         "en_name" : "Vex",
         "name_id" : "Vex",
-        "image" : "Vex.avif",
+        "image" : "Vex.webp",
         "ko_name" : "벡스",
         "positionList": [
             "MIDDLE"
@@ -1570,7 +1570,7 @@ export default [
         "id" : 777,
         "en_name" : "Yone",
         "name_id" : "Yone",
-        "image" : "Yone.avif",
+        "image" : "Yone.webp",
         "ko_name" : "요네",
         "positionList": [
             "TOP", "MIDDLE"
@@ -1580,7 +1580,7 @@ export default [
         "id" : 875,
         "en_name" : "Sett",
         "name_id" : "Sett",
-        "image" : "Sett.avif",
+        "image" : "Sett.webp",
         "ko_name" : "세트",
         "positionList": [
             "TOP"
@@ -1590,7 +1590,7 @@ export default [
         "id" : 876,
         "en_name" : "Lillia",
         "name_id" : "Lillia",
-        "image" : "Lillia.avif",
+        "image" : "Lillia.webp",
         "ko_name" : "릴리아",
         "positionList": [
             "JUNGLE"
@@ -1600,7 +1600,7 @@ export default [
         "id" : 887,
         "en_name" : "Gwen",
         "name_id" : "Gwen",
-        "image" : "Gwen.avif",
+        "image" : "Gwen.webp",
         "ko_name" : "그웬",
         "positionList": [
             "TOP"
@@ -1610,7 +1610,7 @@ export default [
         "id" : 888,
         "en_name" : "Renata Glasc",
         "name_id" : "Renata",
-        "image" : "Renata.avif",
+        "image" : "Renata.webp",
         "ko_name" : "레나타 글라스크",
         "positionList": [
             "UTILITY"
@@ -1620,7 +1620,7 @@ export default [
         "id" : 895,
         "en_name" : "Nilah",
         "name_id" : "Nilah",
-        "image" : "Nilah.avif",
+        "image" : "Nilah.webp",
         "ko_name" : "닐라",
         "positionList": [
             "BOTTOM"
@@ -1630,7 +1630,7 @@ export default [
         "id" : 897,
         "en_name" : "K'Sante",
         "name_id" : "KSante",
-        "image" : "KSante.avif",
+        "image" : "KSante.webp",
         "ko_name" : "크산테",
         "positionList": [
             "TOP"
@@ -1640,7 +1640,7 @@ export default [
         "id" : 902,
         "en_name" : "Milio",
         "name_id" : "Milio",
-        "image" : "Milio.avif",
+        "image" : "Milio.webp",
         "ko_name" : "밀리오",
         "positionList": [
             "UTILITY"
@@ -1650,7 +1650,7 @@ export default [
         "id" : 910,
         "en_name" : "Hwei",
         "name_id" : "Hwei",
-        "image" : "Hwei.avif",
+        "image" : "Hwei.webp",
         "ko_name" : "흐웨이",
         "positionList": [
             "MIDDLE" ,"UTILITY"
@@ -1660,7 +1660,7 @@ export default [
         "id" : 950,
         "en_name" : "Naafiri",
         "name_id" : "Naafiri",
-        "image" : "Naafiri.avif",
+        "image" : "Naafiri.webp",
         "ko_name" : "나피리",
         "positionList": [
             "MIDDLE"

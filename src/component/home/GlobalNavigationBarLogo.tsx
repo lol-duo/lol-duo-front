@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import colorList from "../../../style/colorList";
 import {useRouter} from "next/router";
 import {imgURL} from "@styles/img";
-import Image from "next/image";
 import I18n from "@/component/locale/i18n";
 import {
     Button,
@@ -52,8 +51,7 @@ const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
         <GlobalNavigationBarLogoWrapper>
             <div className={props.where === "banPick" ? "total none" : "total"}>
             <div className={props.where === "banPick" ? "logo banPick" : "logo"}>
-                <Image className="logoImg" src={imgURL.logo} onClick={() => onClickNavLogo()} width={164.8} height={32}
-                       alt={imgURL.logo}/>
+                <img className="logoImg" src={imgURL.logo} onClick={() => onClickNavLogo()} width={164.8} height={32} alt={imgURL.logo}/>
             </div>
             <div className="건의하기" onClick={() => {
                 onOpen();
