@@ -1,11 +1,9 @@
-import { NextPage } from "next";
+import {NextPage} from "next";
 import styled from "@emotion/styled";
 import ChampionSelect from "@/component/banpick/Start/ChampionSelect";
 import Title from "@/component/banpick/Start/Title";
 import Timer from "@/component/banpick/Start/Timer";
 import Chat from "@/component/banpick/Participate/Chat";
-import Image from "next/image";
-import {Button} from "@nextui-org/react";
 import LastInfo from "./LastInfo";
 import EndInfo from "./EndInfo";
 import Capture from "./Capture";
@@ -75,12 +73,12 @@ export default MainList;
 
 const MainListWrapper = styled.div`
 
-width: 33%;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     button {
         width: 100px;

@@ -41,7 +41,7 @@ const PickCard: NextPage<{
                 <PopoverTrigger>
                     <div className={now === turn ? "pick now blue" : now === 20 && (me === "blue" || isSoloModeHost) && me!==selectLane  ? "pick hover blue" : "pick blue"} >
                         {
-                            now == turn && <div className="now"/>
+                            now == turn && <div className="now blue"/>
                         }
                         {
                             selectedChampion[turn] &&
@@ -104,7 +104,7 @@ const PickCard: NextPage<{
                     <PopoverTrigger>
                 <div className={now === turn ? "pick now red" : now === 20 && (me === "red" || isSoloModeHost) && me!==selectLane ? "pick hover red" : "pick red"} >
                     {
-                        now == turn && <div className="now"/>
+                        now == turn && <div className="now red"/>
                     }
                     {
                         selectedChampion[turn] &&
@@ -163,15 +163,18 @@ const PickCard: NextPage<{
 export default PickCard;
 
 const PickCardWrapper = styled.div`
-width: 100%;
-height: 100%;
+    width: 250px;
+    height: 100%;
+    
+    position: relative;
 
-position: relative;
+    box-shadow: 0 0 10px 0 ${colorList.alpha.gray000_70};
+    background-color: rgba(255, 255, 255, 0.05);
 
     .pick {
         position: relative;
         width: 100%;
-        height: 150px;
+        height: 110px;
         background-color: rgba(33, 33, 33, 0.5);
         border-left: 2px solid rgba(33, 33, 33, 0.5);
         border-top: 2px solid rgba(33, 33, 33, 0.5);
@@ -193,9 +196,6 @@ position: relative;
             justify-content: start;
         }
         
-        @media screen and (max-width: 1100px) {
-            height: 100px;
-        }
 
         .img {
             position: absolute;
@@ -275,7 +275,14 @@ position: relative;
             position: absolute;
             z-index: 2;
             animation: blink 5s linear infinite;
-            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%, rgba(255, 255, 255, 0) 100%);
+            
+            &.blue {
+                background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%, rgba(255, 255, 255, 0) 100%);
+            }
+            
+            &.red {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%, rgba(255, 255, 255, 0) 100%);
+            }
         }
     }
 

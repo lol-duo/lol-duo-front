@@ -53,87 +53,71 @@ const Chat: NextPage<{isMainList:boolean,isStart:boolean,chatList:Chat[],setChat
 
 export default Chat;
 const ChatWrapper =styled.div`
-&.test{
-    display: none;
-    z-index: 1;
+    &.test{
+        display: none;
+        z-index: 1;
+    
+        @media screen and (max-width: 1100px) {
+            width: 30%;
+            height: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            margin-top: 20px;
+            margin-left: 20px;
+        } 
+    }
 
-    @media screen and (max-width: 1100px) {
-        width: 30%;
+    &.start3{
+        width: 100%;
         height: 100%;
-        
+    
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        margin-top: 20px;
-        margin-left: 20px;
-    } 
-}
-
-&.test2{
-    width: 20%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-left: 30px;
-}
-
-&.start3{
-    width: 80%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-top: 20px;
     
-    @media screen and (max-width: 1100px) {
-        display: none;
-
-    }
-}
-
-.input-text {
-    width: 100%;
-    height: 150px;
-    outline: none;
-    background: rgba(0, 0, 0, 0);
-    color: white;
-    border: none;
-
-    overflow-y: scroll;
-    padding-right: 17px;
-    box-sizing: border-box;
-
-    ::-webkit-scrollbar {
-        width: 5px; /* 스크롤바의 width */
-        background-color: rgba(0, 0, 0, 0); /* 스크롤바의 배경색 지정 */
+        margin-top: 32px;
     }
 
-    ::-webkit-scrollbar-corner {
-        background-color: ${colorList.semantic.card}; /* 스크롤바 교차 지점의 배경색 지정 */
+    .input-text {
+        width: 100%;
+        height: 150px;
+        outline: none;
+        background: rgba(0, 0, 0, 0);
+        color: white;
+        border: none;
+    
+        overflow-y: scroll;
+        padding-right: 17px;
+        box-sizing: border-box;
+    
+        ::-webkit-scrollbar {
+            width: 5px; /* 스크롤바의 width */
+            background-color: rgba(0, 0, 0, 0); /* 스크롤바의 배경색 지정 */
+        }
+    
+        ::-webkit-scrollbar-corner {
+            background-color: ${colorList.semantic.card}; /* 스크롤바 교차 지점의 배경색 지정 */
+        }
+    
+        ::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0); /* 스크롤바의 track 배경색 지정 */
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background-color: ${colorList.semantic.hover}; /* 스크롤바의 thumb 배경색 지정 */
+            border-radius: 100px; /* 스크롤바 thumb의 모서리 둥글게 지정 */
+        }
     }
-
-    ::-webkit-scrollbar-track {
-        background-color: rgba(0, 0, 0, 0); /* 스크롤바의 track 배경색 지정 */
+    
+    .send-text {
+        width: 100%;
+        height: 30px;
+        border: 2px outset ${colorList.secondary.beige};
+        outline: none;
+        background-color: ${colorList.semantic.card};
+        color: white;
     }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: ${colorList.semantic.hover}; /* 스크롤바의 thumb 배경색 지정 */
-        border-radius: 100px; /* 스크롤바 thumb의 모서리 둥글게 지정 */
-    }
-}
-
-.send-text {
-    width: 100%;
-    height: 30px;
-    border: 2px outset ${colorList.secondary.beige};
-    outline: none;
-    background-color: ${colorList.semantic.card};
-    color: white;
-}
 `

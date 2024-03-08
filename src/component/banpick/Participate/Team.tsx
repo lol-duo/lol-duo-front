@@ -120,6 +120,10 @@ gap: 10px;
         line-height: ${fontList.roboto.regular["20"].lineHeight};
         letter-spacing: ${fontList.roboto.regular["20"].letterSpacing};
         color: ${colorList.grayscale["000"]};
+        text-shadow: -1px -1px 0 ${colorList.secondary.beige},
+        1px -1px 0 ${colorList.secondary.beige},
+        -1px  1px 0 ${colorList.secondary.beige},
+        1px  1px 0 ${colorList.secondary.beige};
     }
     
     .status {

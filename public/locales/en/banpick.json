@@ -34,5 +34,6 @@
     {"index" : 1,"info": "End Notice" },
     {"index" : 2,"info": "※ First image: Download status before lane swap" },
     {"index" : 3,"info": "※ Second image: Download end status"}
-  ]
+  ],
+  "personInfo": "The number of people who joined the room."
 }
