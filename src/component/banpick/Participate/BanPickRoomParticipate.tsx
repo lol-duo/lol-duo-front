@@ -18,8 +18,9 @@ const BanPickRoomParticipate: NextPage<{
     rootId?: string ,
     timeLimited?:boolean,
     setTimeLimited?: (value:boolean) => void,
+    setIsGameStart: (value: boolean) => void,
     }> = (props) => {
-    const {rootId,timeLimited,setTimeLimited} = props;
+    const {rootId,timeLimited,setTimeLimited,setIsGameStart} = props;
     const router = useRouter();
     let {id} = router.query;
     if(rootId != undefined) id = rootId;
@@ -268,6 +269,8 @@ const BanPickRoomParticipate: NextPage<{
                             Timer();
                             setIsStart(true);
                             isStartRef.current = true;
+                            //내비게이션 바 지우는 용도
+                            setIsGameStart(true);
                         } else if(nowData.type === "banPick") {
                             setSelectedChampion(selectedChampion => {
                                 const newSelectedChampion = [...selectedChampion];

@@ -15,7 +15,7 @@ const GlobalNavigationBar: NextPage = () => {
         soloClassName = "nav active";
     }
 
-    if(router.pathname === "/banpick") {
+    if(router.pathname === "/banpick" || router.pathname === "/banpick/room") {
         banpickClassName = "nav active";
     }
 
