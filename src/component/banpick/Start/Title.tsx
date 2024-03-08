@@ -15,13 +15,17 @@ const Title: NextPage<{subject:string}> = (props) => {
 export default Title;
 
 const TitleWrapper = styled.div`
-font-size: 30px;
-font-weight: bold;
-color: ${colorList.grayscale["000"]};
-height: 100%;
-
-@media screen and (max-width: 1100px) {
-    font-size: 25px;
-}
+    font-size: 30px;
+    font-weight: bold;
+    color: ${colorList.grayscale["000"]};
+    height: 100%;
+    
+    @media screen and (max-width: 1100px) {
+        font-size: 25px;
+    }
+    
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 
 `

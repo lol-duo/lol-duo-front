@@ -14,8 +14,12 @@ const Timer: NextPage<{time: number|string}> = (props) => {
 export default Timer;
 
 const TimerWrapper = styled.div`
-font-size: 30px;
-font-weight: bold;
-color: ${colorList.grayscale["000"]};
-color: ${colorList.secondary.beige};
+    font-size: 30px;
+    font-weight: bold;
+    color: ${colorList.grayscale["000"]};
+    color: ${colorList.secondary.beige};
+    
+    @media screen and (max-width: 800px) {
+        font-size: 20px;
+    }
 `

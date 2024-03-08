@@ -23,7 +23,7 @@ const BanCard: NextPage<{
                 }
                 {
                     selectedChampion[turn] &&
-                    <img className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                    <img className="img" src={`https://d3b83p9ttz58gf.cloudfront.net/champion${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
                 }              
             </BanCardWrapper>
         )

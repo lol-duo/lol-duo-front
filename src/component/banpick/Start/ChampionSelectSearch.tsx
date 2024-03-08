@@ -53,6 +53,10 @@ const ChampionSelectSearchWrapper = styled.div`
         justify-content: end;
         align-items: end;
     
+    @media screen and (max-width: 800px) {
+        margin-top: 0;
+    }
+    
     .lane {
         display: flex;
         flex-direction: row;       

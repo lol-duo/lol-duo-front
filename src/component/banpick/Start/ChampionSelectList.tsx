@@ -83,6 +83,10 @@ const ChampionSelectListWrapper = styled.div`
     grid-auto-rows: 50px;
     align-items: flex-start;
     box-sizing: content-box;
+    
+    @media (max-width: 800px) {
+        height: 100px;
+    }
 
     ::-webkit-scrollbar {
         width: 10px; /* 스크롤바의 width */
