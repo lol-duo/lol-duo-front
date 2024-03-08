@@ -51,4 +51,13 @@ const PickTeamWrapper = styled.div`
         justify-items: center;
         align-items: start;
     }
+    
+    @media (max-width: 800px) {
+        width: 100%;
+        gap: 10px;
+        margin-top: 0;
+        max-width: none;
+        position: relative;
+        flex-direction: column-reverse;
+    }
 `

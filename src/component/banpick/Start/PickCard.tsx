@@ -180,6 +180,11 @@ const PickCardWrapper = styled.div`
         border-top: 2px solid rgba(33, 33, 33, 0.5);
         border-right: 2px solid rgba(33, 33, 33, 0.5);
         overflow: hidden;
+        
+        @media (max-width: 800px) {
+            height: 100%;
+            background-color: rgba(33, 33, 33, 0);
+        }
 
         //championName 우측, 아래로 배치
         display: flex;

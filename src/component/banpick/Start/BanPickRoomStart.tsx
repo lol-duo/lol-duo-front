@@ -122,5 +122,14 @@ const BanPickRoomStartWrapper = styled.div`
     z-index: 1;
     max-width: 1000px;
     max-height: 700px;
+    position: relative;
+    
+    @media (max-width: 800px) {
+        flex-direction: column;
+        max-width: none;
+        max-height: none;
+        gap: 2px;
+        margin-top: 5px;
+    }
 `
 

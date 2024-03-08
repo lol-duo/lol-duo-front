@@ -32,7 +32,7 @@ const Solo: NextPage = () => {
                 <title>LOL-DUO</title>
             </Head>
             <HomeHeader/>
-            <SoloMain></SoloMain>
+            <SoloMain/>
         </SoloPageWrapper>
     );
 }
