@@ -4,6 +4,7 @@ import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
 import styled from "@emotion/styled";
 import Head from "next/head";
 import I18n from "@/component/locale/i18n";
+import HomeHeader from "@/component/home/Header";
 
 const BanPick: NextPage = () => {
 
@@ -31,7 +32,9 @@ const BanPick: NextPage = () => {
                 <link href="/favicon.ico" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
-            <GlobalNavigationBarLogo where="banPick"/>
+            {/* 임시 <GlobalNavigationBarLogo where="banPick"/> */}
+            <HomeHeader/>
+            
             <BanPickRoom/>
         </BanPickWrapper>
 

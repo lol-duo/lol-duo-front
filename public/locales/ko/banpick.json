@@ -9,7 +9,7 @@
   "timeLimit": "시간 제한", 
   "timeLimitInfo": "시간 무제한", 
   "status" : {
-    "waiting" : "대기중",
+    "waiting" : "대기중...",
     "in" : "참여 완료",
     "ready" : "준비 완료"
   },

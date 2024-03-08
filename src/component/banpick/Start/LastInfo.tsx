@@ -62,7 +62,7 @@ align-items: center;
     border-radius: 10px;
     
     font-weight: bold;
-    line-height: 1.0;
+    line-height: 1.2;
 
 }
 .red{
@@ -97,6 +97,6 @@ align-items: center;
     font-size : 2vmax;
 }
 .font-long{
-    font-size :1.3vmax
+    font-size :1.6vmax
 }
 `

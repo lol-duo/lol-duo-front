@@ -46,11 +46,15 @@ const GlobalNavigationBarLogo: NextPage<{where?: string}> = (props) => {
             window.alert(success);
         }
     }
-
+    /*
+    <div className={props.where === "banPick" ? "total none" : "total"}>
+    <div className={props.where === "banPick" ? "logo banPick" : "logo"}>
+    */
     return (
         <GlobalNavigationBarLogoWrapper>
-            <div className={props.where === "banPick" ? "total none" : "total"}>
-            <div className={props.where === "banPick" ? "logo banPick" : "logo"}>
+            
+            <div className={props.where === "banPick" ? "total" : "total"}>
+            <div className={props.where === "banPick" ? "logo" : "logo"}>
                 <img className="logoImg" src={imgURL.logo} onClick={() => onClickNavLogo()} width={164.8} height={32} alt={imgURL.logo}/>
             </div>
             <div className="건의하기" onClick={() => {
