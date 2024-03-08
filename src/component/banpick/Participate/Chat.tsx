@@ -67,7 +67,12 @@ const ChatWrapper =styled.div`
     
             margin-top: 20px;
             margin-left: 20px;
-        } 
+        }
+        
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            margin-left: 0;
+        }
     }
 
     &.start3{
@@ -79,6 +84,10 @@ const ChatWrapper =styled.div`
         align-items: center;
     
         margin-top: 32px;
+
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 
     .input-text {
@@ -120,4 +129,5 @@ const ChatWrapper =styled.div`
         background-color: ${colorList.semantic.card};
         color: white;
     }
+
 `

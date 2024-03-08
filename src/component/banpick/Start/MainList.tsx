@@ -85,4 +85,11 @@ const MainListWrapper = styled.div`
         height: 50px;
         margin-top: 20px;
     }
+    
+    @media (max-width: 800px) {
+        width: 100%;
+        max-width: none;
+        position: relative;
+        margin-top: 5px;
+    }
 `

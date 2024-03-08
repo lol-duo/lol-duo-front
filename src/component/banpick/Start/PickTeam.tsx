@@ -50,14 +50,18 @@ const PickTeamWrapper = styled.div`
     &.blueTeam{
         justify-items: center;
         align-items: start;
+        
+        @media (max-width: 800px) {
+            flex-direction: column-reverse;
+        }
     }
     
     @media (max-width: 800px) {
         width: 100%;
         gap: 10px;
-        margin-top: 0;
         max-width: none;
         position: relative;
-        flex-direction: column-reverse;
+        margin-top: 5px;
+        height: 200px;
     }
 `

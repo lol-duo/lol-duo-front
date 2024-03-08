@@ -48,55 +48,67 @@ const LastInfo: NextPage<{
 export default LastInfo;
 
 const LastInfoWrapper = styled.div`
-width:50%;
-height: 500px;
-display: flex;
-justify-content: center;
-align-items: center;
-
-.LaneSelectButton {
-    //size
-    width: 100%;
-    height: 20%;
-
-    border-radius: 10px;
+    width:50%;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    font-weight: bold;
-    line-height: 1.2;
-
-}
-.red{
-    background-color: ${colorList.banPick.redTeam};
-
-    /disabled 상태
-
-    &:disabled {
-        background-color: ${colorList.banPick.redTeamHover2};
-        opacity: 0.5;
-        cursor: default;
+    @media (max-width: 800px) {
+        width: 50%;
+        max-width: none;
+        position: relative;
+        height: 40px;
     }
-}
-.blue{
-    background-color: ${colorList.banPick.blueTeam};
+    
+    .LaneSelectButton {
+        //size
+        width: 100%;
+        height: 20%;
+    
+        border-radius: 10px;
+        
+        font-weight: bold;
+        line-height: 1.2;
 
-    //disabled 상태
-
-    &:disabled {
-        background-color: ${colorList.banPick.blueTeamHover2};
-        opacity: 0.5;
-        cursor: default;
+        @media (max-width: 800px) {
+            height: 40px;
+            margin-top: 0;
+        }
+    
     }
-}
-//관전자
-.observer{
-    background-color: ${colorList.semantic.hover};
-
-}
-
-.font-short{
-    font-size : 2vmax;
-}
-.font-long{
-    font-size :1.6vmax
-}
+    .red{
+        background-color: ${colorList.banPick.redTeam};
+    
+        /disabled 상태
+    
+        &:disabled {
+            background-color: ${colorList.banPick.redTeamHover2};
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+    .blue{
+        background-color: ${colorList.banPick.blueTeam};
+    
+        //disabled 상태
+    
+        &:disabled {
+            background-color: ${colorList.banPick.blueTeamHover2};
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+    //관전자
+    .observer{
+        background-color: ${colorList.semantic.hover};
+    
+    }
+    
+    .font-short{
+        font-size : 2vmax;
+    }
+    .font-long{
+        font-size :1.6vmax
+    }
 `

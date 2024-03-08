@@ -46,5 +46,5 @@ const ChampionSelect: NextPage<{
 export default ChampionSelect;
 
 const ChampionSelectWrapper = styled.div`
-width: 100%;
+    width: 100%;
 `

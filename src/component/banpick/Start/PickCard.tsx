@@ -32,7 +32,7 @@ const PickCard: NextPage<{
     const isSoloModeHost = selectedGameMode === "solo" && (me === "blue" || me ==="red");
     if(team == 0){
         return (
-            <PickCardWrapper  >
+            <PickCardWrapper>
                 <Popover placement={"right"} isOpen={now === 20 && (me === "blue" || isSoloModeHost ) && me!==selectLane ? isOpen == turn : false}  onOpenChange={(open) => {
                         setIsOpen(open ? turn : -1)
                     }}  style={{backgroundColor: "none"}} classNames={{
@@ -45,7 +45,11 @@ const PickCard: NextPage<{
                         }
                         {
                             selectedChampion[turn] &&
-                            <img loading="eager" className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                            <img loading="eager" className="imgCentered" src={`https://d3b83p9ttz58gf.cloudfront.net/centered${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                        }
+                        {
+                            selectedChampion[turn] &&
+                            <img loading="eager" className="imgLoading" src={`https://d3b83p9ttz58gf.cloudfront.net/loading${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
                         }
                         {
                             selectedChampion[turn] &&
@@ -108,8 +112,12 @@ const PickCard: NextPage<{
                     }
                     {
                         selectedChampion[turn] &&
-                                    <img loading="eager" className="img" src={`https://d3b83p9ttz58gf.cloudfront.net${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                                    <img loading="eager" className="imgCentered" src={`https://d3b83p9ttz58gf.cloudfront.net/centered${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
                         }
+                    {
+                        selectedChampion[turn] &&
+                        <img loading="eager" className="imgLoading" src={`https://d3b83p9ttz58gf.cloudfront.net/loading${selectedChampion[turn].img}`} alt={selectedChampion[turn].img}/>
+                    }
                         {
                             selectedChampion[turn] &&
                             <div className="championName red">
@@ -181,16 +189,17 @@ const PickCardWrapper = styled.div`
         border-right: 2px solid rgba(33, 33, 33, 0.5);
         overflow: hidden;
         
+       
+        //championName 우측, 아래로 배치
+        display: flex;
+        align-items: end;
+        
         @media (max-width: 800px) {
             height: 100%;
             background-color: rgba(33, 33, 33, 0);
         }
 
-        //championName 우측, 아래로 배치
-        display: flex;
-        align-items: end;
-        
-        
+
         &.blue {
             flex-direction: row-reverse;
             justify-content: end;
@@ -199,13 +208,31 @@ const PickCardWrapper = styled.div`
         &.red {
             flex-direction: row;
             justify-content: start;
+            
+            @media (max-width: 800px) {
+                flex-direction: row-reverse;
+            }
         }
         
 
-        .img {
+        .imgCentered {
             position: absolute;
             height: auto !important;
             inset: 0;
+            
+            @media (max-width: 800px) {
+                display: none;
+            }
+        }
+        
+        .imgLoading {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+    
+            @media (min-width: 800px) {
+                display: none;
+            }
         }
 
         .championName{
@@ -228,6 +255,26 @@ const PickCardWrapper = styled.div`
                 justify-content: start;
                 margin-left: 10px;
             }
+            
+            @media (max-width: 800px) {
+                font-size: 10px;
+                align-items: end;
+                width: 100%;
+                &.blue {
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    align-items: end;
+                    justify-content: end;
+                }
+
+                &.red {
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    align-items: end;
+                    justify-content: end;
+                    margin-left: 0;
+                }
+            }
         }
         .swap{
             
@@ -249,7 +296,14 @@ const PickCardWrapper = styled.div`
                 border:4px solid ${colorList.secondary.beige};
                 border-radius: 50%;
                 background-color: rgba(33,33,33,0.8);
+                
+                @media (max-width: 800px) {
+                    width: 30px;
+                    height: 30px;
+                }
             }
+            
+           
         }                
         .championLane{
 
@@ -266,6 +320,25 @@ const PickCardWrapper = styled.div`
             &.red {
                 justify-content: end;
                 margin-right: 15px;
+            }
+
+            @media (max-width: 800px) {
+                height: 100%;
+              
+                &.blue {
+                    justify-content: start;
+                    margin-left: 5px;
+                    top: 5px;
+                    align-items: start;
+                }
+
+                &.red {
+                    justify-content: start;
+                    margin-left: 5px;
+                    top: 5px;
+                    align-items: start;
+                    margin-right: 0;
+                }
             }
         }
 
@@ -311,7 +384,8 @@ const PopUp = styled.div`
     .change_img {
         position: relative;
         display: grid;
-        background-color: rgba(33, 33, 33, 0.7);
+        background-color: ${colorList.semantic.card};
+        border: 2px solid ${colorList.secondary.beige};
         width: 100px;
         height: 100px;
         place-items: center;

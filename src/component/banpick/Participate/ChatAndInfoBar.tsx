@@ -10,7 +10,7 @@ const ChatAndInfoBar: NextPage<{isStart:boolean, text:any,roomId:any,roomUrl:str
     return (
         <ChatAndInfoBarWrapper>
             <div className ="chatWrapper">
-            {!isStart && <Chat isMainList={false} isStart={isStart} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList}/>}
+            <Chat isMainList={false} isStart={isStart} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList}/>
             </div>
                         <GameInfo isStart={isStart} text={text} roomId={roomId} roomUrl={roomUrl} myUserId={myUserId}/>
         </ChatAndInfoBarWrapper>
@@ -35,5 +35,9 @@ const ChatAndInfoBarWrapper = styled.div`
 
     .chatWrapper{
         width: 30%;
+        
+        @media (max-width: 800px) {
+            width: 90%;
+        }
     }
 `

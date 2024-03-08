@@ -1,8 +1,6 @@
-import { NextPage } from "next";
+import {NextPage} from "next";
 import styled from "@emotion/styled";
 import fontList from "@styles/fontList";
-import UserIdBar from "@/component/banpick/Participate/UserIdBar";
-import RoomInfoBar from "@/component/banpick/Participate/RoomInfoBar";
 
 
 const GameInfo: NextPage<{isStart:boolean,text:any,roomUrl:string,roomId:string,myUserId:string}> = (props) => {
@@ -19,14 +17,6 @@ const GameInfo: NextPage<{isStart:boolean,text:any,roomUrl:string,roomId:string,
             ))}
             </div>
         </GameInfoWrapper>
-        )
-    }
-    else{
-        return (
-        <InfoMationBottomWrapper>
-            <UserIdBar idText={text.myId} myUserId={myUserId}></UserIdBar>
-            <RoomInfoBar roomUrl={roomUrl} roomId={roomId}></RoomInfoBar>
-        </InfoMationBottomWrapper>
         )
     }
 }
