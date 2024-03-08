@@ -11,39 +11,41 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
     if(Team === 0){
         return (
             <BlueWrapper>
-                <div className="title">{text.blueTeam}</div>
-                <div className="status">
-                    {blueTeam.user === "" && text.status.waiting}
-                    {blueTeam.user === myId.current && myUserId + " ( ME )"}
-                    {blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.userName}
-                </div>
-                <div className="in_button">
-                    {selectedGameMode !== "solo" && blueTeam.user === myId.current &&
-                        <div className="readyButton">
-                            {
-                                blueTeam.user === myId.current && blueTeam.status === "in" &&
-                                <Button
-                                    onClick={() => sendTeamMsg({team: "blue", status: "ready"})}>준비하기</Button>
-                            }
-                            {
-                                blueTeam.user === myId.current && blueTeam.status === "ready" &&
-                                <Button onClick={() => sendTeamMsg({team: "blue", status: "in"})}>준비
-                                    취소하기</Button>
-                            }
-                            {
-                                blueTeam.user !== myId.current && <Button disabled={true}>준비하기</Button>
-                            }
-                        </div>
-                    }
-                    {selectedGameMode!=="solo" && redTeam.user !== myId.current && blueTeam.status === "none" && <Button
-                        onClick={() => sendTeamMsg({team: "blue", status: "in"})}>BLUE 팀 참가하기</Button>}
-                    {selectedGameMode!=="solo" && (redTeam.user === myId.current || (blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.status !== "ready")) && blueTeam.status !== "ready" &&
-                        <Button disabled={true} className="none">BLUE 팀 참가하기</Button>}
-                    {blueTeam.status === "in" && blueTeam.user === myId.current && <Button
-                        className="outButton"
-                        onClick={() => sendTeamMsg({team: "blue", status: "none"})}>나가기</Button>}
-                    {(selectedGameMode==="solo" || (blueTeam.user !== myId.current && blueTeam.status === "ready") ) && <Button
-                        disabled={true}>BLUE 팀 준비완료</Button>}
+                <div className="statusCard">
+                    <div className="title">{text.blueTeam}</div>
+                    <div className="status">
+                        {blueTeam.user === "" && text.status.waiting}
+                        {blueTeam.user === myId.current && myUserId + " ( ME )"}
+                        {blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.userName}
+                    </div>
+                    <div className="in_button">
+                        {selectedGameMode !== "solo" && blueTeam.user === myId.current &&
+                            <div className="readyButton">
+                                {
+                                    blueTeam.user === myId.current && blueTeam.status === "in" &&
+                                    <Button
+                                        onClick={() => sendTeamMsg({team: "blue", status: "ready"})}>준비하기</Button>
+                                }
+                                {
+                                    blueTeam.user === myId.current && blueTeam.status === "ready" &&
+                                    <Button onClick={() => sendTeamMsg({team: "blue", status: "in"})}>준비
+                                        취소하기</Button>
+                                }
+                                {
+                                    blueTeam.user !== myId.current && <Button disabled={true}>준비하기</Button>
+                                }
+                            </div>
+                        }
+                        {selectedGameMode!=="solo" && redTeam.user !== myId.current && blueTeam.status === "none" && <Button
+                            onClick={() => sendTeamMsg({team: "blue", status: "in"})}>BLUE 팀 참가하기</Button>}
+                        {selectedGameMode!=="solo" && (redTeam.user === myId.current || (blueTeam.user !== myId.current && blueTeam.user !== "" && blueTeam.status !== "ready")) && blueTeam.status !== "ready" &&
+                            <Button disabled={true} className="none">BLUE 팀 참가하기</Button>}
+                        {blueTeam.status === "in" && blueTeam.user === myId.current && <Button
+                            className="outButton"
+                            onClick={() => sendTeamMsg({team: "blue", status: "none"})}>나가기</Button>}
+                        {(selectedGameMode==="solo" || (blueTeam.user !== myId.current && blueTeam.status === "ready") ) && <Button
+                            disabled={true}>BLUE 팀 준비완료</Button>}
+                    </div>
                 </div>
             </BlueWrapper>
         )
@@ -52,40 +54,43 @@ const Team: NextPage<{Team:number,blueTeam:any,redTeam:any,myId:any,sendTeamMsg:
     else {
         return (
             <RedWrapper>
-                <div className="title">{text.redTeam}</div>
-                <div className="status">
-                    {redTeam.user === "" && text.status.waiting}
-                    {redTeam.user === myId.current && myUserId + " ( ME )"}
-                    {redTeam.user !== myId.current && redTeam.user !== "" && redTeam.userName}
-                </div>
-                <div className="in_button">
-                    {selectedGameMode !== "solo" && redTeam.user === myId.current &&
-                        <div className="readyButton">
-                            {
-                                redTeam.user === myId.current && redTeam.status === "in" &&
-                                <Button
-                                    onClick={() => sendTeamMsg({team: "red", status: "ready"})}>준비하기</Button>
-                            }
-                            {
-                                redTeam.user === myId.current && redTeam.status === "ready" &&
-                                <Button onClick={() => sendTeamMsg({team: "red", status: "in"})}>준비
-                                    취소하기</Button>
-                            }
-                            {
-                                redTeam.user !== myId.current &&
-                                <Button disabled={true}>준비하기</Button>
-                            }
-                        </div>
-                    }
-                    {selectedGameMode!=="solo" && blueTeam.user !== myId.current && redTeam.status === "none" &&
-                        <Button onClick={() => sendTeamMsg({team: "red", status: "in"})}>RED 팀 참가하기</Button>}
-                    {selectedGameMode!=="solo" && (blueTeam.user === myId.current || (redTeam.user !== myId.current && redTeam.user !== "" && redTeam.status !== "ready")) && redTeam.status !== "ready" &&
-                        <Button disabled={true} className="none">RED 팀 참가하기</Button>}
-                    {redTeam.status === "in" && redTeam.user === myId.current &&
-                        <Button className="outButton"
-                                onClick={() => sendTeamMsg({team: "red", status: "none"})}>나가기</Button>}
-                    {(selectedGameMode==="solo" ||  (redTeam.user !== myId.current && redTeam.status === "ready")) &&
-                        <Button disabled={true}>RED 팀 준비완료</Button>}
+                <div className="statusCard">
+                    <div className="title">{text.redTeam}</div>
+                    <div className="status">
+                        
+                        {redTeam.user === "" && text.status.waiting}
+                        {redTeam.user === myId.current && myUserId + " ( ME )"}
+                        {redTeam.user !== myId.current && redTeam.user !== "" && redTeam.userName}
+                    </div>
+                    <div className="in_button">
+                        {selectedGameMode !== "solo" && redTeam.user === myId.current &&
+                            <div className="readyButton">
+                                {
+                                    redTeam.user === myId.current && redTeam.status === "in" &&
+                                    <Button
+                                        onClick={() => sendTeamMsg({team: "red", status: "ready"})}>준비하기</Button>
+                                }
+                                {
+                                    redTeam.user === myId.current && redTeam.status === "ready" &&
+                                    <Button onClick={() => sendTeamMsg({team: "red", status: "in"})}>준비
+                                        취소하기</Button>
+                                }
+                                {
+                                    redTeam.user !== myId.current &&
+                                    <Button disabled={true}>준비하기</Button>
+                                }
+                            </div>
+                        }
+                        {selectedGameMode!=="solo" && blueTeam.user !== myId.current && redTeam.status === "none" &&
+                            <Button onClick={() => sendTeamMsg({team: "red", status: "in"})}>RED 팀 참가하기</Button>}
+                        {selectedGameMode!=="solo" && (blueTeam.user === myId.current || (redTeam.user !== myId.current && redTeam.user !== "" && redTeam.status !== "ready")) && redTeam.status !== "ready" &&
+                            <Button disabled={true} className="none">RED 팀 참가하기</Button>}
+                        {redTeam.status === "in" && redTeam.user === myId.current &&
+                            <Button className="outButton"
+                                    onClick={() => sendTeamMsg({team: "red", status: "none"})}>나가기</Button>}
+                        {(selectedGameMode==="solo" ||  (redTeam.user !== myId.current && redTeam.status === "ready")) &&
+                            <Button disabled={true}>RED 팀 준비완료</Button>}
+                    </div>
                 </div>
             </RedWrapper>
         )
@@ -98,14 +103,27 @@ export default Team;
 const BlueWrapper = styled.div`
 //size
 width: 40%;
-height: 300px;
+height: 270px;
 
 //align
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 10px;
+
+.statusCard{
+        
+    width: 60%;
+    min-width:230px;
+    height : 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: 2px solid ${colorList.secondary.beige};
+    background: rgba(47, 47, 47, 1);
     
     .title {
         width: 100%;
@@ -127,15 +145,15 @@ gap: 10px;
     }
     
     .status {
-        width: 50%;
+        width: 80%;
         height: 35px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
 
-        background-color: white;
         border : 2px solid ${colorList.banPick.blueTeam};
+        background-color: rgba(255, 255, 255, 0.85);
         border-radius: 10px;
 
         font-family: ${fontList.roboto.regular["14"].fontFamily};
@@ -148,7 +166,7 @@ gap: 10px;
     }
 
     .in_button {
-        width: 100%;
+        width: 80%;
         height: 40px;
         display: flex;
         flex-direction: row;
@@ -157,11 +175,11 @@ gap: 10px;
         gap: 10px;
 
         .readyButton {
-            width: 35%;
+            width: 70%;
             height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: end;
             justify-content: center;
 
             Button {
@@ -170,9 +188,11 @@ gap: 10px;
 
                 border-radius: 10px;
                 background: ${colorList.banPick.blueTeam};
-                border-left-color: ${colorList.banPick.blueTeam};
-                border-right-color: ${colorList.banPick.redTeam};
-                border-top-color: rgba(118, 118, 118, 0.3);
+                //황금색 테두리 때문에 임시 주석 및 추가 03.07 ajw 
+                //border: 2px solid ${colorList.secondary.beige};
+                //border-left-color: ${colorList.banPick.blueTeam};
+                //border-right-color: ${colorList.banPick.redTeam};
+                //border-top-color: rgba(118, 118, 118, 0.3);
                 color: white;
 
                 &:active {
@@ -187,7 +207,7 @@ gap: 10px;
         }
 
         .outButton {
-            width: 15%;
+            width: 30%;
             height: 100%;
             border-radius: 10px;
             border: none;
@@ -215,7 +235,7 @@ gap: 10px;
         }
 
         Button {
-            width: 50%;
+            width: 100%;
             height: 100%;
             border-radius: 10px;
             border: none;
@@ -243,19 +263,34 @@ gap: 10px;
             }
         }
     }
+}
 `
 const RedWrapper = styled.div`
 //size
 width: 40%;
-height: 300px;
+height: 270px;
 
 //align
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap: 15px;
     
+
+.statusCard{
+
+    width: 60%;
+    min-width:230px;
+    height : 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: 2px solid ${colorList.secondary.beige};
+    background: rgba(47, 47, 47, 1);
+
     .title, .status{
         //align
         display: flex;
@@ -280,25 +315,25 @@ gap: 15px;
     
     .status {
         //size
-        width: 50%;
+        width: 80%;
         height: 35px;
+
+        //03.07 원상복귀용 임시 주석
+        //border : 2px solid ${colorList.banPick.redTeam};
+        background-color: rgba(255,255,255,0.85);
+        border-radius: 10px;
 
         //font
         font-family: ${fontList.roboto.regular["14"].fontFamily};
         font-size: ${fontList.roboto.regular["14"].fontSize};
-        font-weight: bold;
         line-height: ${fontList.roboto.regular["14"].lineHeight};
         letter-spacing: ${fontList.roboto.regular["14"].letterSpacing};
         color: ${colorList.grayscale["400"]};
-
-        //etc
-        background-color: white;
-        border : 2px solid ${colorList.banPick.redTeam};
-        border-radius: 10px;
+        font-weight: bold;
     }
     
     .in_button {
-        width: 100%;
+        width: 80%;
         height: 40px;
         display: flex;
         flex-direction: row;
@@ -307,11 +342,11 @@ gap: 15px;
         gap: 10px;
         
         .readyButton {
-        width: 35%;
+        width: 70%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: end;
         justify-content: center;
         
         Button {
@@ -320,10 +355,15 @@ gap: 15px;
 
             border-radius: 10px;
             background: ${colorList.banPick.redTeam};
-            border-left-color: ${colorList.banPick.redTeam};
-            border-right-color: ${colorList.banPick.blueTeam};
-            border-top-color: rgba(118, 118, 118, 0.3);
+
+            //황금색 테두리 때문에 임시 주석 및 추가 03.07 ajw 
+            //border: 2px solid ${colorList.secondary.beige};
+            //border-left-color: ${colorList.banPick.redTeam};
+            //border-right-color: ${colorList.banPick.blueTeam};
+            //border-top-color: rgba(118, 118, 118, 0.3);
+
             color: white;
+
 
             &:active {
                 outline: none;
@@ -341,13 +381,16 @@ gap: 15px;
     }
         
         .outButton {
-                width: 15%;
+                width: 30%;
                 height: 100%;
                 border-radius: 10px;
                 border: none;
                 background-color: ${colorList.grayscale["200"]};
                 opacity: 0.8;
                 color: ${colorList.grayscale["000"]};
+
+                //황금색 테두리 때문에 임시 추가 03.07 ajw 
+                //border: 2px solid ${colorList.secondary.beige};
 
                 &:hover {
                     background-color: #888888;
@@ -369,7 +412,7 @@ gap: 15px;
         }
         
         Button {
-            width: 50%;
+            width: 100%;
             height: 100%;
             border-radius: 10px;
             border: none;
@@ -378,6 +421,10 @@ gap: 15px;
             font-weight: bold;
             font-size: 15px;
             
+            //황금색 테두리 때문에 임시 추가 03.07 ajw 
+            //border: 2px solid ${colorList.secondary.beige};
+            
+
             &:hover {
                 background-color: ${colorList.banPick.redTeamHover};
                 cursor: pointer;
@@ -397,4 +444,5 @@ gap: 15px;
             }
         }
     }
+}
 `

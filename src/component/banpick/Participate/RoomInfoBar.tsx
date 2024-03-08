@@ -67,6 +67,8 @@ const RoomInfoBarWrapper = styled.div`
     background: rgba(47, 47, 47, 1);
     border-radius: 10px;
 
+    border: 2px solid ${colorList.secondary.beige};
+    
     .title {
         //size 
         width: 100%;

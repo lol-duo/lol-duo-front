@@ -30,12 +30,10 @@ export default GameOption;
 const GameOptionWrapper = styled.div`
 //size
 width: 100%;
-height: 100%;
+height: 20%;
 
 //align
 display: flex;
 flex-direction: column;
-gap:10px;
-
-margin-bottom: 10px;
+gap:5px;
 `

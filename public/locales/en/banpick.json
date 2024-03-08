@@ -9,7 +9,7 @@
   "timeLimit": "Time limit", 
   "timeLimitInfo": "Time Unlimited", 
   "status" : {
-    "waiting" : "waiting",
+    "waiting" : "waiting...",
     "in" : "participated",
     "ready" : "ready"
   },

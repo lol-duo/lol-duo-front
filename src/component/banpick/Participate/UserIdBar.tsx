@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styled from "@emotion/styled";
 import fontList from "@styles/fontList";
-
+import colorList from "@styles/colorList";
 const UserIdBar: NextPage<{idText:string,myUserId:string}> = (props) => {
 
     // 내 아이디 Component
@@ -31,7 +31,8 @@ const UserIdBarWrapper = styled.div`
     //etc
     background: rgba(47, 47, 47, 1);
     border-radius: 10px;
-
+    
+    border: 2px solid ${colorList.secondary.beige};
     .title {
         //size
         width: 100%;

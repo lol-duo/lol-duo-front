@@ -43,7 +43,7 @@ export default GameMode;
 const GameModeWrapper = styled.div`
 //size
 width: 100%;
-height: 100%;
+height: 50%;
 
 //align
 display: flex;
