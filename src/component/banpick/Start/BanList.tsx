@@ -40,13 +40,11 @@ const BanList: NextPage<{
 export default BanList;
 
 const BanListWrapper = styled.div`
-height: 100%;
-width: 100%;
-display: grid;
-grid-template-columns: repeat(5, minmax(20px, 50px)); /* 정사각형의 크기를 유지하면서 가능한 많은 열을 채움 */
-grid-auto-rows: 50px;
-box-sizing: content-box;
-gap: 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: content-box;
+    gap: 5px;
 
     &.blueTeam {
         justify-content: start;

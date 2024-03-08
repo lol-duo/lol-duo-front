@@ -113,12 +113,14 @@ const BanPickRoomStart: NextPage<{
 export default BanPickRoomStart;
 
 const BanPickRoomStartWrapper = styled.div`
-width: 95%;
-height: 100%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-gap: 20px;
-z-index: 1;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1;
+    max-width: 1000px;
+    max-height: 700px;
 `
 

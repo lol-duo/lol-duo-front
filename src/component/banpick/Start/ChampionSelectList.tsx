@@ -73,15 +73,16 @@ const ChampionSelectList: NextPage<{
 export default ChampionSelectList;
 
 const ChampionSelectListWrapper = styled.div`
-width: 100%;
-height: 400px;
-overflow: auto;
-background-color: rgba(0, 0, 0, 0);
-display: grid;                     
-grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* 정사각형의 크기를 유지하면서 가능한 많은 열을 채움 */
-grid-auto-rows: 50px;
-align-items: flex-start;
-box-sizing: content-box;
+    width: 100%;
+    height: 250px;
+    min-width: 250px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    display: grid;                     
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* 정사각형의 크기를 유지하면서 가능한 많은 열을 채움 */
+    grid-auto-rows: 50px;
+    align-items: flex-start;
+    box-sizing: content-box;
 
     ::-webkit-scrollbar {
         width: 10px; /* 스크롤바의 width */

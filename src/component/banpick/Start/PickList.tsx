@@ -49,11 +49,11 @@ const PickList: NextPage<{
 export default PickList;
 
 const PickListWrapper = styled.div`
-margin-top: 20px;
-height: 100%;
-width: 100%;
-background-color: rgba(0, 0, 0, 0);
-display: flex;
-flex-direction: column;
-position: relative;
+    margin-top: 20px;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 `

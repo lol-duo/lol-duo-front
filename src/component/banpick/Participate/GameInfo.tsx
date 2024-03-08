@@ -34,29 +34,29 @@ const GameInfo: NextPage<{isStart:boolean,text:any,roomUrl:string,roomId:string,
 export default GameInfo;
 
 const GameInfoWrapper = styled.div`
-//size
-width: 70%;
-height: 100%;
-
-//align
-display: flex;
-flex-direction: column;
-align-items: end;
-justify-content: end;
-
-.infoList {
-width: 500px;
-height: 100%;
-display: flex;
-flex-direction: column;
-border-radius: 10px;
-justify-content: center;
-align-items: start;
-gap: 10px;
-
-@media screen and (max-width: 750px) {
-    width: 100%;
-}
+    //size
+    width: 70%;
+    height: 100%;
+    
+    //align
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    
+    .infoList {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    
+    @media screen and (max-width: 750px) {
+        width: 100%;
+    }
 
     .info {
         //size
@@ -80,8 +80,6 @@ gap: 10px;
 
         //font
         font-family: ${fontList.roboto.medium["16"].fontFamily};
-        font-size: ${fontList.roboto.medium["16"].fontSize};
-        font-weight: ${fontList.roboto.medium["16"].fontWeight};
         line-height: ${fontList.roboto.medium["16"].lineHeight};
         letter-spacing: ${fontList.roboto.medium["16"].letterSpacing};
         color: rgba(181, 181, 181, 1);
@@ -95,17 +93,12 @@ gap: 10px;
 }`
 
 const InfoMationBottomWrapper = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20px;
-z-index: 1;
-
-@media screen and (max-width: 1100px) {
-    width: 65%;
-    align-items: end;                
-}
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1;
 `

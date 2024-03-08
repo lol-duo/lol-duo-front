@@ -347,6 +347,9 @@ const BanPickRoomParticipate: NextPage<{
             <Person>
                 <img src={imgURL.person} alt="person" width={20} height={20}/>
                 {connectionListCount - 1}
+                <div className="info">
+                    {text.personInfo}
+                </div>
             </Person>
             {!isStart && <TitleBar subject={text.subject}/>}
             {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
@@ -372,6 +375,26 @@ const Person = styled.div`
     align-items: center;
     font-size: 14px;
     color: ${colorList.grayscale["000"]};
+    
+    .info {
+        visibility: hidden;
+        position: absolute;
+        color: ${colorList.grayscale["000"]};
+        background-color: ${colorList.semantic.card};
+        border-radius: 5px;
+        width: max-content;
+        bottom: -30px;
+        border: 1px solid ${colorList.secondary.beige};
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    &:hover .info {
+        visibility: visible;
+    }
 `
 
 const BanPickRoomParticipateWrapper = styled.div`

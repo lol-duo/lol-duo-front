@@ -50,17 +50,19 @@ const ChampionSelectSearchWrapper = styled.div`
         position: relative;
         width: 100%;
         gap: 20px;
-
-        @media screen and (max-width: 800px) {
-            flex-direction: column;
-            gap: 10px;
-        }
+        justify-content: end;
+        align-items: end;
     
     .lane {
         display: flex;
         flex-direction: row;       
         position: relative;
         left: 0;
+        
+        @media screen and (max-width: 850px) {
+            width: 22px;
+            height: 22px;
+        }
         
         .img {
             box-sizing: border-box;
@@ -70,7 +72,7 @@ const ChampionSelectSearchWrapper = styled.div`
                 cursor: pointer;
                 filter: grayscale(0%);
             }
-        }   
+        }
         
         .on {
             filter: grayscale(0%);
@@ -83,7 +85,7 @@ const ChampionSelectSearchWrapper = styled.div`
         border: none;
         border-bottom: 2px solid rgba(33, 33, 33, 0.5);
         color: ${colorList.grayscale["100"]};
-        font-size: 17px;
+        font-size: 12px;
         box-sizing: border-box;
         text-align: right;
         

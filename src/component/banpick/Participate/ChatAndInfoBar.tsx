@@ -10,7 +10,6 @@ const ChatAndInfoBar: NextPage<{isStart:boolean, text:any,roomId:any,roomUrl:str
     return (
         <ChatAndInfoBarWrapper>
             {!isStart && <Chat isMainList={false} isStart={isStart} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList}/>}
-            {isStart && <Chat isMainList={false} isStart={isStart} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList}/>}
             <GameInfo isStart={isStart} text={text} roomId={roomId} roomUrl={roomUrl} myUserId={myUserId}/>
         </ChatAndInfoBarWrapper>
     )
@@ -19,14 +18,16 @@ const ChatAndInfoBar: NextPage<{isStart:boolean, text:any,roomId:any,roomUrl:str
 export default ChatAndInfoBar;
 
 const ChatAndInfoBarWrapper = styled.div`
-//size
-width: 100%;
-height: 100%;
-
-//align
-display: flex;
-flex-direction: row;
-align-items: center;
-gap:10px;
+    //size
+    width: 100%;
+    height: 100%;
+    
+    //align
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    
+    margin-top: 40px;
 
 `

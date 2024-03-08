@@ -35,18 +35,20 @@ const PickTeam: NextPage<{
 export default PickTeam;
 
 const PickTeamWrapper = styled.div`
-width: 33%;
-height: 100%;
-max-width: 400px;
-margin-top: 20px;
-display: flex;
-flex-direction: column;
+    width: 33%;
+    height: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 
     &.redTeam{
+        justify-items: center;
         align-items: end;
     }
 
     &.blueTeam{
+        justify-items: center;
         align-items: start;
     }
 `
