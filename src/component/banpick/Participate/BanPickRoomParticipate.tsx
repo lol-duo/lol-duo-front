@@ -13,6 +13,8 @@ import TeamBar from "@/component/banpick/Participate/TeamBar";
 import InfoamtionBar from "@/component/banpick/Participate/InfoamtionBar";
 import TitleBar from "@/component/banpick/Participate/TitleBar";
 import {imgURL} from "@styles/img";
+import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
+import GlobalNavigationBar from "@/component/home/GlobalNavigationBar";
 
 const BanPickRoomParticipate: NextPage<{
     rootId?: string ,
@@ -344,21 +346,25 @@ const BanPickRoomParticipate: NextPage<{
     }, [id]);
     return (
         <BanPickRoomParticipateWrapper>
-            <Person>
-                <img src={imgURL.person} alt="person" width={20} height={20}/>
-                {connectionListCount - 1}
-                <div className="info">
-                    {text.personInfo}
-                </div>
-            </Person>
-            {!isStart && <TitleBar subject={text.subject}/>}
-            {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
-            {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setTimeLimited ={setTimeLimited} ></TeamBar>}
-            {
-                isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} chatList={chatList} setChatList={setChatList}
-                sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} selectedGameMode={selectedGameMode} hostId = {rootIdRef.current} selectLane={selectLane}/>
-            }
-            <ChatAndInfoBar isStart={isStartRef.current} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList} text={text} roomUrl={text.roomURL} roomId ={id}/>
+            <GlobalNavigationBarLogo/>
+            {!isStart && <GlobalNavigationBar/>}
+            <ParticipateWrapper>
+                <Person>
+                    <img src={imgURL.person} alt="person" width={20} height={20}/>
+                    {connectionListCount - 1}
+                    <div className="info">
+                        {text.personInfo}
+                    </div>
+                </Person>
+                {!isStart && <TitleBar subject={text.subject}/>}
+                {!isStart && <InfoamtionBar idText={text.myId} myUserId={myUserId} roomUrl={text.roomURL} roomId ={id}/>}
+                {!isStart && <TeamBar blueTeam={blueTeam} redTeam={redTeam} rootId={rootId} myId={myId} sendTeamMsg={sendTeamMsg} sendMsg={sendMsg} myUserId={myUserId} hostId = {rootIdRef.current} text={text} selectedGameMode={selectedGameMode} setSelectedGameMode={setSelectedGameMode} isTimeLimited={isTimeLimited} setTimeLimited ={setTimeLimited} ></TeamBar>}
+                {
+                    isStart && <BanPickRoomStart selectedChampion={selectedChampion} now={now} sendMsg={sendMsg} text={text} chatList={chatList} setChatList={setChatList}
+                    sendChat={sendChat} myId={myId} redTeam={redTeam} blueTeam={blueTeam} myUserId={myUserId} time={time} selectedGameMode={selectedGameMode} hostId = {rootIdRef.current} selectLane={selectLane}/>
+                }
+                <ChatAndInfoBar isStart={isStartRef.current} myId={myId} myUserId= {myUserId} blueTeam={blueTeam} redTeam={redTeam} chat={chat} setChat={setChat} setChatList={setChatList} sendChat={sendChat} chatList={chatList} text={text} roomUrl={text.roomURL} roomId ={id}/>
+            </ParticipateWrapper>
         </BanPickRoomParticipateWrapper>
     );
 }
@@ -396,12 +402,15 @@ const Person = styled.div`
         visibility: visible;
     }
 `
-
 const BanPickRoomParticipateWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+const ParticipateWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
-`;
+`

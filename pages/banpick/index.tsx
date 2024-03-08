@@ -1,14 +1,13 @@
 import {NextPage} from "next";
 import BanPickRoom from "@/component/banpick/BanPickRoom";
-import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
 import styled from "@emotion/styled";
 import Head from "next/head";
 import I18n from "@/component/locale/i18n";
-import HomeHeader from "@/component/home/Header";
 
 const BanPick: NextPage = () => {
 
     const description = I18n("common.json").description;
+    
     return (
         <BanPickWrapper>
             <Head>
@@ -32,9 +31,6 @@ const BanPick: NextPage = () => {
                 <link href="/favicon.ico" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
-            {/* 임시 <GlobalNavigationBarLogo where="banPick"/> */}
-            <HomeHeader/>
-            
             <BanPickRoom/>
         </BanPickWrapper>
 

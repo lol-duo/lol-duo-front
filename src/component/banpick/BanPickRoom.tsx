@@ -8,7 +8,6 @@ import {useRouter} from "next/router";
 import I18n from "@/component/locale/i18n";
 
 const BanPickRoom: NextPage = () => {
-
     const [myId, setMyId] = useState<string>("");
     const redTeam = useRef<TeamInfoType>({user: "",   status: "none",userName: ""}).current;
     const blueTeam = useRef<TeamInfoType>({user: "",   status: "none",userName: ""}).current;
@@ -492,7 +491,7 @@ const BanPickRoom: NextPage = () => {
     return (
         <BanPickRoomWrapper>
             {
-                myId != "" && <BanPickRoomParticipate rootId={myId} timeLimited={isTimeLimited} setTimeLimited={setIsTimeLimited} />
+                myId != "" && <BanPickRoomParticipate rootId={myId} timeLimited={isTimeLimited} setTimeLimited={setIsTimeLimited}/>
             }
         </BanPickRoomWrapper>
     );

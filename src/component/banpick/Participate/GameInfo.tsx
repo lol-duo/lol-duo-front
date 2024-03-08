@@ -35,7 +35,7 @@ export default GameInfo;
 
 const GameInfoWrapper = styled.div`
     //size
-    width: 70%;
+    width: 60%;
     height: 100%;
     
     //align

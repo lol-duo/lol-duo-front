@@ -47,6 +47,7 @@ const TeamReadyWrapper = styled.div`
 //size
 width: 25%;
 height: 270px;
+min-wdith: 300px;
 
 //align
 display: flex;

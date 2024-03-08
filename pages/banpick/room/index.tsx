@@ -1,6 +1,5 @@
 import {NextPage} from "next";
 import styled from "@emotion/styled";
-import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
 import Head from "next/head";
 import I18n from "@/component/locale/i18n";
 import BanPickRoomParticipate from "@/component/banpick/Participate/BanPickRoomParticipate";
@@ -31,7 +30,6 @@ const BanPick: NextPage = () => {
                 <link href="/favicon.ico" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
-            <GlobalNavigationBarLogo where="banPick"/>
             <div className="banpickRoom">
                 <BanPickRoomParticipate/>
             </div>
