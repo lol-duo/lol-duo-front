@@ -3,14 +3,10 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import I18n from "@/component/locale/i18n";
 import BanPickRoomParticipate from "@/component/banpick/Participate/BanPickRoomParticipate";
-import { useState } from "react";
-import GlobalNavigationBar from "@/component/home/GlobalNavigationBar";
-import GlobalNavigationBarLogo from "@/component/home/GlobalNavigationBarLogo";
 
 const BanPick: NextPage = () => {
 
     const description = I18n("common.json").description;
-    const [isGameStart, setIsGameStart] = useState<boolean>(false);
 
     return (
         <BanPickRoomWrapper>
@@ -34,10 +30,8 @@ const BanPick: NextPage = () => {
                 <link href="/favicon.ico" rel="apple-touch-icon"/>
                 <title>LOL-DUO</title>
             </Head>
-            <GlobalNavigationBarLogo/>
-            {!isGameStart && <GlobalNavigationBar/>}
             <div className="banpickRoom">
-                <BanPickRoomParticipate setIsGameStart={setIsGameStart}/>
+                <BanPickRoomParticipate/>
             </div>
         </BanPickRoomWrapper>
     );
