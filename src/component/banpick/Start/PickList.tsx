@@ -56,4 +56,10 @@ const PickListWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
+    
+    @media (max-width: 800px) {
+        flex-direction: row;
+        width: 100%;
+        height: 200px;
+    }
 `
